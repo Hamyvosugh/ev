@@ -71,7 +71,7 @@ export async function POST(request: Request) {
     `;
 
     await transporter.sendMail({
-      from: `"EmoVIral" <${process.env.SMTP_USER || 'hi@hamyvosugh.com'}>`,
+      from: `"EmoViral" <${process.env.SMTP_USER || 'hi@hamyvosugh.com'}>`,
       to: email,
       subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
       text: confirmationEmail
