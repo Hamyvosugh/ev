@@ -5,6 +5,7 @@ import Pricing from '@/components/social/price';
 import CTAComponent from '@/components/social/cta';
 
 
+
 export default function Home() {
   return (
     <main className="min-h-screen p-4">

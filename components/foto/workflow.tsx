@@ -24,7 +24,7 @@ const WorkflowComponent = () => {
             {/* Image Container */}
             <div className="h-64 relative">
               <img 
-                src="/api/placeholder/600/400" 
+                src="/images/foto/carshoot1.webp" 
                 alt="Fotoshooting vor Ort"
                 className="w-full h-full object-cover"
               />
@@ -51,7 +51,7 @@ const WorkflowComponent = () => {
             {/* Image Container */}
             <div className="h-64 relative">
               <img 
-                src="/api/placeholder/600/400" 
+                src="/images/foto/fotoshoot2.webp" 
                 alt="Professionelle Bearbeitung"
                 className="w-full h-full object-cover"
               />
@@ -78,7 +78,7 @@ const WorkflowComponent = () => {
             {/* Image Container */}
             <div className="h-64 relative">
               <img 
-                src="/api/placeholder/600/400" 
+                src="/images/foto/fotoshoot3.webp" 
                 alt="Schnelle Lieferung & Upload"
                 className="w-full h-full object-cover"
               />

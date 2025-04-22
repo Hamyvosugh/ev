@@ -20,23 +20,23 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-white" style={{ height: '60vh', minHeight: '600px' }}>
+    <div className="relative overflow-hidden bg-white " style={{ height: '60vh', minHeight: '600px' }}>
       {/* Car website illustration */}
-      <div className="absolute right-0 bottom-0 w-2/3 h-full hidden lg:block">
+      <div className="absolute right-0 top-24 bottom-0 w-2/3 h-full hidden lg:block">
         {/* Browser window frame - moved more to the left and centered vertically */}
-        <div className="absolute right-1/3 top-1/2 transform -translate-y-1/2 w-96 h-80 bg-gray-50 rounded-lg shadow-lg border border-gray-200 overflow-hidden"
+        <div className="absolute right-1/3 top-1/2 transform -translate-y-1/2 w-96 h-80  bg-gray-50 rounded-lg shadow-lg border border-gray-200 overflow-hidden"
              style={{
                transform: `translate(${mousePosition.x * -10}px, ${mousePosition.y * -10 - 50}%) rotate(-2deg)`,
                transition: 'transform 0.3s ease-out'
              }}>
           {/* Browser header */}
-          <div className="h-8 bg-gray-100 border-b border-gray-200 flex items-center px-4">
+          <div className="h-8 bg-gray-100 border-b border-gray-200 flex items-center px-4 ">
             <div className="flex space-x-2">
               <div className="w-3 h-3 rounded-full bg-red-400"></div>
               <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
               <div className="w-3 h-3 rounded-full bg-green-400"></div>
             </div>
-            <div className="mx-auto h-5 w-64 bg-white rounded-full flex items-center justify-center text-xs text-gray-400">www.autohaus-digital.de</div>
+            <div className="mx-auto h-5 w-64  bg-white rounded-full flex items-center justify-center text-xs text-gray-400">www.autohaus-digital.de</div>
           </div>
           
           {/* Website content with image placeholder instead of car graphic */}
@@ -50,9 +50,9 @@ const HeroSection = () => {
             </div>
             
             {/* Car image placeholder */}
-            <div className="h-24 bg-blue-50 mb-4 overflow-hidden relative rounded-sm">
+            <div className="h-24 bg-blue-50 mb-4 overflow-hidden relative rounded-sm ">
               <img 
-                src="/api/placeholder/400/200" 
+                src="/images/home/hero/car-hero-mockup.webp" 
                 alt="Car placeholder" 
                 className="absolute inset-0 w-full h-full object-cover"
               />
@@ -66,9 +66,15 @@ const HeroSection = () => {
             </div>
             
             {/* Grid of cars - image placeholders */}
-            <div className="mt-4 grid grid-cols-3 gap-2">
+            <div className="mt-4 grid grid-cols-3 gap-2 ">
               <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
-                <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover" />
+                <img src="/images/home/hero/aus1.webp" alt="Car thumbnail" className="w-full h-full object-cover" />
+              </div>
+              <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
+                <img src="/images/home/hero/aus02.webp" alt="Car thumbnail" className="w-full h-full object-cover" />
+              </div>
+              <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
+                <img src="/images/home/hero/aus01.webp" alt="Car thumbnail" className="w-full h-full object-cover" />
               </div>
               <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
                 <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover" />
@@ -76,34 +82,28 @@ const HeroSection = () => {
               <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
                 <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover" />
               </div>
-              <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
-                <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover" />
-              </div>
-              <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
-                <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover" />
-              </div>
-              <div className="h-10 bg-gray-100 rounded-sm overflow-hidden">
-                <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover" />
+              <div className="h-10 bg-gray-100 rounded-sm overflow-hidden ">
+                <img src="/api/placeholder/100/40" alt="Car thumbnail" className="w-full h-full object-cover " />
               </div>
             </div>
           </div>
         </div>
         
         {/* Mobile device - repositioned more to the left and in the vertical center */}
-        <div className="absolute right-1/2 bottom-1/3 w-32 h-64 bg-gray-800 rounded-xl shadow-xl overflow-hidden"
+        <div className="absolute  right-1/2  bottom-1/3 w-32 h-64 bg-gray-800 rounded-xl shadow-xl overflow-hidden "
              style={{
                transform: `translate(${mousePosition.x * -20}px, ${mousePosition.y * -20}px) rotate(5deg)`,
-               transition: 'transform 0.3s ease-out'
+               transition: 'transform 0.3s ease-out '
              }}>
-          <div className="h-4 w-16 bg-gray-900 mx-auto rounded-b-xl"></div>
-          <div className="h-full bg-gray-100 m-1 mt-0 rounded-lg overflow-hidden">
+          <div className="h-4 w-16  bg-gray-900 mx-auto  rounded-b-xl"></div>
+          <div className="h-full bg-gray-100 m-1 mt-0 rounded-lg overflow-hidden ">
             {/* Mobile screen content */}
-            <div className="h-6 bg-blue-900 w-full"></div>
+            <div className="h-6 bg-blue-900 w-full "></div>
             <div className="p-2">
               {/* Mobile car image placeholder */}
-              <div className="h-20 bg-blue-50 mb-2 overflow-hidden relative rounded-sm">
+              <div className="h-20  bg-blue-50 mb-2 overflow-hidden relative rounded-sm ">
                 <img 
-                  src="/api/placeholder/200/100" 
+                  src="/images/home/hero/aus05.webp" 
                   alt="Mobile car placeholder" 
                   className="absolute inset-0 w-full h-full object-cover"
                 />
@@ -114,16 +114,16 @@ const HeroSection = () => {
               </div>
               <div className="grid grid-cols-2 gap-1">
                 <div className="h-8 bg-gray-100 rounded-sm overflow-hidden">
-                  <img src="/api/placeholder/50/30" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
+                  <img src="/images/home/hero/car1.webp" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
                 </div>
                 <div className="h-8 bg-gray-100 rounded-sm overflow-hidden">
-                  <img src="/api/placeholder/50/30" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
+                  <img src="/images/home/hero/car2.webp" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
                 </div>
                 <div className="h-8 bg-gray-100 rounded-sm overflow-hidden">
-                  <img src="/api/placeholder/50/30" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
+                  <img src="/images/home/hero/car4.webp" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
                 </div>
                 <div className="h-8 bg-gray-100 rounded-sm overflow-hidden">
-                  <img src="/api/placeholder/50/30" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
+                  <img src="/images/home/hero/car3.webp" alt="Car thumbnail mobile" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>

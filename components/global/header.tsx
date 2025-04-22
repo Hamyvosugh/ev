@@ -38,7 +38,7 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Dienstleistungen", href: "#services", hasMegaMenu: true },
-    { name: "Über uns", href: "aboutus" },
+    { name: "Über uns", href: "/about" },
     { name: "Kontakt", href: "#contact" }
   ];
 
@@ -48,14 +48,14 @@ const Header = () => {
       name: "Fotografie",
       description: "Professionelle Fahrzeugfotografie für Ihr Autohaus",
       icon: Camera,
-      href: "/fotografie",
+      href: "/foto",
       gradient: "from-blue-600 to-indigo-600"
     },
     {
       name: "Development",
       description: "Webseiten & Online-Shops für Autohäuser",
       icon: Code,
-      href: "/development",
+      href: "/web",
       gradient: "from-purple-600 to-pink-600"
     },
     {
@@ -69,7 +69,7 @@ const Header = () => {
       name: "Werbekampagnen",
       description: "Effektive Marketing-Kampagnen für mehr Reichweite",
       icon: Megaphone,
-      href: "/werbekampagnen",
+      href: "/kampagnen",
       gradient: "from-green-600 to-teal-600"
     }
   ];

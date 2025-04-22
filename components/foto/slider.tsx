@@ -23,9 +23,9 @@ const ImageSlider = () => {
 
   // Mock image arrays - in a real application, you would replace these with actual image paths
   const sliders: SliderData = {
-    slider1: Array.from({ length: 17 }, (_, i) => `/images/fahrzeuge/aussen/aus${(i+1).toString().padStart(2, '0')}.webp`),
-    slider2: Array.from({ length: 20 }, (_, i) => `/images/fahrzeuge/innen/inn${(i+1).toString().padStart(2, '0')}.webp`),
-    slider3: Array.from({ length: 19 }, (_, i) => `/images/fahrzeuge/details/det${(i+1).toString().padStart(2, '0')}.webp`)
+    slider1: Array.from({ length: 15 }, (_, i) => `/images/fahrzeuge/aussen/aus${(i+1).toString().padStart(2, '0')}.webp`),
+    slider2: Array.from({ length: 23 }, (_, i) => `/images/fahrzeuge/innen/inn${(i+1).toString().padStart(2, '0')}.webp`),
+    slider3: Array.from({ length: 11 }, (_, i) => `/images/fahrzeuge/details/det${(i+1).toString().padStart(2, '0')}.webp`)
   };
 
   // Slider titles
@@ -146,7 +146,7 @@ const ImageSlider = () => {
                   {/* Navigation arrows */}
                   <button 
                     onClick={handlePrevClick(sliderId)} 
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-50"
                     aria-label="Vorheriges Bild"
                     type="button"
                   >
@@ -156,7 +156,7 @@ const ImageSlider = () => {
                   </button>
                   <button 
                     onClick={handleNextClick(sliderId)} 
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-50"
                     aria-label="Nächstes Bild"
                     type="button"
                   >

@@ -30,7 +30,8 @@ const ServicesSection = () => {
         </svg>
       ),
       title: "Fahrzeugfotografie",
-      description: "Professionelle Aufnahmen, die Ihre Fahrzeuge im besten Licht präsentieren und Kunden überzeugen."
+      description: "Professionelle Aufnahmen, die Ihre Fahrzeuge im besten Licht präsentieren und Kunden überzeugen.",
+      link: "/foto"
     },
     {
       icon: (
@@ -39,7 +40,8 @@ const ServicesSection = () => {
         </svg>
       ),
       title: "Webdesign & Verwaltung",
-      description: "Moderne, benutzerfreundliche Autohaus-Websites mit einfacher Verwaltung und optimaler Conversion-Rate."
+      description: "Moderne, benutzerfreundliche Autohaus-Websites mit einfacher Verwaltung und optimaler Conversion-Rate.",
+      link: "/web"
     },
     {
       icon: (
@@ -48,7 +50,8 @@ const ServicesSection = () => {
         </svg>
       ),
       title: "Social-Media-Management",
-      description: "Strategische Content-Erstellung und Community-Management für mehr Sichtbarkeit und Engagement."
+      description: "Strategische Content-Erstellung und Community-Management für mehr Sichtbarkeit und Engagement.",
+      link: "/socialmedia"
     },
     {
       icon: (
@@ -58,7 +61,8 @@ const ServicesSection = () => {
         </svg>
       ),
       title: "Werbekampagnen",
-      description: "Gezielte Google- und Amazon-Kampagnen für maximale Reichweite und optimalen Return on Investment."
+      description: "Gezielte Google- und Amazon-Kampagnen für maximale Reichweite und optimalen Return on Investment.",
+      link: "/kampagnen"
     }
   ];
 
@@ -92,7 +96,7 @@ const ServicesSection = () => {
               
               <div className="mt-auto pt-4 border-t border-gray-100 text-center">
                 <a 
-                  href="#" 
+                  href={service.link} 
                   className="inline-flex items-center justify-center px-4 py-2 bg-blue-900 text-white font-medium rounded hover:bg-amber-600 transition-colors duration-300 text-sm w-full"
                 >
                   <span>Mehr erfahren</span>

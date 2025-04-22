@@ -67,9 +67,9 @@ div.section-wrapper {
   box-sizing: border-box !important;
 }
 
-/* Preserve header layout */
+/* Preserve header layout 
 header > div {
   max-width: 1280px !important; 
   margin-left: auto !important;
   margin-right: auto !important;
-}
+}*/
