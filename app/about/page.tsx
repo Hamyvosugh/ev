@@ -124,10 +124,10 @@ const AboutUsPage = () => {
             <div className="text-center">
               <div className="mb-4 aspect-square bg-gray-200 rounded-lg overflow-hidden">
                 <div className="w-full h-full bg-[#0a2e4a]/10 flex items-center justify-center">
-                  <img src="/api/placeholder/300/300" alt="Team member" className="w-full h-full object-cover" />
+                  <img src="/images/team/hamy.webp" alt="Team member" className="w-full h-full object-cover" />
                 </div>
               </div>
-              <h3 className="font-bold text-xl mb-1">Maximilian Schmidt</h3>
+              <h3 className="font-bold text-xl mb-1">Hamy Vosugh</h3>
               <p className="text-[#0a2e4a] mb-2">CEO & Strategy Director</p>
               <p className="text-gray-600 text-sm">10+ Jahre Erfahrung in der Automobilbranche</p>
             </div>
@@ -136,7 +136,7 @@ const AboutUsPage = () => {
             <div className="text-center">
               <div className="mb-4 aspect-square bg-gray-200 rounded-lg overflow-hidden">
                 <div className="w-full h-full bg-[#0a2e4a]/10 flex items-center justify-center">
-                  <img src="/api/placeholder/300/300" alt="Team member" className="w-full h-full object-cover" />
+                  <img src="/images/team/sar.webp" alt="Team member" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="font-bold text-xl mb-1">Julia Weber</h3>
@@ -148,7 +148,7 @@ const AboutUsPage = () => {
             <div className="text-center">
               <div className="mb-4 aspect-square bg-gray-200 rounded-lg overflow-hidden">
                 <div className="w-full h-full bg-[#0a2e4a]/10 flex items-center justify-center">
-                  <img src="/api/placeholder/300/300" alt="Team member" className="w-full h-full object-cover" />
+                  <img src="/images/team/am.webp" alt="Team member" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="font-bold text-xl mb-1">Thomas Bauer</h3>
@@ -160,7 +160,7 @@ const AboutUsPage = () => {
             <div className="text-center">
               <div className="mb-4 aspect-square bg-gray-200 rounded-lg overflow-hidden">
                 <div className="w-full h-full bg-[#0a2e4a]/10 flex items-center justify-center">
-                  <img src="/api/placeholder/300/300" alt="Team member" className="w-full h-full object-cover" />
+                  <img src="/images/team/sar22.webp" alt="Team member" className="w-full h-full object-cover" />
                 </div>
               </div>
               <h3 className="font-bold text-xl mb-1">Lisa Hoffmann</h3>

@@ -67,8 +67,8 @@ const HeroSocial = () => {
                         <Instagram className="w-6 h-6" />
                       </div>
                       <div>
-                        <div className="font-bold">Instagram Management</div>
-                        <div className="text-sm text-blue-100">Strategische Inhalte & Community Building</div>
+                        <div className="font-bold text-blue-900 text-2xl">Instagram Management</div>
+                        <div className="text-sm text-blue-900">Strategische Inhalte & Community Building</div>
                       </div>
                     </div>
                   </div>
@@ -79,8 +79,8 @@ const HeroSocial = () => {
                         <Facebook className="w-6 h-6" />
                       </div>
                       <div>
-                        <div className="font-bold">Facebook Marketing</div>
-                        <div className="text-sm text-blue-100">Gezielte Kampagnen & Interaktion</div>
+                        <div className="font-bold text-blue-900 text-2xl">Facebook Marketing</div>
+                        <div className="text-sm text-blue-900">Gezielte Kampagnen & Interaktion</div>
                       </div>
                     </div>
                   </div>
@@ -91,8 +91,8 @@ const HeroSocial = () => {
                         <Twitter className="w-6 h-6" />
                       </div>
                       <div>
-                        <div className="font-bold">Twitter Präsenz</div>
-                        <div className="text-sm text-blue-100">Aktuelle Trends & schnelle Kommunikation</div>
+                        <div className="font-bold text-blue-900 text-2xl">Twitter Präsenz</div>
+                        <div className="text-sm text-blue-900">Aktuelle Trends & schnelle Kommunikation</div>
                       </div>
                     </div>
                   </div>

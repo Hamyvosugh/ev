@@ -39,7 +39,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Dienstleistungen", href: "#services", hasMegaMenu: true },
     { name: "Über uns", href: "/about" },
-    { name: "Kontakt", href: "#contact" }
+    { name: "Kontakt", href: "/kontakt" }
   ];
 
   // Mega menu services

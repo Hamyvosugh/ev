@@ -1,0 +1,88 @@
+// app/api/contact/route.ts
+import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+
+export async function POST(request: Request) {
+  try {
+    const body = await request.json();
+    const { name, email, company, phone, service, message, to } = body;
+
+    // Create a transporter using Zoho SMTP settings
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || 'smtppro.zoho.eu', // Zoho EU server
+      port: parseInt(process.env.SMTP_PORT || '465'),
+      secure: true, // true for 465 (Zoho recommends SSL)
+      auth: {
+        user: process.env.SMTP_USER || 'hi@hamyvosugh.com',
+        pass: process.env.SMTP_PASSWORD || 'your-zoho-app-password'
+      }
+    });
+
+    // Email template with professional German formatting
+    const emailContent = `
+    Neue Kontaktanfrage von ${name}
+    
+    ============================
+    KONTAKTDATEN
+    ============================
+    Name: ${name}
+    E-Mail: ${email}
+    Autohaus/Firma: ${company || 'Nicht angegeben'}
+    Telefon: ${phone || 'Nicht angegeben'}
+    
+    ============================
+    ANFRAGE DETAILS
+    ============================
+    Gewünschte Dienstleistung: ${service}
+    
+    Nachricht:
+    ${message}
+    
+    ============================
+    
+    Diese Nachricht wurde automatisch über das Kontaktformular Ihrer Website generiert.
+    `;
+
+    // Send email to your address (hi@hamyvosugh.com)
+    await transporter.sendMail({
+      from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@hamyvosugh.com'}>`,
+      to: to || 'hi@hamyvosugh.com',
+      subject: `Neue Anfrage: ${service} - von ${name}`,
+      text: emailContent,
+      replyTo: email
+    });
+
+    // Send confirmation email to the customer
+    const confirmationEmail = `
+    Sehr geehrte(r) ${name},
+    
+    vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich bei Ihnen melden.
+    
+    Hier ist eine Kopie Ihrer Anfrage:
+    ------------------------
+    Dienstleistung: ${service}
+    
+    Ihre Nachricht:
+    ${message}
+    ------------------------
+    
+    Mit freundlichen Grüßen
+    Ihr Team
+    `;
+
+    await transporter.sendMail({
+      from: `"EmoVIral" <${process.env.SMTP_USER || 'hi@hamyvosugh.com'}>`,
+      to: email,
+      subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
+      text: confirmationEmail
+    });
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error('Error sending email:', error);
+    return NextResponse.json(
+      { error: 'Failed to send email' },
+      { status: 500 }
+    );
+  }
+}

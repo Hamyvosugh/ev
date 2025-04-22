@@ -1,4 +1,4 @@
-import HeroSection from '@/components/home/hero';
+import HeroSection2 from '@/components/home/hero2';
 import React from 'react';
 import ServicesSection from '@/components/home/service';
 import CTASection from '@/components/home/cta';
@@ -9,7 +9,7 @@ import VehiclePhotographyIntro from '@/components/home/fotoopener'
 export default function Home() {
   return (
     <main className="min-h-screen p-4">
-      <HeroSection />
+      <HeroSection2 />
       <ServicesSection />
       <AboutSection />
       <VehiclePhotographyIntro />
