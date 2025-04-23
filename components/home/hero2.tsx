@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import ScrollButton from '@/components/global/ScrollButton'
 
 const HeroSection2 = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -43,7 +44,7 @@ const HeroSection2 = () => {
             
             {/* Enhanced CTA section */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="relative overflow-hidden group inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg">
+              <a href='/beratung' className="relative overflow-hidden group inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-900 hover:bg-blue-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300 shadow-lg">
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-yellow-500 rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
                 <span className="relative flex items-center">
                   Jetzt Beratung anfordern
@@ -51,12 +52,12 @@ const HeroSection2 = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </span>
-              </button>
+              </a>
               
-              <button className="relative overflow-hidden group inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
+              <ScrollButton className="relative overflow-hidden group inline-flex items-center justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-md text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300">
                 <span className="absolute w-0 h-0 transition-all duration-500 ease-out bg-blue-200 rounded-full group-hover:w-56 group-hover:h-56 opacity-10"></span>
                 <span className="relative">Mehr erfahren</span>
-              </button>
+              </ScrollButton>
             </div>
           </div>
           

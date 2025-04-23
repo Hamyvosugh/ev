@@ -57,7 +57,7 @@ const WhyChooseUs = () => {
                 
                 <div className="space-y-4">
                   {benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center gap-3 bg-white bg-opacity-10 p-3 rounded">
+                    <div key={index} className="flex items-center gap-3 bg-white text-black bg-opacity-10 p-3 rounded">
                       <div className="bg-yellow-400 p-1 rounded-full">
                         <Check className="w-4 h-4 text-blue-900" />
                       </div>

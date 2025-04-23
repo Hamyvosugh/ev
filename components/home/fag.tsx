@@ -163,7 +163,7 @@ const FAQSection = () => {
             Haben Sie weitere Fragen oder möchten Sie ein persönliches Gespräch?
           </p>
           <a 
-            href="#contact" 
+            href="/kontakt" 
             className="inline-flex items-center justify-center px-6 py-3 bg-blue-900 text-white font-medium rounded-lg hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 shadow-md hover:shadow-lg"
           >
             Kontakt aufnehmen

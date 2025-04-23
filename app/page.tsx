@@ -5,6 +5,9 @@ import CTASection from '@/components/home/cta';
 import FAQSection from '@/components/home/fag';
 import AboutSection from '@/components/home/aboutus';
 import VehiclePhotographyIntro from '@/components/home/fotoopener'
+import ContactForm from '@/components/contact/ContactForm';
+import CTAComponent from '@/components/beratung/call'
+
 
 export default function Home() {
   return (
@@ -13,9 +16,10 @@ export default function Home() {
       <ServicesSection />
       <AboutSection />
       <VehiclePhotographyIntro />
+      <CTAComponent />
       <FAQSection />
       <CTASection />
-    
+      <ContactForm />
 
  
     </main>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
+import ScrollButton from '@/components/global/ScrollButton';
 
 const HeroSocial = () => {
   return (
@@ -42,9 +43,11 @@ const HeroSocial = () => {
                 Jetzt Social-Media-Beratung sichern
                 <ArrowRight className="w-4 h-4" />
               </button>
-              <button className="px-6 py-3 border-2 border-blue-900 text-blue-900 font-medium rounded hover:bg-blue-50 transition-colors">
+              
+              {/* Replace the regular button with our client component ScrollButton */}
+              <ScrollButton className="px-6 py-3 border-2 border-blue-900 text-blue-900 font-medium rounded hover:bg-blue-50 transition-colors">
                 Beispiele ansehen
-              </button>
+              </ScrollButton>
             </div>
           </div>
           

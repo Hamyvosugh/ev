@@ -1,5 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
+import ScrollButton from '@/components/global/ScrollButton'
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -60,15 +61,14 @@ const CTASection = () => {
               </p>
               
               <div>
-                <a 
-                  href="#contact" 
+                <ScrollButton
                   className="inline-flex items-center justify-center px-8 py-4 bg-blue-900 text-white font-medium rounded-lg hover:bg-amber-600 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-xl text-lg"
                 >
                   Jetzt Kontakt aufnehmen
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
-                </a>
+                </ScrollButton>
               </div>
               
               {/* Trust indicators */}
