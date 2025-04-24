@@ -291,7 +291,7 @@ const WerbekampagnenPage = () => {
               </div>
             </div>
             <p className="text-gray-700 italic">
-              „Dank Emoviral konnten wir unsere Sichtbarkeit auf Google in kürzester Zeit verdoppeln und unseren Umsatz auf Amazon signifikant steigern."
+              &bdquo;Dank Emoviral konnten wir unsere Sichtbarkeit auf Google in kürzester Zeit verdoppeln und unseren Umsatz auf Amazon signifikant steigern.&ldquo;
             </p>
           </div>
         </div>

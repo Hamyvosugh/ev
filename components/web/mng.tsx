@@ -103,9 +103,9 @@ const WebManagement = () => {
               </svg>
             </div>
             <div>
-              <p className="text-lg text-gray-700 mb-4 italic">
-                "Die kontinuierliche Betreuung unserer Website durch dieses Team hat unsere Online-Präsenz auf ein neues Niveau gehoben. Wir können uns voll auf unser Kerngeschäft konzentrieren, während sie sicherstellen, dass unsere Website stets optimal läuft und aktuell bleibt."
-              </p>
+            <p className="text-lg text-gray-700 mb-4 italic">
+               &ldquo;Die kontinuierliche Betreuung unserer Website durch dieses Team hat unsere Online-Präsenz auf ein neues Niveau gehoben. Wir können uns voll auf unser Kerngeschäft konzentrieren, während sie sicherstellen, dass unsere Website stets optimal läuft und aktuell bleibt.&rdquo;
+            </p>
               <div className="flex items-center">
                 <span className="font-medium text-gray-900">Michael Schneider</span>
                 <span className="mx-2">•</span>
