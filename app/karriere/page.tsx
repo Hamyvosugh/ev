@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description: 'Jetzt bewerben und die digitale Zukunft im Automobilhandel mitgestalten. Flexible Jobs in Fotografie, Web, Content & mehr.',
     images: [
       {
-        url: '/images/karriere-og.jpg', 
+        url: '/images/karrier/karrier-emoviral.webp', 
         width: 1200,
         height: 630,
         alt: 'Karriere bei Emoviral',
