@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     description: 'Maßgeschneiderte Webseiten für Autohäuser – mit Fokus auf Geschwindigkeit, Design, mobile Nutzer und Integration von Fahrzeugdaten.',
     images: [
       {
-        url: 'emoviral/public/images/home/hero/haerobaner.webp', 
+        url: '/images/home/hero/haerobaner.webp', 
         width: 1200,
         height: 630,
         alt: 'Webdesign für Autohäuser',
