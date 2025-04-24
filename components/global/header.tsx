@@ -39,6 +39,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Dienstleistungen", href: "#services", hasMegaMenu: true },
     { name: "Über uns", href: "/about" },
+    { name: "Karriere", href: "/karriere" },
     { name: "Kontakt", href: "/kontakt" }
   ];
 
@@ -85,8 +86,8 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <a href="/" className="flex items-center">
-              <div className="h-10 w-10 rounded bg-blue-900 flex items-center justify-center mr-2">
-                <span className="text-white font-bold text-xl">EV</span>
+              <div className="h-10 w-10 rounded  flex items-center justify-center mr-2">
+              <img src="/images/logo/favicon-blue-emoviral.png" alt="EV Logo" className=" w-3xl h-3xl" />
               </div>
               <span className={`font-bold text-xl ${isScrolled ? 'text-blue-900' : 'text-blue-900'}`}>EmoViral</span>
             </a>

@@ -39,10 +39,10 @@ const HeroSocial = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <button className="px-6 py-3 bg-blue-900 text-white font-medium rounded hover:bg-blue-800 transition-colors flex items-center gap-2 shadow-lg">
+              <a href='/beratung' className="px-6 py-3 bg-blue-900 text-white font-medium rounded hover:bg-blue-800 transition-colors flex items-center gap-2 shadow-lg">
                 Jetzt Social-Media-Beratung sichern
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </a>
               
               {/* Replace the regular button with our client component ScrollButton */}
               <ScrollButton className="px-6 py-3 border-2 border-blue-900 text-blue-900 font-medium rounded hover:bg-blue-50 transition-colors">

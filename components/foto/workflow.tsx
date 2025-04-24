@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink'
+
+
 
 const WorkflowComponent = () => {
   return (
@@ -96,9 +99,9 @@ const WorkflowComponent = () => {
 
         {/* Call to Action */}
         <div className="mt-12 text-center">
-          <button className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-md transition duration-300 font-poppins">
+        <SmoothScrollLink href="#contact-form" className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-md transition duration-300 font-poppins">
             Jetzt Termin vereinbaren
-          </button>
+          </SmoothScrollLink>
         </div>
       </div>
     </div>

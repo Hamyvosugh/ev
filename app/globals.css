@@ -65,6 +65,8 @@ div.section-wrapper {
   margin-left: 0 !important;
   margin-right: 0 !important;
   box-sizing: border-box !important;
+  scroll-behavior: smooth;
+
 }
 
 /* Preserve header layout 

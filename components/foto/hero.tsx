@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import { Clock, Shield, Award } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink'
+import ScrollButton from '@/components/global/Scroll100vh'
+
 
 const HeroFoto = () => {
   return (
@@ -32,12 +35,12 @@ const HeroFoto = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4">
-              <button className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-md transition duration-300 font-poppins">
+              <SmoothScrollLink href="#contact-form"  className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-md transition duration-300 font-poppins">
                 Service buchen
-              </button>
-              <button className="px-8 py-3 border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-medium rounded-md transition duration-300 font-poppins">
-                Portfolio ansehen
-              </button>
+              </SmoothScrollLink>
+              <ScrollButton className="px-8 py-3 border-2 border-gray-800 hover:bg-gray-800 hover:text-white text-gray-800 font-medium rounded-md transition duration-300 font-poppins">
+              Wie funktioniert es?
+              </ScrollButton>
             </div>
           </div>
           

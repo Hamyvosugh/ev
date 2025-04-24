@@ -8,8 +8,8 @@ const Footer = () => {
             <div className="col-span-1">
               <div className="flex items-center mb-6">
                 {/* Replace with your actual logo */}
-                <div className="h-10 w-10 rounded-full bg-amber-500 flex items-center justify-center mr-3">
-                  <span className="font-bold text-blue-900">EV</span>
+                <div className="h-12 w-12 rounded-full flex items-center justify-center mr-3">
+                <img src="/images/logo/favicon-orange-emoviral.png" alt="EV Logo" className=" w-4xl h-4xl" />
                 </div>
                 <span className="text-2xl font-bold text-white font-poppins">Emoviral</span>
               </div>

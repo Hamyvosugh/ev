@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import { Check, Instagram, Upload, Image } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink'
+
 
 const PricingComponent = () => {
   return (
@@ -65,9 +67,12 @@ const PricingComponent = () => {
               </ul>
               
               <div className="mt-8">
-                <button className="w-full py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 font-poppins">
-                  Jetzt buchen
-                </button>
+              <SmoothScrollLink 
+  href='#contact-form' 
+  className="w-full block py-4 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition duration-300 font-poppins text-center"
+>
+  Jetzt buchen
+</SmoothScrollLink>
               </div>
             </div>
           </div>

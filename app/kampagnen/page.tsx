@@ -1,4 +1,6 @@
 import React from 'react';
+import ContactForm from '@/components/contact/ContactForm';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink'
 
 const WerbekampagnenPage = () => {
   // Primary colors from requirements
@@ -28,12 +30,10 @@ const WerbekampagnenPage = () => {
               Vertrauen Sie auf datenbasierte Strategien, kreative Anzeigengestaltung und laufende Optimierung.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all" style={{ backgroundColor: colors.accent }}>
+              <SmoothScrollLink href="#contact-form" className="px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all bg-amber-500" >
                 Jetzt Kampagnen-Beratung sichern
-              </button>
-              <button className="px-6 py-3 rounded font-medium border-2 shadow-md hover:shadow-lg transition-all" style={{ borderColor: colors.primary, color: colors.primary }}>
-                Ergebnisse ansehen
-              </button>
+              </SmoothScrollLink>
+
             </div>
           </div>
         </div>
@@ -184,9 +184,14 @@ const WerbekampagnenPage = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full mt-8 px-6 py-3 rounded font-medium text-white" style={{ backgroundColor: colors.primary }}>
-                  Paket wählen
-                </button>
+                <SmoothScrollLink 
+  href='#contact-form' 
+  className="w-full block mt-8 px-6 py-3 rounded font-medium text-white text-center" 
+  style={{ backgroundColor: colors.primary }}
+>
+  Jetzt anrufen & starten
+</SmoothScrollLink>
+
               </div>
             </div>
             
@@ -219,9 +224,13 @@ const WerbekampagnenPage = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full mt-8 px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all" style={{ backgroundColor: colors.accent }}>
-                  Paket wählen
-                </button>
+                <SmoothScrollLink 
+  href='#contact-form' 
+  className="w-full block mt-8 px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all text-center" 
+  style={{ backgroundColor: colors.accent }}
+>
+  Jetzt anrufen & starten
+</SmoothScrollLink>
               </div>
             </div>
             
@@ -252,9 +261,13 @@ const WerbekampagnenPage = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="w-full mt-8 px-6 py-3 rounded font-medium border-2 shadow-md hover:shadow-lg transition-all" style={{ borderColor: colors.primary, color: colors.primary }}>
-                  Anfrage stellen
-                </button>
+                <SmoothScrollLink 
+  href='#contact-form' 
+  className="w-full block mt-8 px-6 py-3 rounded font-medium border-2 shadow-md hover:shadow-lg transition-all text-center" 
+  style={{ borderColor: colors.primary, color: colors.primary }}
+>
+  Anfrage stellen
+</SmoothScrollLink>
               </div>
             </div>
           </div>
@@ -293,11 +306,12 @@ const WerbekampagnenPage = () => {
             Starten Sie jetzt mit einer maßgeschneiderten Kampagne auf Google und Amazon!
             Vereinbaren Sie eine kostenlose Erstberatung und lassen Sie uns gemeinsam Ihren Erfolg beschleunigen.
           </p>
-          <button className="px-8 py-4 rounded-lg font-medium text-gray-900 shadow-lg hover:shadow-xl transition-all text-lg" style={{ backgroundColor: colors.accent }}>
+          <a href='/beratung' className="px-8 py-4 rounded-lg font-medium text-gray-900 shadow-lg hover:shadow-xl transition-all text-lg" style={{ backgroundColor: colors.accent }}>
             Jetzt Kampagne starten
-          </button>
+          </a>
         </div>
       </section>
+      <ContactForm />
     </div>
   );
 };

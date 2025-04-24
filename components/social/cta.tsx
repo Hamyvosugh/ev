@@ -25,11 +25,11 @@ const CTA = () => {
                   Vereinbaren Sie jetzt eine kostenlose Erstberatung – unverbindlich und persönlich.
                 </p>
                 
-                <button className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium px-8 py-4 rounded-lg transition-colors shadow-lg group">
+                <a href='/beratung' className="inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium px-8 py-4 rounded-lg transition-colors shadow-lg group">
                   <MessageSquare className="w-5 h-5" />
                   Jetzt kostenlos beraten lassen
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                </button>
+                </a>
               </div>
               
               {/* Right side - Visual element */}

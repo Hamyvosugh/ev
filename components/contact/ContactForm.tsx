@@ -71,7 +71,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div className="w-full max-w-3xl mx-auto px-4 py-12">
+    <div  id="contact-form"  className="w-full max-w-3xl mx-auto px-4 py-12">
       <div className="bg-white rounded-lg shadow-md p-8">
         <h2 className="text-3xl font-semibold text-[#1a365d] mb-6">Kontaktformular</h2>
         <p className="text-gray-600 mb-8">

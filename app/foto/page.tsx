@@ -12,10 +12,11 @@ export default function Home() {
     <main className="min-h-screen p-4">
      <HeroFoto />
      <WorkflowComponent />
+     <CTAComponent />
      <ImageSlider />
      <PricingComponent />
-     <CTAComponent />
      <ContactForm />
+     <CTAComponent />
 
 
 
