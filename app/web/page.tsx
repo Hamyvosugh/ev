@@ -24,17 +24,17 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function Home() {
   return (
-    <main className="min-h-screen p-4">
-    <HeroSection />
-    <ServicesIntroduction />
-    <CTADemo />
-    <WebManagement />
-    <PricingComponent />
-    <CTAComponent />
+    <main className="min-h-screen overflow-x-hidden">
+      <div className="px-4 max-w-full mx-auto">
+        <HeroSection />
+        <ServicesIntroduction />
+        <CTADemo />
+        <WebManagement />
+        <PricingComponent />
+        <CTAComponent />
+      </div>
     </main>
   );
 }

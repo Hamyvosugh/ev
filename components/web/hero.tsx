@@ -9,7 +9,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full h-screen bg-gray-50 overflow-hidden">
+    <div className="relative w-full md:h-screen bg-gray-50 overflow-hidden">
       {/* Background with subtle pattern and darker right side similar to screenshot */}
       <div className="absolute inset-0 z-0 ">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-blue-900/90 " style={{
@@ -29,13 +29,13 @@ const HeroSection = () => {
       </div>
       
       {/* Main content container */}
-      <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center">
+      <div className="relative z-10 container mx-auto px-6 h-full flex flex-col justify-center ">
         <div className="max-w-3xl">
           {/* Small decorative element */}
           <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
           
           {/* Main heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight mt-24 md:mt-0">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight mt-20 md:mt-0 ">
             Ihr professioneller Webauftritt für den Automobilhandel
           </h1>
           
@@ -92,7 +92,7 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll down indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col   items-center animate-bounce hidden md:flex">
         <span className="text-sm text-gray-500 mb-2">Mehr entdecken</span>
         <ChevronDown className="w-6 h-6 text-blue-900" />
       </div>
