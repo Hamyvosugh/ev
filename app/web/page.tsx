@@ -5,6 +5,7 @@ import ImageSlider from '@/components/web/slider';
 import WebManagement from '@/components/web/mng';
 import PricingComponent from '@/components/web/price';
 import CTAComponent from '@/components/web/cta';
+import PortfolioShowcase from '@/components/web/ui';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -31,6 +32,7 @@ export default function Home() {
     <main className="min-h-screen p-4">
     <HeroSection />
     <ServicesIntroduction />
+    <PortfolioShowcase />
     <ImageSlider />
     <WebManagement />
     <PricingComponent />

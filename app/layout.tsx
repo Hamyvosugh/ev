@@ -4,6 +4,7 @@ import "./globals.css";
 import ScrollToTopButton from '@/components/global/scrollup';
 import Header from '@/components/global/header';
 import Footer from '@/components/global/footer';
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -35,6 +36,7 @@ export default function RootLayout({
     <html lang="de" className={`${poppins.className} w-full`}>
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
+        <Analytics/>
           <Header />
           <main className="w-full min-w-full p-0 m-0">
             {children}

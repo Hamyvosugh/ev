@@ -11,8 +11,8 @@ const HeroSection = () => {
   return (
     <div className="relative w-full h-screen bg-gray-50 overflow-hidden">
       {/* Background with subtle pattern and darker right side similar to screenshot */}
-      <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-blue-900/90" style={{
+      <div className="absolute inset-0 z-0 ">
+        <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-blue-900/90 " style={{
           backgroundImage: `radial-gradient(circle at 25px 25px, rgba(0, 32, 63, 0.03) 2%, transparent 0%), 
                             radial-gradient(circle at 75px 75px, rgba(0, 32, 63, 0.03) 2%, transparent 0%)`,
           backgroundSize: '100px 100px',
@@ -35,7 +35,7 @@ const HeroSection = () => {
           <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
           
           {/* Main heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight mt-24 md:mt-0">
             Ihr professioneller Webauftritt für den Automobilhandel
           </h1>
           

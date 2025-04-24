@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emoviral - Digitale Lösungen für Autohäuser</title>
+    <style type="text/css">
+        /* Reset styles */
+        body, p, table, td, div {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', Arial, sans-serif;
+            color: #333333;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            width: 100% !important;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        
+        table {
+            border-spacing: 0;
+            border-collapse: collapse;
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+            -ms-interpolation-mode: bicubic;
+            display: block;
+        }
+        
+        /* Main container */
+        .main-container {
+            max-width: 650px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            border-radius: 16px;
+            overflow: hidden;
+        }
+        
+        /* Hero section with full-bleed image and overlay */
+        .hero-section {
+            position: relative;
+            padding: 0;
+            background-color: #0d3b66;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .hero-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(135deg, rgba(13, 59, 102, 0.9) 0%, rgba(16, 37, 66, 0.75) 100%);
+        }
+        
+        .logo-badge {
+            background-color: orange;
+            border-radius: 100%;
+            width: 90px;
+            height: 120px;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .logo-badge img {
+            width: 80px;
+            height: auto;
+            margin: 0 auto;
+        }
+        
+        /* Intro section with angled design */
+        .intro-section {
+            position: relative;
+            background: white;
+            padding: 60px 40px 80px;
+            text-align: center;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .intro-accent {
+            content: '';
+            position: absolute;
+            left: -5%;
+            bottom: -100px;
+            width: 110%;
+            height: 200px;
+            background: #f4f7fa;
+            transform: rotate(-5deg);
+            z-index: -1;
+          
+        }
+        
+        /* Services section */
+        .services-container {
+            background: #f4f7fa;
+            padding: 5px 5px 5px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .services-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .services-heading:after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #c5a31c;
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 40px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .featured-label {
+            position: absolute;
+            top: 20px;
+            right: 0;
+            background: #c5a31c;
+            color: white;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 6px 15px 6px 25px;
+            border-radius: 50px 0 0 50px;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: -5px 5px 15px rgba(197, 163, 28, 0.25);
+        }
+        
+        .service-image-container {
+            position: relative;
+            overflow: hidden;
+            height: 300px;
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-icon-container {
+            position: absolute;
+            bottom: -30px;
+            left: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0d3b66 0%, #102542 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(13, 59, 102, 0.3);
+            z-index: 2;
+        }
+        
+        .service-content {
+            padding: 50px 30px 30px;
+        }
+        
+        .service-title-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .service-price {
+            background: #f4f7fa;
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #0d3b66;
+        }
+        
+        .service-price strong {
+            color: #c5a31c;
+        }
+        
+        .service-features {
+            margin: 20px 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        .feature-item {
+            padding: 10px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 15px;
+            color: #555;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .feature-item:last-child {
+            border-bottom: none;
+        }
+        
+        .feature-check {
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background: rgba(13, 59, 102, 0.1);
+            border-radius: 50%;
+            color: #0d3b66;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Testimonial section */
+        .testimonial-section {
+            background: white;
+            padding: 60px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .testimonial-accent {
+            content: '';
+            position: absolute;
+            right: -5%;
+            top: -100px;
+            width: 110%;
+            height: 200px;
+            background: white;
+            transform: rotate(-5deg);
+            z-index: 1;
+        }
+        
+        .testimonial-container {
+            position: relative;
+            z-index: 2;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .testimonial-quote {
+            font-size: 22px;
+            line-height: 1.6;
+            font-style: italic;
+            color: #333;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-quote:before,
+        .testimonial-quote:after {
+            content: '"';
+            font-size: 60px;
+            color: rgba(13, 59, 102, 0.1);
+            position: absolute;
+            line-height: 1;
+        }
+        
+        .testimonial-quote:before {
+            left: -20px;
+            top: -10px;
+        }
+        
+        .testimonial-quote:after {
+            right: -20px;
+            bottom: -40px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            overflow: hidden;
+            margin-right: 15px;
+        }
+        
+        .author-info {
+            text-align: left;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            font-size: 16px;
+            color: #0d3b66;
+        }
+        
+        .author-title {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background: linear-gradient(135deg, #0d3b66 0%, #102542 100%);
+            padding: 80px 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-shape-1 {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 100%;
+            top: -100px;
+            right: -100px;
+        }
+        
+        .cta-shape-2 {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(197, 163, 28, 0.1);
+            border-radius: 100%;
+            bottom: -50px;
+            left: -50px;
+        }
+        
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 40px;
+            gap: 20px;
+        }
+        
+        /* Footer section */
+        .footer-section {
+            background: #0d3b66;
+            color: white;
+            padding: 50px 30px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .footer-wave {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url('/api/placeholder/650/20');
+            background-size: cover;
+        }
+        
+        .footer-logo {
+            margin-bottom: 30px;
+        }
+        
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+        
+        .social-icon:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px 40px;
+            max-width: 400px;
+            margin: 0 auto 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 14px;
+        }
+        
+        .contact-icon {
+            margin-right: 8px;
+            font-size: 18px;
+        }
+        
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 12px;
+            margin-top: 30px;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: white;
+            margin: 0 0 15px;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        }
+        
+        h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0d3b66;
+            margin: 0 0 15px;
+            line-height: 1.3;
+        }
+        
+        h3 {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0d3b66;
+            margin: 0 0 10px;
+            line-height: 1.3;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.9);
+            margin: 0 0 30px;
+            font-weight: 400;
+            max-width: 500px;
+        }
+        
+        .accent-text {
+            color: #c5a31c;
+            font-weight: 600;
+        }
+        
+        .highlight-text {
+            font-size: 20px;
+            line-height: 1.5;
+            color: #0d3b66;
+            font-weight: 500;
+            margin: 0 auto 30px;
+            max-width: 500px;
+            text-align: left;
+        }
+        
+        /* Buttons */
+        .button {
+            display: inline-block;
+            padding: 16px 32px;
+            background: #c5a31c;
+            color: white !important;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(197, 163, 28, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px rgba(197, 163, 28, 0.4);
+        }
+        
+        .button-secondary {
+            background: white;
+            color: #0d3b66 !important;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .button-secondary:hover {
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .button-outline {
+            background: transparent;
+            color: white !important;
+            box-shadow: none;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .button-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: none;
+        }
+        
+        /* Responsive design */
+        @media screen and (max-width: 600px) {
+            .intro-section,
+            .services-container,
+            .testimonial-section,
+            .cta-section,
+            .footer-section {
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            
+            .service-content {
+                padding: 40px 20px 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 24px;
+            }
+            
+            h3 {
+                font-size: 18px;
+            }
+            
+            .highlight-text {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .button {
+                display: block;
+                width: 100%;
+            }
+            
+            .service-icon-container {
+                left: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+               
+            }
+            
+            .testimonial-quote {
+                font-size: 18px;
+            }
+            
+            .testimonial-quote:before,
+            .testimonial-quote:after {
+                font-size: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <table role="presentation" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+            <td style="padding: 20px 0;">
+                <!-- Main container -->
+                <table role="presentation" class="main-container" cellpadding="0" cellspacing="0" width="100%">
+                    <!-- Hero section -->
+                    <tr>
+                        <td class="hero-section">
+                            <img src="https://www.emoviral.com/images/foto/carfototake.webp" alt="Premium Auto Photography" class="hero-image" />
+                            <div class="hero-content">
+                                <div class="logo-badge">
+                                    <img src="./favicon-blue.png" alt="Emoviral Logo" />
+                                </div>
+                                <h1>DIGITALE POWER<br>FÜR AUTOHÄUSER</h1>
+                                <p class="subtitle">Professionelle Lösungen, die Ihr Autohaus im digitalen Raum zum Strahlen bringen</p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Intro section -->
+                    <tr>
+                        <td class="intro-section">
+                            <div class="intro-accent"></div>
+                            <p style="font-size: 18px; margin-bottom: 15px;   text-align: left;">Sehr geehrtes Team von <strong>[Autohaus Name]</strong>,</p>
+                            <p class="highlight-text">Mein Name ist <strong>Julia Weber</strong> von <strong class="accent-text">Emoviral</strong> – wir sind Spezialisten für die digitale Präsenz von Autohäusern in ganz Deutschland und machen Ihr Unternehmen sichtbar, effizient und unverwechselbar.</p>
+                        </td>
+                    </tr>
+                    
+                    <!-- Services Section -->
+                    <tr>
+                        <td class="services-container">
+                            <div class="services-heading">
+                                <h2>Unsere Premium-Leistungen</h2>
+                            </div>
+                            
+                            <!-- Service 1: Photography -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="service-card" style="margin-bottom: 40px;">
+                                <tr>
+                                    <td>
+                                        <div class="featured-label">Bestseller</div>
+                                        <div class="service-image-container">
+                                            <img src="./autofotografie.webp" alt="Fahrzeugfotografie" class="service-image" />
+                                            <div class="service-icon-container">🚗</div>
+                                        </div>
+                                        <div class="service-content">
+                                            <div class="service-title-row">
+                                                <h3>Fahrzeugfotografie vor Ort</h3>
+                                                <span class="service-price">ab <strong>50€</strong> pro Fahrzeug</span>
+                                            </div>
+                                            <p style="color: #555; margin-bottom: 20px;">Wir fotografieren Ihre Fahrzeuge direkt bei Ihnen – mit professioneller Ausrüstung und jahrelanger Erfahrung.</p>
+                                            
+                                            <ul class="service-features">
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Professionelle Nachbearbeitung inklusive
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    40+ Bilder pro Fahrzeug
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Optimierte Bilder für Social Media
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Express-Lieferung innerhalb von 24h
+                                                </li>
+                                            </ul>
+                                            
+                                            <a href="https://www.emoviral.de/fahrzeugfotografie" class="button">Mehr erfahren</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Service 2: Websites -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="service-card" style="margin-bottom: 40px;">
+                                <tr>
+                                    <td>
+                                        <div class="service-image-container">
+                                            <img src="/api/placeholder/650/200" alt="Webdesign" class="service-image" />
+                                            <div class="service-icon-container">💻</div>
+                                        </div>
+                                        <div class="service-content">
+                                            <h3>Moderne Webseiten & technische Betreuung</h3>
+                                            <p style="color: #555; margin-bottom: 20px;">Wir entwickeln mobil-optimierte, schnelle und optisch starke Websites – speziell für Fahrzeughändler.</p>
+                                            
+                                            <ul class="service-features">
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Responsive Design für alle Geräte
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    SEO-Optimierung für bessere Rankings
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Anbindung an mobile.de & andere Plattformen
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Regelmäßige Wartung und Updates
+                                                </li>
+                                            </ul>
+                                            
+                                            <a href="https://www.emoviral.de/webdesign" class="button">Mehr erfahren</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Service 3: Social Media -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="service-card" style="margin-bottom: 40px;">
+                                <tr>
+                                    <td>
+                                        <div class="service-image-container">
+                                            <img src="/api/placeholder/650/200" alt="Social Media" class="service-image" />
+                                            <div class="service-icon-container">📱</div>
+                                        </div>
+                                        <div class="service-content">
+                                            <h3>Social Media Management</h3>
+                                            <p style="color: #555; margin-bottom: 20px;">Wir übernehmen Ihre Inhalte, planen Ihre Strategie und steigern Ihre Reichweite bei Instagram, Facebook & Co.</p>
+                                            
+                                            <ul class="service-features">
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Professionelle Content-Erstellung
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Strategische Planung und Posting
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Community Management
+                                                </li>
+                                                <li class="feature-item">
+                                                    <span class="feature-check">✓</span>
+                                                    Performance-Analyse und Reporting
+                                                </li>
+                                            </ul>
+                                            
+                                            <a href="https://www.emoviral.de/social-media-management" class="button">Mehr erfahren</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Other services in more compact format -->
+                            <table role="presentation" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 40px;">
+                                <tr>
+                                    <td width="48%" style="padding-right: 2%;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="service-card" style="height: 100%;">
+                                            <tr>
+                                                <td>
+                                                    <div class="service-icon-container" style="position: relative; top: -30px; left: 20px; margin-bottom: -30px;">📢</div>
+                                                    <div class="service-content" style="padding-top: 30px;">
+                                                        <h3>Google & Amazon Ads</h3>
+                                                        <p style="color: #555; margin-bottom: 15px;">Mehr Sichtbarkeit – mehr Anfragen. Datenbasierte, effiziente und messbare Werbekampagnen.</p>
+                                                        <a href="https://www.emoviral.de/werbekampagnen" class="button" style="width: 100%; box-sizing: border-box;">Mehr erfahren</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <td width="48%" style="padding-left: 2%;">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" width="100%" class="service-card" style="height: 100%;">
+                                            <tr>
+                                                <td>
+                                                    <div class="service-icon-container" style="position: relative; top: -30px; left: 20px; margin-bottom: -30px;">⚙️</div>
+                                                    <div class="service-content" style="padding-top: 30px;">
+                                                        <h3>Automatisierung & KI</h3>
+                                                        <p style="color: #555; margin-bottom: 15px;">Von API-Integrationen bis zu digitalen Assistenten – wir machen Ihre Abläufe schlanker und schneller.</p>
+                                                        <a href="https://www.emoviral.de/webdesign#automatisierung" class="button" style="width: 100%; box-sizing: border-box;">Mehr erfahren</a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                    
+                    <!-- Testimonial Section -->
+                    <tr>
+                        <td class="testimonial-section">
+                            <div class="testimonial-accent"></div>
+                            <div class="testimonial-container">
+                                <div class="testimonial-quote">
+                                    Mit Emovirals Unterstützung haben wir unsere Fahrzeugverkäufe um 32% steigern können. Die Fotos sind erstklassig und die Webseite läuft besser als je zuvor!
+                                </div>
+                                <div class="testimonial-author">
+                                    <div class="author-avatar">
+                                        <img src="/api/placeholder/60/60" alt="Testimonial Author" />
+                                    </div>
+                                    <div class="author-info">
+                                        <div class="author-name">Michael Schmidt</div>
+                                        <div class="author-title">Autohaus Schmidt & Partner, Frankfurt</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- CTA section -->
+                    <tr>
+                        <td class="cta-section">
+                            <div class="cta-shape-1"></div>
+                            <div class="cta-shape-2"></div>
+                            <div class="cta-content">
+                                <h2 style="color: white; font-size: 32px; margin-bottom: 20px;">Bereit für den digitalen Vorsprung?</h2>
+                                <p style="color: rgba(255,255,255,0.7); font-size: 14px; margin-top: 30px;">Antworten Sie einfach auf diese E-Mail, um direkt mit mir in Kontakt zu treten.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    
+                    <!-- Footer section -->
+                    <tr>
+                        <td class="footer-section">
+                            <div class="footer-wave"></div>
+                            <img src="/api/placeholder/150/40" alt="Emoviral Logo" class="footer-logo" />
+                            
+                            <p style="margin-bottom: 5px; font-size: 18px;">Mit freundlichen Grüßen</p>
+                            <p style="font-size: 26px; font-weight: 700; margin-bottom: 5px; letter-spacing: -0.5px;">Hamy Vosugh</p>
+                            <p style="margin-bottom: 25px; color: rgba(255,255,255,0.8);"><strong>Emoviral</strong> – Digitale Lösungen für Autohäuser</p>
+                            
+                            <div class="contact-grid">
+                                <a href="tel:064384039867" class="contact-item">
+                                    <span class="contact-icon">📞</span> 06438 4039867
+                                </a>
+                                <a href="mailto:hi@emoviral.de" class="contact-item">
+                                    <span class="contact-icon">✉️</span> hi@emoviral.de
+                                </a>
+                                <a href="https://www.emoviral.de" class="contact-item">
+                                    <span class="contact-icon">🌐</span> www.emoviral.de
+                                </a>
+                            </div>
+                            
+                            <div class="social-icons">
+                                <a href="#" class="social-icon">in</a>
+                                <a href="#" class="social-icon">f</a>
+                                <a href="#" class="social-icon">ig</a>
+                            </div>
+                            
+                            <p class="footer-copyright">© 2025 Emoviral. Alle Rechte vorbehalten.</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
