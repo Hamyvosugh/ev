@@ -63,8 +63,8 @@ const ContactForm = () => {
       } else {
         setSubmitStatus('error');
       }
-    } catch (_) {
-      // Using underscore to indicate that we're intentionally not using the error parameter
+    } catch {
+      // Not capturing the error parameter at all since we're not using it
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
