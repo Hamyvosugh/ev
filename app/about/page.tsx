@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const AboutUsPage = () => {
   return (
@@ -232,10 +233,10 @@ const AboutUsPage = () => {
               Sie möchten Ihr Autohaus digital stärken und neue Kunden gewinnen?
               Kontaktieren Sie uns für ein unverbindliches Kennenlerngespräch.
             </p>
-            <a href="/kontakt" className="inline-flex items-center px-8 py-4 bg-[#b8860b] hover:bg-[#a07608] text-white font-bold rounded-lg transition-colors duration-300">
+            <Link href="/kontakt" className="inline-flex items-center px-8 py-4 bg-[#b8860b] hover:bg-[#a07608] text-white font-bold rounded-lg transition-colors duration-300">
               Jetzt Kontakt aufnehmen
               <ArrowRight className="ml-2 h-5 w-5" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>

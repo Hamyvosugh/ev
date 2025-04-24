@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
 import { Camera, Code, Share2, Megaphone, ChevronDown } from 'lucide-react';
+import Link from 'next/link';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,12 +86,12 @@ const Header = () => {
         <div className="flex justify-between items-center w-full">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center">
+            <Link href="/" className="flex items-center">
               <div className="h-10 w-10 rounded  flex items-center justify-center mr-2">
               <img src="/images/logo/favicon-blue-emoviral.png" alt="EV Logo" className=" w-3xl h-3xl" />
               </div>
               <span className={`font-bold text-xl ${isScrolled ? 'text-blue-900' : 'text-blue-900'}`}>EmoViral</span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -112,20 +113,20 @@ const Header = () => {
                     />
                   </button>
                 ) : (
-                  <a 
+                  <Link 
                     href={item.href}
                     className={`text-sm font-medium transition-colors duration-200 ${
                       isScrolled ? 'text-gray-700 hover:text-blue-900' : 'text-gray-800 hover:text-blue-900'
                     }`}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                 )}
               </div>
             ))}
             
             {/* CTA Button */}
-            <a 
+            <Link 
               href="/beratung"
               className={`ml-4 px-4 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
                 isScrolled 
@@ -134,7 +135,7 @@ const Header = () => {
               }`}
             >
               Beratung anfordern
-            </a>
+            </Link>
           </nav>
 
           {/* Mobile menu button */}
@@ -170,7 +171,7 @@ const Header = () => {
           <div className="w-full px-4 sm:px-6 lg:px-8 py-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => (
-                <a
+                <Link
                   key={index}
                   href={service.href}
                   className="group relative block p-6 rounded-xl hover:bg-gray-50 transition-all duration-300"
@@ -186,7 +187,7 @@ const Header = () => {
                     {service.description}
                   </p>
                   <div className="absolute inset-0 border border-transparent group-hover:border-blue-900/10 rounded-xl transition-colors duration-300"></div>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -206,7 +207,7 @@ const Header = () => {
                     {item.name}
                   </div>
                   {services.map((service, sIndex) => (
-                    <a
+                    <Link
                       key={sIndex}
                       href={service.href}
                       className="flex items-center px-6 py-2 rounded-md text-sm font-medium text-gray-600 hover:text-blue-900 hover:bg-gray-50"
@@ -214,27 +215,27 @@ const Header = () => {
                     >
                       <service.icon className="w-4 h-4 mr-2" />
                       {service.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               ) : (
-                <a
+                <Link
                   href={item.href}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.name}
-                </a>
+                </Link>
               )}
             </div>
           ))}
-          <a
+          <Link
             href="/beratung"
             className="block px-3 py-2 rounded-md text-base font-medium bg-blue-900 text-white hover:bg-blue-800 mt-4"
             onClick={() => setIsMobileMenuOpen(false)}
           >
             Beratung anfordern
-          </a>
+          </Link>
         </div>
       </div>
     </header>

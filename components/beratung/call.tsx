@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, Mail, MessageCircle } from 'lucide-react';
+import Link from 'next/link';
 
 const CTAComponent = () => {
   return (
@@ -15,7 +16,7 @@ const CTAComponent = () => {
           {/* Right side - Contact options */}
           <div className="flex flex-wrap gap-3 justify-center md:justify-end">
             {/* Phone */}
-            <a 
+            <Link 
               href="tel:06438-4039867" 
               className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 transition-colors py-2 px-4 rounded-md"
               target="_blank"
@@ -23,10 +24,10 @@ const CTAComponent = () => {
             >
               <Phone size={18} />
               <span>06438 4039867</span>
-            </a>
+            </Link> 
             
             {/* Email */}
-            <a 
+            <Link 
               href="mailto:hi@emoviral.com" 
               className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 transition-colors py-2 px-4 rounded-md"
               target="_blank"
@@ -34,10 +35,10 @@ const CTAComponent = () => {
             >
               <Mail size={18} />
               <span>hi@emoviral.com</span>
-            </a>
+            </Link> 
             
             {/* WhatsApp */}
-            <a 
+            <Link 
               href="https://wa.me/4917647666407" 
               className="flex items-center gap-2 bg-blue-800 hover:bg-blue-700 transition-colors py-2 px-4 rounded-md"
               target="_blank"
@@ -45,7 +46,7 @@ const CTAComponent = () => {
             >
               <MessageCircle size={18} />
               <span>WhatsApp</span>
-            </a>
+            </Link> 
           </div>
         </div>
       </div>

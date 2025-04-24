@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Datenschutz = () => {
@@ -78,7 +79,7 @@ const Datenschutz = () => {
               <div className="pl-5 border-l-2 border-gray-200">
                 <p className="text-gray-700 leading-relaxed">
                   Bei Fragen zum Datenschutz können Sie uns jederzeit unter folgender E-Mail-Adresse kontaktieren: 
-                  <a href="mailto:hi@emoviral.com" className="text-blue-800 hover:text-blue-600 font-medium ml-1">hi@emoviral.com</a>
+                  <Link href="mailto:hi@emoviral.com" className="text-blue-800 hover:text-blue-600 font-medium ml-1">hi@emoviral.com</Link>
                 </p>
               </div>
             </section>

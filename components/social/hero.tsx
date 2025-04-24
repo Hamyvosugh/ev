@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react';
 import ScrollButton from '@/components/global/ScrollButton';
+import Link from 'next/link';
 
 const HeroSocial = () => {
   return (
@@ -39,10 +40,10 @@ const HeroSocial = () => {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <a href='/beratung' className="px-6 py-3 bg-blue-900 text-white font-medium rounded hover:bg-blue-800 transition-colors flex items-center gap-2 shadow-lg">
+              <Link href='/beratung' className="px-6 py-3 bg-blue-900 text-white font-medium rounded hover:bg-blue-800 transition-colors flex items-center gap-2 shadow-lg">
                 Jetzt Social-Media-Beratung sichern
                 <ArrowRight className="w-4 h-4" />
-              </a>
+              </Link>
               
               {/* Replace the regular button with our client component ScrollButton */}
               <ScrollButton className="px-6 py-3 border-2 border-blue-900 text-blue-900 font-medium rounded hover:bg-blue-50 transition-colors">

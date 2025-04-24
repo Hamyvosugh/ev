@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, Mail, MessageCircle, Calendar, ArrowRight } from 'lucide-react';
 import ScrollButton from '@/components/global/Scroll100vh';
+import Link from 'next/link';
 
 
 const TallCTAComponent = () => {
@@ -34,7 +35,7 @@ const TallCTAComponent = () => {
           {/* Contact options */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-4xl">
             {/* Phone */}
-            <a 
+            <Link 
               href="tel:06438-4039867" 
               className="flex flex-col items-center gap-3 bg-blue-800 hover:bg-blue-700 transition-colors py-6 px-4 rounded-lg text-center"
               target="_blank"
@@ -45,10 +46,10 @@ const TallCTAComponent = () => {
               </div>
               <span className="font-bold text-lg">Telefon</span>
               <span className="text-gray-200">06438 4039867</span>
-            </a>
+            </Link> 
             
             {/* Email */}
-            <a 
+            <Link 
               href="mailto:hi@emoviral.com" 
               className="flex flex-col items-center gap-3 bg-blue-800 hover:bg-blue-700 transition-colors py-6 px-4 rounded-lg text-center"
               target="_blank"
@@ -59,10 +60,10 @@ const TallCTAComponent = () => {
               </div>
               <span className="font-bold text-lg">E-Mail</span>
               <span className="text-gray-200">hi@emoviral.com</span>
-            </a>
+            </Link> 
             
             {/* WhatsApp */}
-            <a 
+            <Link 
               href="https://wa.me/4917647666407" 
               className="flex flex-col items-center gap-3 bg-blue-800 hover:bg-blue-700 transition-colors py-6 px-4 rounded-lg text-center"
               target="_blank"
@@ -73,7 +74,7 @@ const TallCTAComponent = () => {
               </div>
               <span className="font-bold text-lg">WhatsApp</span>
               <span className="text-gray-200">+49 17647666407</span>
-            </a>
+            </Link> 
           </div>
           
           {/* Bottom text */}

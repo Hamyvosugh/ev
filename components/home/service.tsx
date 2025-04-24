@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import { useState, useEffect } from 'react';
 
 const ServicesSection = () => {
@@ -95,7 +96,7 @@ const ServicesSection = () => {
               <p className="text-gray-600 text-center font-poppins">{service.description}</p>
               
               <div className="mt-auto pt-4 border-t border-gray-100 text-center">
-                <a 
+                <Link 
                   href={service.link} 
                   className="inline-flex items-center justify-center px-4 py-2 bg-blue-900 text-white font-medium rounded hover:bg-amber-600 transition-colors duration-300 text-sm w-full"
                 >
@@ -103,7 +104,7 @@ const ServicesSection = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

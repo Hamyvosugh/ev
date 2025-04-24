@@ -1,6 +1,7 @@
 import React from 'react';
 import ContactForm from '@/components/contact/ContactForm';
 import SmoothScrollLink from '@/components/global/SmoothScrollLink'
+import Link from 'next/link';
 
 const WerbekampagnenPage = () => {
   // Primary colors from requirements
@@ -306,9 +307,9 @@ const WerbekampagnenPage = () => {
             Starten Sie jetzt mit einer maßgeschneiderten Kampagne auf Google und Amazon!
             Vereinbaren Sie eine kostenlose Erstberatung und lassen Sie uns gemeinsam Ihren Erfolg beschleunigen.
           </p>
-          <a href='/beratung' className="px-8 py-4 rounded-lg font-medium text-gray-900 shadow-lg hover:shadow-xl transition-all text-lg" style={{ backgroundColor: colors.accent }}>
+          <Link href='/beratung' className="px-8 py-4 rounded-lg font-medium text-gray-900 shadow-lg hover:shadow-xl transition-all text-lg" style={{ backgroundColor: colors.accent }}>
             Jetzt Kampagne starten
-          </a>
+          </Link>
         </div>
       </section>
       <ContactForm />

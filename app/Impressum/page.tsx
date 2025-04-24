@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 
 const Impressum = () => {
@@ -51,15 +52,15 @@ const Impressum = () => {
               <div className="pl-5 border-l-2 border-gray-200 space-y-2">
                 <div className="flex items-center">
                   <div className="w-24 flex-shrink-0 text-gray-500">Telefon:</div>
-                  <a href="tel:06438-4039867" className="text-blue-800 hover:text-blue-600 font-medium">06438 4039867</a>
+                  <Link href="tel:06438-4039867" className="text-blue-800 hover:text-blue-600 font-medium">06438 4039867</Link>
                 </div>
                 <div className="flex items-center">
                   <div className="w-24 flex-shrink-0 text-gray-500">E-Mail:</div>
-                  <a href="mailto:hi@emoviral.com" className="text-blue-800 hover:text-blue-600 font-medium">hi@emoviral.com</a>
+                  <Link href="mailto:hi@emoviral.com" className="text-blue-800 hover:text-blue-600 font-medium">hi@emoviral.com</Link>
                 </div>
                 <div className="flex items-center">
                   <div className="w-24 flex-shrink-0 text-gray-500">Website:</div>
-                  <a href="https://www.emoviral.com" className="text-blue-800 hover:text-blue-600 font-medium">www.emoviral.com</a>
+                  <Link href="https://www.emoviral.com" className="text-blue-800 hover:text-blue-600 font-medium">www.emoviral.com</Link>
                 </div>
               </div>
             </section>

@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { User, Mail, Briefcase, MapPin, FileText, Upload, Send } from 'lucide-react';
+import Link from 'next/link';
 
 interface FormData {
   firstName: string;
@@ -364,7 +365,8 @@ const ApplicationForm = () => {
                   </div>
                   <div className="ml-3 text-sm">
                     <label htmlFor="agreedToTerms" className="font-medium text-gray-700">
-                      Ich stimme der <a href="/Datenschutz" className="text-blue-900 hover:underline">Datenschutzerklärung</a> zu und akzeptiere die Verarbeitung meiner Daten im Rahmen des Bewerbungsprozesses. *
+                      Ich stimme der 
+                      <Link href="/Datenschutz" className="text-blue-900 hover:underline">Datenschutzerklärung</Link> zu und akzeptiere die Verarbeitung meiner Daten im Rahmen des Bewerbungsprozesses. *
                     </label>
                   </div>
                 </div>

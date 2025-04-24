@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 interface PricingCardProps {
   title: string;
@@ -46,14 +47,14 @@ const PricingCard = ({ title, price, features, isPopular = false, isCustomPrice 
           ))}
         </ul>
         
-        <a href='/kontakt' className={`w-full py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
+        <Link href='/kontakt' className={`w-full py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2 ${
           isPopular 
             ? 'bg-blue-900 hover:bg-blue-800 text-white' 
             : 'bg-blue-50 hover:bg-blue-100 text-blue-900'
         }`}>
           Jetzt anrufen & starten
           <ArrowRight className="w-4 h-4" />
-        </a>
+        </Link>
       </div>
     </div>
   );
@@ -130,9 +131,9 @@ const Pricing = () => {
             Jedes Unternehmen ist einzigartig. Kontaktieren Sie uns für ein individuelles Angebot, 
             das perfekt auf Ihre spezifischen Anforderungen zugeschnitten ist.
           </p>
-          <a href='/beratung' className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium px-8 py-3 rounded-lg transition-colors">
+          <Link href='/beratung' className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium px-8 py-3 rounded-lg transition-colors">
             Kostenloses Beratungsgespräch vereinbaren
-          </a>
+          </Link>
         </div>
         
         {/* Trust Indicators */}

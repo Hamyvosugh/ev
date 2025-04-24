@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import { ArrowRight, Camera } from 'lucide-react';
+import Link from 'next/link';
 
 const LoopingAnimationComponent = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -103,11 +104,11 @@ const LoopingAnimationComponent = () => {
       
       {/* Fixed CTA button in bottom right */}
       <div className="absolute bottom-20 md:bottom-8 right-8 z-20 ml-7 md:ml-0">
-      <a href="/foto" className="flex items-center bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 group shadow-lg">
+      <Link href="/foto" className="flex items-center bg-yellow-500 hover:bg-yellow-600 text-gray-900 font-bold py-4 px-8 rounded-lg transition-all duration-300 group shadow-lg">
   <Camera className="mr-2 h-5 w-5" />
   <span>Jetzt Fahrzeugfotografie buchen</span>
   <ArrowRight className="ml-2 h-5 w-5 transform transition-transform group-hover:translate-x-1" />
-</a>
+</Link>
       </div>
       
       {/* Progress indicators */}

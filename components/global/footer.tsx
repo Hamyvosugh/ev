@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const Footer = () => {
     return (
       <footer className="bg-blue-900 text-white">
@@ -19,26 +21,26 @@ const Footer = () => {
               <div className="flex space-x-4">
                 {/* Social media icons 
                 
-                <a href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
+                <Link href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
                   </svg>
-                </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
+                </Link>
+                <Link href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
-                </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
+                </Link>
+                <Link href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
-                </a>
-                <a href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
+                </Link>
+                <Link href="#" className="h-10 w-10 rounded-full bg-blue-800 hover:bg-amber-500 flex items-center justify-center transition-colors duration-300">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
                   </svg>
-                </a>
+                </Link>
                   */}
               </div>
             </div>
@@ -48,19 +50,19 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-6 font-poppins">Dienstleistungen</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Fahrzeugfotografie</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Fahrzeugfotografie</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Webdesign & Verwaltung</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Webdesign & Verwaltung</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Social-Media-Management</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Social-Media-Management</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Werbekampagnen</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Werbekampagnen</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Online-Shops</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Online-Shops</Link>
                 </li>
               </ul>
             </div>
@@ -70,19 +72,19 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-6 font-poppins">Unternehmen</h3>
               <ul className="space-y-4">
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Über uns</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Über uns</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Portfolio</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Portfolio</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Testimonials</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Testimonials</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Blog</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Blog</Link>
                 </li>
                 <li>
-                  <a href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Karriere</a>
+                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Karriere</Link>
                 </li>
               </ul>
             </div>
@@ -110,9 +112,9 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                     </svg>
                   </div>
-                  <a href="tel:064384039867" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">
+                  <Link href="tel:064384039867" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">
                    06438 4039867
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-center">
                   <div className="text-amber-500 mr-3">
@@ -120,9 +122,9 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                     </svg>
                   </div>
-                  <a href="mailto:hi@emoviral.com" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">
+                  <Link href="mailto:hi@emoviral.com" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">
                     hi@emoviral.com
-                  </a>
+                  </Link>
                 </li>
                 <li className="flex items-center">
                   <div className="text-amber-500 mr-3">
@@ -130,9 +132,9 @@ const Footer = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                     </svg>
                   </div>
-                  <a href="https://www.emoviral.com" target="_blank" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">
+                  <Link href="https://www.emoviral.com" target="_blank" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">
                     www.emoviral.com
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
@@ -146,9 +148,9 @@ const Footer = () => {
               &copy; {new Date().getFullYear()} Emoviral. Alle Rechte vorbehalten.
             </div>
             <div className="flex space-x-6">
-              <a href="/Impressum" className="text-blue-200 hover:text-amber-500 text-sm transition-colors duration-300 font-poppins">Impressum</a>
-              <a href="/Datenschutz" className="text-blue-200 hover:text-amber-500 text-sm transition-colors duration-300 font-poppins">Datenschutz</a>
-              <a href="/AGB" className="text-blue-200 hover:text-amber-500 text-sm transition-colors duration-300 font-poppins">AGB</a>
+              <Link href="/Impressum" className="text-blue-200 hover:text-amber-500 text-sm transition-colors duration-300 font-poppins">Impressum</Link>
+              <Link href="/Datenschutz" className="text-blue-200 hover:text-amber-500 text-sm transition-colors duration-300 font-poppins">Datenschutz</Link>
+              <Link href="/AGB" className="text-blue-200 hover:text-amber-500 text-sm transition-colors duration-300 font-poppins">AGB</Link>
             </div>
           </div>
         </div>

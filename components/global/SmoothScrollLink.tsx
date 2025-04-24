@@ -1,6 +1,7 @@
 // components/SmoothScrollLink.tsx
 'use client';
 
+import Link from 'next/link';
 import React from 'react';
 
 interface SmoothScrollLinkProps {
@@ -59,14 +60,14 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({
   };
 
   return (
-    <a 
+    <Link 
       href={href} 
       onClick={handleClick} 
       className={className}
       style={style} // اضافه کردن style به تگ a
     >
       {children}
-    </a>
+    </Link>
   );
 };
 
