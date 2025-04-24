@@ -1,11 +1,10 @@
 import React from 'react';
 import HeroSection from '@/components/web/hero';
 import ServicesIntroduction from '@/components/web/service';
-import ImageSlider from '@/components/web/slider';
 import WebManagement from '@/components/web/mng';
 import PricingComponent from '@/components/web/price';
 import CTAComponent from '@/components/web/cta';
-import PortfolioShowcase from '@/components/web/ui';
+import CTADemo from '@/components/web/demo';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -32,8 +31,7 @@ export default function Home() {
     <main className="min-h-screen p-4">
     <HeroSection />
     <ServicesIntroduction />
-    <PortfolioShowcase />
-    <ImageSlider />
+    <CTADemo />
     <WebManagement />
     <PricingComponent />
     <CTAComponent />
