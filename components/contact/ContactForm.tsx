@@ -63,7 +63,8 @@ const ContactForm = () => {
       } else {
         setSubmitStatus('error');
       }
-    } catch (error) {
+    } catch (_) {
+      // Using underscore to indicate that we're intentionally not using the error parameter
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -71,7 +72,7 @@ const ContactForm = () => {
   };
 
   return (
-    <div  id="contact-form"  className="w-full max-w-3xl mx-auto px-4 py-12">
+    <div id="contact-form" className="w-full max-w-3xl mx-auto px-4 py-12">
       <div className="bg-white rounded-lg shadow-md p-8">
         <h2 className="text-3xl font-semibold text-[#1a365d] mb-6">Kontaktformular</h2>
         <p className="text-gray-600 mb-8">
@@ -107,7 +108,7 @@ const ContactForm = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border  text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
                 placeholder="ihre.email@beispiel.de"
               />
             </div>
@@ -122,7 +123,7 @@ const ContactForm = () => {
                 name="company"
                 value={formData.company}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border  text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
                 placeholder="Name Ihres Autohauses"
               />
             </div>
@@ -137,7 +138,7 @@ const ContactForm = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-2 border  text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
+                className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
                 placeholder="+49 123 456789"
               />
             </div>
@@ -153,7 +154,7 @@ const ContactForm = () => {
               required
               value={formData.service}
               onChange={handleChange}
-              className="w-full px-4 py-2 border  text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
+              className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
             >
               <option value="">Bitte wählen Sie</option>
               <option value="fotografie">Fahrzeugfotografie</option>
@@ -175,7 +176,7 @@ const ContactForm = () => {
               value={formData.message}
               onChange={handleChange}
               rows={6}
-              className="w-full px-4 py-2 border  text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
+              className="w-full px-4 py-2 border text-black border-gray-300 rounded-md focus:ring-2 focus:ring-[#1a365d] focus:border-transparent"
               placeholder="Bitte beschreiben Sie Ihre Anfrage..."
             />
           </div>

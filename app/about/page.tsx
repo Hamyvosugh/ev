@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChevronRight, Check, ArrowRight, Mail, Phone, Clock } from 'lucide-react';
+import { Check, ArrowRight } from 'lucide-react';
 
 const AboutUsPage = () => {
   return (
