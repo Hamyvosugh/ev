@@ -1,5 +1,24 @@
 import Link from 'next/link';
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Impressum | Emoviral – Angaben gemäß § 5 TMG',
+  description: 'Offizielle Anbieterkennzeichnung gemäß § 5 TMG und § 55 RStV für die Website Emoviral. Kontaktinformationen, Verantwortlichkeit und rechtliche Hinweise.',
+  openGraph: {
+    title: 'Impressum | Emoviral',
+    description: 'Hier finden Sie alle rechtlich relevanten Informationen über Emoviral – transparent, gesetzeskonform und aktuell.',
+    images: [
+      {
+        url: '/images/karrier/karrier-emoviral.webp', // اگه OG خاص نداری از لوگو هم میشه استفاده کرد
+        width: 1200,
+        height: 630,
+        alt: 'Emoviral Impressum',
+      },
+    ],
+  },
+};
+
 
 const Impressum = () => {
   return (

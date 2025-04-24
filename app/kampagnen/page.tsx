@@ -1,7 +1,25 @@
 import React from 'react';
 import ContactForm from '@/components/contact/ContactForm';
-import SmoothScrollLink from '@/components/global/SmoothScrollLink'
+import SmoothScrollLink from '@/components/global/SmoothScrollLink';
 import Link from 'next/link';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Google & Amazon Ads für Autohäuser | Emoviral Kampagnen',
+  description: 'Gezielte Werbekampagnen für Autohäuser und Fahrzeughändler – mehr Sichtbarkeit, mehr Leads, mehr Umsatz. Performance Marketing mit Strategie.',
+  openGraph: {
+    title: 'Digitale Werbekampagnen mit Emoviral',
+    description: 'Maßgeschneiderte Google- und Amazon-Kampagnen für die Automobilbranche – datengetrieben, skalierbar und erfolgsorientiert.',
+    images: [
+      {
+        url: '/images/meta/social-media-campaign.webp', 
+        width: 1200,
+        height: 630,
+        alt: 'Digitale Werbekampagnen für Autohäuser',
+      },
+    ],
+  },
+};
 
 const WerbekampagnenPage = () => {
   // Primary colors from requirements

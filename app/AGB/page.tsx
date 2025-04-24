@@ -1,4 +1,22 @@
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'AGB | Emoviral – Allgemeine Geschäftsbedingungen',
+  description: 'Hier finden Sie die allgemeinen Geschäftsbedingungen von Emoviral für alle angebotenen digitalen Dienstleistungen – fair, transparent und verbindlich.',
+  openGraph: {
+    title: 'AGB | Emoviral',
+    description: 'Unsere Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Leistungen im Bereich Webdesign, Fahrzeugfotografie, Marketing und Automatisierung.',
+    images: [
+      {
+        url: '/images/karrier/karrier-emoviral.webp', // مثلاً یک تصویر قانونی، نماد سند یا لوگو
+        width: 1200,
+        height: 630,
+        alt: 'AGB Emoviral',
+      },
+    ],
+  },
+};
 
 const AGB = () => {
   return (

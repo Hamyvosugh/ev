@@ -1,7 +1,26 @@
 // app/beratung/page.tsx
 import ContactForm from '@/components/contact/ContactForm';
 import { Coffee, Users, Lightbulb, Target } from 'lucide-react';
-import CTAComponent from '@/components/beratung/call2'
+import CTAComponent from '@/components/beratung/call2';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Kostenlose Beratung | Emoviral – Digitale Strategien für Autohäuser',
+  description: 'Fordern Sie jetzt Ihre kostenlose Erstberatung an. Wir analysieren Ihre digitale Präsenz und zeigen Ihnen, wie Sie online mehr Kunden erreichen.',
+  openGraph: {
+    title: 'Kostenlose Beratung bei Emoviral',
+    description: 'Unverbindliche Erstberatung für Autohäuser und Fahrzeughändler – persönlich, professionell und lösungsorientiert.',
+    images: [
+      {
+        url: '/images/meta/beratung.webp', 
+        width: 1200,
+        height: 630,
+        alt: 'Digitale Beratung für Autohäuser',
+      },
+    ],
+  },
+};
+
 
 export default function BeratungPage() {
   return (

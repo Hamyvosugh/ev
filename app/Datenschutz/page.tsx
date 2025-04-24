@@ -1,5 +1,23 @@
 import Link from 'next/link';
 import React from 'react';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Datenschutzerklärung | Emoviral',
+  description: 'Informationen zum Datenschutz bei Emoviral – keine Cookies, kein Tracking, keine Speicherung von IP-Adressen. Transparenz und Sicherheit für unsere Nutzer.',
+  openGraph: {
+    title: 'Datenschutz bei Emoviral',
+    description: 'Erfahren Sie, wie wir Ihre Daten schützen und warum Datenschutz für uns selbstverständlich ist – klar, einfach und transparent.',
+    images: [
+      {
+        url: '/images/meta/datenschutz.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Datenschutz bei Emoviral',
+      },
+    ],
+  },
+};
 
 const Datenschutz = () => {
   return (
