@@ -37,38 +37,41 @@ export default function RootLayout({
   return (
     <html lang="de" className={`${poppins.className} w-full`}>
       <head>
-        {/* Critical CSS for performance optimization */}
-        <style dangerouslySetInnerHTML={{ 
-          __html: `
-            /* Critical CSS for above-the-fold content */
-            body { 
-              margin: 0; 
-              padding: 0; 
-              width: 100%; 
-              font-family: 'Poppins', sans-serif;
-            }
-            header { 
-              position: fixed; 
-              width: 100%; 
-              z-index: 50; 
-              transition: all 0.3s;
-            }
-            .bg-white { background-color: #ffffff; }
-            .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
-            .font-bold { font-weight: 700; }
-            .text-gray-900 { color: rgb(17, 24, 39); }
-            .text-blue-900 { color: rgb(30, 58, 138); }
-          ` 
-        }} />
-        
-        {/* Preload fonts */}
-        <link 
-          rel="preload" 
-          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
-          as="style" 
-          crossOrigin="anonymous" 
-        />
-      </head>
+  {/* Add this explicit favicon link for search engines */}
+  <link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" />
+  
+  {/* Your existing head content */}
+  <style dangerouslySetInnerHTML={{ 
+    __html: `
+      /* Critical CSS for above-the-fold content */
+      body { 
+        margin: 0; 
+        padding: 0; 
+        width: 100%; 
+        font-family: 'Poppins', sans-serif;
+      }
+      header { 
+        position: fixed; 
+        width: 100%; 
+        z-index: 50; 
+        transition: all 0.3s;
+      }
+      .bg-white { background-color: #ffffff; }
+      .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+      .font-bold { font-weight: 700; }
+      .text-gray-900 { color: rgb(17, 24, 39); }
+      .text-blue-900 { color: rgb(30, 58, 138); }
+    ` 
+  }} />
+  
+  {/* Preload fonts */}
+  <link 
+    rel="preload" 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+    as="style" 
+    crossOrigin="anonymous" 
+  />
+</head>
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
           <Analytics/>
