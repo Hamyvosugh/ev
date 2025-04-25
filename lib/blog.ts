@@ -42,7 +42,8 @@ export function getAllPosts(): BlogPostMeta[] {
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   
   // Return posts without content field
-  return posts.map(({ content: _, ...rest }) => rest);
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  return posts.map(({ content, ...rest }) => rest);
 }
 
 export function getPostsByCategory(category: string): BlogPostMeta[] {

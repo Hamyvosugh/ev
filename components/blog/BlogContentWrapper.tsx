@@ -1,13 +1,12 @@
 // components/blog/BlogContentWrapper.tsx
 'use client';
 
-import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 
 // Dynamically import BlogContent component
 const BlogContent = dynamic(() => import('@/components/blog/BlogContent'), {
   ssr: false,
-  loading: () => <div className="py-20 text-center"> Loading article content...</div>
+  loading: () => <div className="py-20 text-center">Loading article content...</div>
 });
 
 interface BlogContentWrapperProps {
