@@ -23,7 +23,7 @@ export async function POST(request: Request) {
     });
     
     // Simple verification of connection
-    await transporter.verify().catch(err => {
+    await transporter.verify().catch((err: Error) => {
       console.error('Transporter verification failed:', err);
       throw new Error(`SMTP Connection Error: ${err.message}`);
     });
@@ -60,7 +60,7 @@ export async function POST(request: Request) {
       subject: `Neue Anfrage: ${service} - von ${name}`,
       text: emailContent,
       replyTo: email
-    }).catch(err => {
+    }).catch((err: Error) => {
       console.error('Error sending main email:', err);
       throw new Error(`Failed to send main email: ${err.message}`);
     });
@@ -90,7 +90,7 @@ export async function POST(request: Request) {
       to: email,
       subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
       text: confirmationEmail
-    }).catch(err => {
+    }).catch((err: Error) => {
       console.error('Error sending confirmation email:', err);
       console.warn('Main email was sent, but confirmation failed');
       // Don't throw here to allow partial success
@@ -101,12 +101,22 @@ export async function POST(request: Request) {
     }
     
     return NextResponse.json({ success: true });
-  } catch (error: any) {
+  } catch (error) {
     console.error('Error sending email:', error);
-    console.error('Error details:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
+    
+    // Safe error details extraction for logging
+    const errorMessage = error instanceof Error ? error.message : 'Unknown error';
+    const errorDetails = error instanceof Error ? 
+      Object.getOwnPropertyNames(error).reduce((acc, key) => {
+        acc[key] = (error as unknown as Record<string, unknown>)[key];
+        return acc;
+      }, {} as Record<string, unknown>) : 
+      {};
+    
+    console.error('Error details:', JSON.stringify(errorDetails));
     
     return NextResponse.json(
-      { error: 'Failed to send email', details: error.message },
+      { error: 'Failed to send email', details: errorMessage },
       { status: 500 }
     );
   }
