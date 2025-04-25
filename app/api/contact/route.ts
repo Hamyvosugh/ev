@@ -1,14 +1,22 @@
 import { NextResponse } from 'next/server';
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, company, phone, service, message, to } = body;
 
-    // Initialize Resend with your API key
-    // You'll need to sign up at resend.com and get an API key
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    // Use a direct configuration without any environment variables
+    // to eliminate any potential issues with environment variable loading
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.hostinger.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: 'hi@emoviral.com',
+        pass: 'your-actual-password-here' // Replace with your actual password for testing
+      }
+    });
     
     // Email template with professional German formatting
     const emailContent = `
@@ -36,56 +44,20 @@ export async function POST(request: Request) {
     `;
     
     // Send email to your address (hi@emoviral.com)
-    const { data, error } = await resend.emails.send({
-      from: 'Website Kontaktformular <kontakt@emoviral.com>', // You'll need to verify this domain in Resend
+    await transporter.sendMail({
+      from: '"Website Kontaktformular" <hi@emoviral.com>',
       to: to || 'hi@emoviral.com',
       subject: `Neue Anfrage: ${service} - von ${name}`,
       text: emailContent,
-      replyTo: email // Fixed: changed 'reply_to' to 'replyTo'
-    });
-    
-    if (error) {
-      console.error('Error sending main email:', error);
-      throw new Error(`Failed to send email: ${error.message}`);
-    }
-    
-    console.log('Email sent successfully:', data);
-    
-    // Send confirmation email to the customer
-    const confirmationEmail = `
-    Sehr geehrte(r) ${name},
-    
-    vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich bei Ihnen melden.
-    
-    Hier ist eine Kopie Ihrer Anfrage:
-    ------------------------
-    Dienstleistung: ${service}
-    
-    Ihre Nachricht:
-    ${message}
-    ------------------------
-    
-    Mit freundlichen Grüßen
-    Ihr EmoViral Team
-    `;
-    
-    // No need to wait for confirmation email
-    resend.emails.send({
-      from: 'EmoViral <kontakt@emoviral.com>', // You'll need to verify this domain in Resend
-      to: email,
-      subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
-      text: confirmationEmail,
-      replyTo: 'hi@emoviral.com' // Fixed: changed 'reply_to' to 'replyTo'
-    }).catch(confirmError => {
-      console.error('Error sending confirmation email:', confirmError);
+      replyTo: email
     });
     
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error:', error);
+    console.error('Error sending email:', error);
     
     return NextResponse.json(
-      { error: 'Failed to send email', message: error instanceof Error ? error.message : 'Unknown error' },
+      { error: 'Failed to send email', details: error instanceof Error ? error.message : 'Unknown error' },
       { status: 500 }
     );
   }
