@@ -5,6 +5,7 @@ import ScrollToTopButton from '@/components/global/scrollup';
 import Header from '@/components/global/header';
 import Footer from '@/components/global/footer';
 import { Analytics } from "@vercel/analytics/react";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ['latin'],
@@ -15,6 +16,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Auto Services",
   description: "Professionelle Dienstleistungen für Autohändler und Ausstellungen",
+  metadataBase: new URL('https://emoviral.com'),
   icons: {
     icon: [
       { url: '/favicon_io/favicon.ico' },
@@ -34,9 +36,42 @@ export default function RootLayout({
 }) {
   return (
     <html lang="de" className={`${poppins.className} w-full`}>
+      <head>
+        {/* Critical CSS for performance optimization */}
+        <style dangerouslySetInnerHTML={{ 
+          __html: `
+            /* Critical CSS for above-the-fold content */
+            body { 
+              margin: 0; 
+              padding: 0; 
+              width: 100%; 
+              font-family: 'Poppins', sans-serif;
+            }
+            header { 
+              position: fixed; 
+              width: 100%; 
+              z-index: 50; 
+              transition: all 0.3s;
+            }
+            .bg-white { background-color: #ffffff; }
+            .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+            .font-bold { font-weight: 700; }
+            .text-gray-900 { color: rgb(17, 24, 39); }
+            .text-blue-900 { color: rgb(30, 58, 138); }
+          ` 
+        }} />
+        
+        {/* Preload fonts */}
+        <link 
+          rel="preload" 
+          href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+          as="style" 
+          crossOrigin="anonymous" 
+        />
+      </head>
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
-        <Analytics/>
+          <Analytics/>
           <Header />
           <main className="w-full min-w-full p-0 m-0">
             {children}
@@ -44,6 +79,15 @@ export default function RootLayout({
           <Footer />
           <ScrollToTopButton />
         </div>
+        
+        {/* Load non-critical scripts */}
+        <Script id="partytown-config" strategy="worker">
+          {`
+            window.partytown = {
+              forward: ['dataLayer.push', 'gtag']
+            };
+          `}
+        </Script>
       </body>
     </html>
   );

@@ -2,6 +2,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Camera, Code, Share2, Megaphone, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -88,8 +89,16 @@ const Header = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link href="/" className="flex items-center">
-              <div className="h-10 w-10 rounded  flex items-center justify-center mr-2">
-              <img src="/images/logo/favicon-blue-emoviral.png" alt="EV Logo" className=" w-3xl h-3xl" />
+              <div className="h-10 w-10 rounded flex items-center justify-center mr-2 relative">
+                {/* Using Next.js Image component for better performance */}
+                <Image 
+                  src="/images/logo/logo-emoviral.webp" 
+                  alt="EV Logo" 
+                  width={32} 
+                  height={32} 
+                  className="object-contain"
+                  priority
+                />
               </div>
               <span className={`font-bold text-xl ${isScrolled ? 'text-blue-900' : 'text-blue-900'}`}>EmoViral</span>
             </Link>

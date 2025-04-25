@@ -68,16 +68,75 @@ const nextConfig: NextConfig = {
         source: '/:path*',
         headers: securityHeaders,
       },
+      // Cache policy for static assets - fixed pattern
+      {
+        source: '/:path*.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year
+          },
+        ],
+      },
+      {
+        source: '/:path*.css',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year
+          },
+        ],
+      },
+      {
+        source: '/:path*.(jpg|jpeg|png|gif|svg|ico|webp)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year
+          },
+        ],
+      },
+      {
+        source: '/:path*.(woff|woff2|ttf|otf|eot)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year
+          },
+        ],
+      },
+      // Specific cache policy for insights script
+      {
+        source: '/insights/script.js',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable', // 1 year
+          },
+        ],
+      },
     ];
   },
   
   // Force HTTPS in production
   poweredByHeader: false, // Remove X-Powered-By header
   
-  // Add domain name configurations
-  // This is helpful if your site is deployed to a specific domain
+  // Update images config to use remotePatterns instead of domains
   images: {
-    domains: ['emoviral.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'emoviral.com',
+      },
+    ],
+  },
+  
+  // Experimental features for CSS optimization
+  experimental: {
+    // Enable optimizeCss with critters
+    optimizeCss: true,
+    // Make sure Next.js scripts load efficiently
+    nextScriptWorkers: true,
   },
 };
 

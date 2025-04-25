@@ -1,11 +1,16 @@
 'use client';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { Camera, Globe, Share2, PieChart } from 'lucide-react';
 
 const ServicesSection = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    // Set visible immediately for first render to improve LCP
+    setIsVisible(true);
+    
+    // Use IntersectionObserver only for subsequent animations if needed
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -24,43 +29,25 @@ const ServicesSection = () => {
 
   const services = [
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
-        </svg>
-      ),
+      icon: <Camera className="h-8 w-8" />,
       title: "Fahrzeugfotografie",
       description: "Professionelle Aufnahmen, die Ihre Fahrzeuge im besten Licht präsentieren und Kunden überzeugen.",
       link: "/foto"
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-        </svg>
-      ),
+      icon: <Globe className="h-8 w-8" />,
       title: "Webdesign & Verwaltung",
       description: "Moderne, benutzerfreundliche Autohaus-Websites mit einfacher Verwaltung und optimaler Conversion-Rate.",
       link: "/web"
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z" />
-        </svg>
-      ),
+      icon: <Share2 className="h-8 w-8" />,
       title: "Social-Media-Management",
       description: "Strategische Content-Erstellung und Community-Management für mehr Sichtbarkeit und Engagement.",
       link: "/socialmedia"
     },
     {
-      icon: (
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
-        </svg>
-      ),
+      icon: <PieChart className="h-8 w-8" />,
       title: "Werbekampagnen",
       description: "Gezielte Google- und Amazon-Kampagnen für maximale Reichweite und optimalen Return on Investment.",
       link: "/kampagnen"
@@ -68,10 +55,19 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services-section" className="py-20 bg-white">
+    <section 
+      id="services-section" 
+      className="py-20 bg-white"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-poppins">Unsere Dienstleistungen</h2>
+          {/* Add loading="eager" to prioritize this content */}
+          <h2 
+            className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 font-poppins"
+            id="services-heading"
+          >
+            Unsere Dienstleistungen
+          </h2>
           <div className="h-1 w-32 bg-amber-600 mx-auto"></div>
           <p className="mt-6 text-gray-600 max-w-2xl mx-auto font-poppins">
             Maßgeschneiderte Lösungen für Autohäuser und Fahrzeughändler, die Ihre Präsenz stärken und Verkäufe steigern.
@@ -82,15 +78,18 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index}
-              className={`bg-white rounded-lg shadow-xl p-8 transition-all duration-700 transform ${
-                isVisible 
-                  ? 'translate-y-0 opacity-100' 
-                  : 'translate-y-10 opacity-0'
-              } hover:shadow-2xl hover:-translate-y-1 border border-gray-100 flex flex-col h-full`}
-              style={{ transitionDelay: `${index * 150}ms` }}
+              className={`bg-white rounded-lg shadow-lg p-8 flex flex-col h-full border border-gray-100 ${
+                isVisible ? 'animate-fadeIn' : 'opacity-0'
+              }`}
+              style={{ 
+                animationDelay: `${index * 100}ms`,
+                animationFillMode: 'forwards'
+              }}
             >
               <div className="text-blue-900 mb-6 flex justify-center items-center">
-                <div className="bg-blue-50 p-3 rounded-full">{service.icon}</div>
+                <div className="bg-blue-50 p-3 rounded-full">
+                  {service.icon}
+                </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-800 mb-4 text-center font-poppins">{service.title}</h3>
               <p className="text-gray-600 text-center font-poppins">{service.description}</p>
@@ -113,5 +112,14 @@ const ServicesSection = () => {
     </section>
   );
 };
+
+// Add this to your global CSS file
+// @keyframes fadeIn {
+//   from { opacity: 0; transform: translateY(10px); }
+//   to { opacity: 1; transform: translateY(0); }
+// }
+// .animate-fadeIn {
+//   animation: fadeIn 0.5s ease-out;
+// }
 
 export default ServicesSection;
