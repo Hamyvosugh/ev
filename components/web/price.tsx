@@ -1,5 +1,6 @@
 import React from 'react';
 import { Check } from 'lucide-react';
+import Link from 'next/link';
 
 const PricingComponent = () => {
   return (
@@ -109,9 +110,9 @@ const PricingComponent = () => {
               Kontaktieren Sie uns für ein unverbindliches Beratungsgespräch und Ihr persönliches Angebot.
             </p>
             
-            <button className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl">
+            <Link href="/beratung" className="px-8 py-4 bg-yellow-500 hover:bg-yellow-400 text-blue-900 font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl">
               Jetzt kostenlos beraten lassen
-            </button>
+            </Link>
           </div>
           
           {/* Optional trust elements */}

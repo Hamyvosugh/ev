@@ -124,17 +124,17 @@ const Pricing = () => {
           ))}
         </div>
 
-        {/* Custom Package Note */}
-        <div className="mt-16 bg-blue-800 p-8 rounded-xl text-center">
-          <h3 className="text-xl text-white font-semibold mb-3">Benötigen Sie eine maßgeschneiderte Lösung?</h3>
-          <p className="text-blue-100 mb-6">
-            Jedes Unternehmen ist einzigartig. Kontaktieren Sie uns für ein individuelles Angebot, 
-            das perfekt auf Ihre spezifischen Anforderungen zugeschnitten ist.
-          </p>
-          <Link href='/beratung' className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium px-8 py-3 rounded-lg transition-colors">
-            Kostenloses Beratungsgespräch vereinbaren
-          </Link>
-        </div>
+{/* Custom Package Note */}
+<div className="mt-16 bg-blue-800 p-6 md:p-8 rounded-xl text-center">
+  <h3 className="text-xl text-white font-semibold mb-3">Benötigen Sie eine maßgeschneiderte Lösung?</h3>
+  <p className="text-blue-100 mb-6">
+    Jedes Unternehmen ist einzigartig. Kontaktieren Sie uns für ein individuelles Angebot, 
+    das perfekt auf Ihre spezifischen Anforderungen zugeschnitten ist.
+  </p>
+  <Link href='/beratung' className="bg-yellow-400 hover:bg-yellow-500 text-blue-900 font-medium px-4 py-2 sm:px-6 md:px-8 md:py-3 rounded-lg transition-colors text-sm sm:text-base inline-block w-full sm:w-auto">
+    Kostenloses Beratungsgespräch
+  </Link>
+</div>
         
         {/* Trust Indicators */}
         <div className="mt-16 flex flex-wrap justify-center gap-8">

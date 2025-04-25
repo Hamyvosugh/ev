@@ -1,5 +1,7 @@
 import React from 'react';
 import { MessageSquare } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink';
+
 
 const CTAComponent = () => {
   return (
@@ -25,10 +27,10 @@ const CTAComponent = () => {
               Kontaktieren Sie uns jetzt für eine kostenlose Erstberatung – unverbindlich und persönlich.
             </p>
             
-            <button className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl flex items-center justify-center mx-auto group">
+            <SmoothScrollLink href="#contact-form" className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl flex items-center justify-center mx-auto group">
               <span>Jetzt Beratung anfordern</span>
               <MessageSquare className="ml-2 w-5 h-5 group-hover:scale-110 transition-transform" />
-            </button>
+            </SmoothScrollLink>
             
             {/* Trust badges/elements */}
             <div className="mt-12 pt-8 border-t border-gray-200 flex flex-wrap justify-center gap-8">

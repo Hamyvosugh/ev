@@ -39,7 +39,7 @@ const WerbekampagnenPage = () => {
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-opacity-30" style={{ backgroundImage: "url('/api/placeholder/1920/600')", backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'overlay' }}></div>
         </div>
-        <div className="container mx-auto max-w-6xl relative z-10">
+        <div className="container mx-auto max-w-6xl relative z-10 p-4">
           <div className="max-w-2xl">
             <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: colors.primary }}>
               Gezielte Werbekampagnen für Ihren maximalen Erfolg
@@ -59,8 +59,8 @@ const WerbekampagnenPage = () => {
       </section>
 
       {/* Why Paid Advertising is Important */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
+      <section className="py-20 px-4 bg-white ">
+        <div className="container mx-auto max-w-6xl p-4">
           <div className="text-center max-w-3xl mx-auto">
             <h2 className="text-3xl font-bold mb-6" style={{ color: colors.primary }}>
               Warum bezahlte Werbung unverzichtbar ist
@@ -141,7 +141,7 @@ const WerbekampagnenPage = () => {
 
       {/* Advantages of working with Emoviral */}
       <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-6xl p-4">
           <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: colors.primary }}>
             Ihre Vorteile mit Emoviral
           </h2>
@@ -296,7 +296,7 @@ const WerbekampagnenPage = () => {
       {/* Customer Feedback */}
       <section className="py-20 px-4 bg-white">
         <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: colors.primary }}>
+          <h2 className="text-3xl font-bold mb-12 text-center p-4" style={{ color: colors.primary }}>
             Was unsere Kunden über uns sagen
           </h2>
           
@@ -317,7 +317,7 @@ const WerbekampagnenPage = () => {
 
       {/* Final CTA */}
       <section className="py-20 px-4" style={{ backgroundColor: colors.primary }}>
-        <div className="container mx-auto max-w-4xl text-center">
+        <div className="container mx-auto max-w-4xl text-center p-4">
           <h2 className="text-3xl font-bold mb-6 text-white">
             Bereit für mehr Kunden und mehr Umsatz?
           </h2>

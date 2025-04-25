@@ -83,9 +83,11 @@ export default async function BlogPostPage({ params }: PageProps) {
     const headings = extractHeadings(post.content);
     
     return (
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 ">
         <article>
+          <div className='pt-12 md:pt-5'>
           <BlogHeader post={post} />
+          </div>
           <BlogContentWrapper 
             content={mdxSource} 
             headings={headings}
@@ -94,7 +96,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           />
         </article>
         
-        <hr className="my-16 border-gray-200" />
+        <hr className="my-16 border-gray-200 " />
         
         <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
       </div>

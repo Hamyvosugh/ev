@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { CheckCircle, Monitor, Search, Zap, Palette, Settings, Database, Cpu, Link, Bot } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink';
 
 const ServicesIntroduction = () => {
   // Service features data for the table
@@ -118,12 +119,12 @@ const ServicesIntroduction = () => {
         
         {/* CTA Button */}
         <div className="text-center">
-          <button className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-md hover:shadow-lg inline-flex items-center">
-            <span>Unverbindliches Beratungsgespräch vereinbaren</span>
+        <SmoothScrollLink href="#contact-form" className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-md hover:shadow-lg inline-flex items-center">
+             Unverbindliches Beratungsgespräch vereinbaren 
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
               <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
             </svg>
-          </button>
+          </SmoothScrollLink>
         </div>
       </div>
     </section>

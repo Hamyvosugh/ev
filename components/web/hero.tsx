@@ -1,6 +1,9 @@
 'use client';
 import React from 'react';
 import { ChevronDown } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink';
+import ScrollButton from '@/components/global/Scroll100vh';
+
 
 const HeroSection = () => {
   const scrollToNextSection = () => {
@@ -46,17 +49,17 @@ const HeroSection = () => {
           
           {/* CTA buttons */}
           <div className="flex flex-col sm:flex-row gap-4">
-            <button className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl">
+          <SmoothScrollLink href="#contact-form" className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl">
               Jetzt Beratung anfordern
-            </button>
+            </SmoothScrollLink>
             
-            <button 
-              onClick={scrollToNextSection}
+            <ScrollButton
+              
               className="px-8 py-4 bg-white border-2 border-blue-900 text-blue-900 font-medium rounded-md transition duration-300 hover:bg-gray-100 flex items-center justify-center gap-2 group"
             >
               Beispiele ansehen
               <ChevronDown className="w-5 h-5 group-hover:translate-y-1 transition-transform" />
-            </button>
+            </ScrollButton>
           </div>
           
           {/* Trust indicators */}
@@ -92,10 +95,11 @@ const HeroSection = () => {
       </div>
       
       {/* Scroll down indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col   items-center animate-bounce hidden md:flex">
-        <span className="text-sm text-gray-500 mb-2">Mehr entdecken</span>
+      <ScrollButton
+      className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col text-blue-950  items-center animate-bounce hidden md:flex z-50">
+        Mehr entdecken 
         <ChevronDown className="w-6 h-6 text-blue-900" />
-      </div>
+      </ScrollButton>
     </div>
   );
 };

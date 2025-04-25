@@ -49,6 +49,8 @@ export default function RootLayout({
         padding: 0; 
         width: 100%; 
         font-family: 'Poppins', sans-serif;
+        overflow-x: hidden;
+        max-width: 100%;
       }
       header { 
         position: fixed; 
@@ -71,6 +73,7 @@ export default function RootLayout({
     as="style" 
     crossOrigin="anonymous" 
   />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 </head>
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">

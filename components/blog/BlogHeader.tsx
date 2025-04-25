@@ -17,7 +17,7 @@ export default function BlogHeader({ post }: BlogHeaderProps) {
 
   return (
     <div className="mb-12">
-      <div className="relative h-96 md:h-[500px] w-full mb-8 rounded-xl overflow-hidden">
+      <div className="relative h-96 md:h-[500px] w-full mb-8 rounded-xl overflow-hidden ">
         <Image
           src={post.coverImage}
           alt={post.title}
@@ -29,7 +29,7 @@ export default function BlogHeader({ post }: BlogHeaderProps) {
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
           <div className="p-8 md:p-12 w-full">
             <div className="flex items-center gap-2 mb-4">
-              <span className="bg-yellow-500 text-white text-sm font-medium px-3 py-1 rounded-full">
+              <span className="bg-yellow-500 text-white text-sm font-medium px-3 py-1 rounded-full ">
                 {post.category}
               </span>
               <span className="px-2 text-white/80">•</span>

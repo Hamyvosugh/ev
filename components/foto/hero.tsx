@@ -20,7 +20,7 @@ const HeroFoto = () => {
       </div>
       
       {/* Content Container */}
-      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 flex items-center justify-center h-full px-4 sm:px-6 lg:px-8 mt-20 md:mt-0">
         <div className="max-w-4xl text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-poppins">
             Professionelle Fahrzeugfotografie

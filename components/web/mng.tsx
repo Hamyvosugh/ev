@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 import { RefreshCw, Shield, Zap, Search, PlusCircle, Headphones } from 'lucide-react';
+import SmoothScrollLink from '@/components/global/SmoothScrollLink';
+
 
 const WebManagement = () => {
   // Management service features
@@ -87,9 +89,9 @@ const WebManagement = () => {
             </div>
             
             <div className="mt-8 text-center lg:text-right">
-              <button className="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-md hover:shadow-lg">
+            <SmoothScrollLink href="#contact-form" className="px-6 py-3 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-md hover:shadow-lg">
                 Management-Paket anfragen
-              </button>
+              </SmoothScrollLink>
             </div>
           </div>
         </div>

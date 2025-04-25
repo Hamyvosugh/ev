@@ -5,6 +5,7 @@ import WebManagement from '@/components/web/mng';
 import PricingComponent from '@/components/web/price';
 import CTAComponent from '@/components/web/cta';
 import CTADemo from '@/components/web/demo';
+import ContactForm from '@/components/contact/ContactForm';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function Home() {
         <WebManagement />
         <PricingComponent />
         <CTAComponent />
+        <ContactForm />
       </div>
     </main>
   );
