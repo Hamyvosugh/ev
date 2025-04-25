@@ -20,7 +20,7 @@ Allow: /ueber-uns/
 Allow: /blog/
 
 # Sitemap location
-Sitemap: https://www.emoviral.de/sitemap.xml
+Sitemap: https://www.emoviral.com/sitemap.xml
 
 # Crawl delay for major bots
 User-agent: Googlebot
