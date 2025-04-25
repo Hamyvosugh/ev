@@ -19,8 +19,8 @@ const HeroSection2 = () => {
       </div>
       
       {/* Main content container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center mt-16 md:mt-4">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full ">
           <div className={`flex flex-col justify-center transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'
           }`}>
@@ -28,7 +28,7 @@ const HeroSection2 = () => {
             <div className="h-1 w-24 bg-gradient-to-r from-yellow-500 to-red-800 mb-8"></div>
             
             {/* Main headline with refined spacing */}
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8 leading-tight ">
               <span className="block">Digitale</span>
               <span className="block relative">
                 Lösungen
