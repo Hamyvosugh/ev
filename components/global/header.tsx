@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { Camera, Code, Share2, Megaphone, ChevronDown } from 'lucide-react';
+import { Camera, Code, Share2, Megaphone, ChevronDown, Target } from 'lucide-react';
 import Link from 'next/link';
 
 const Header = () => {
@@ -39,7 +39,7 @@ const Header = () => {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Dienstleistungen", href: "#services", hasMegaMenu: true },
-    { name: "Demo", href: "https://demo01.emoviral.com/" },
+    { name: "Demo", href: "https://demo01.emoviral.com/", target: "_blank" },
     { name: "Über uns", href: "/about" },
     { name: "Karriere", href: "/karriere" },
     { name: "Kontakt", href: "/kontakt" }
@@ -116,6 +116,7 @@ const Header = () => {
                 ) : (
                   <Link 
                     href={item.href}
+                    target={item.target}
                     className={`text-sm font-medium transition-colors duration-200 ${
                       isScrolled ? 'text-gray-700 hover:text-blue-900' : 'text-gray-800 hover:text-blue-900'
                     }`}
@@ -222,6 +223,7 @@ const Header = () => {
               ) : (
                 <Link
                   href={item.href}
+                  target={item.target}
                   className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-900 hover:bg-gray-50"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >

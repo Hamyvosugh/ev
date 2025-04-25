@@ -50,19 +50,19 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-6 font-poppins">Dienstleistungen</h3>
               <ul className="space-y-4">
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Fahrzeugfotografie</Link>
+                  <Link href="/foto" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Fahrzeugfotografie</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Webdesign & Verwaltung</Link>
+                  <Link href="/web" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Webdesign & Verwaltung</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Social-Media-Management</Link>
+                  <Link href="/socialmedia" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Social-Media-Management</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Werbekampagnen</Link>
+                  <Link href="/kampagnen" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Werbekampagnen</Link>
                 </li>
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Online-Shops</Link>
+                  <Link href="https://demo01.emoviral.com/" target="_blank" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Demo</Link>
                 </li>
               </ul>
             </div>
@@ -72,8 +72,9 @@ const Footer = () => {
               <h3 className="text-lg font-semibold mb-6 font-poppins">Unternehmen</h3>
               <ul className="space-y-4">
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Über uns</Link>
+                  <Link href="/about" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Über uns</Link>
                 </li>
+                {/*
                 <li>
                   <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Portfolio</Link>
                 </li>
@@ -83,8 +84,9 @@ const Footer = () => {
                 <li>
                   <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Blog</Link>
                 </li>
+                */}
                 <li>
-                  <Link href="#" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Karriere</Link>
+                  <Link href="/karriere" className="text-blue-100 hover:text-amber-500 transition-colors duration-300 font-poppins">Karriere</Link>
                 </li>
               </ul>
             </div>
