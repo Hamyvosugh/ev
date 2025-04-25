@@ -1,9 +1,9 @@
-// app/[locale]/blog/[slug]/page.tsx
+// app/blog/[slug]/page.tsx
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { getPostBySlug, getAllPosts, markdownToHtml } from '@/lib/blog';
+import { getPostBySlug, getAllPosts } from '@/lib/blog';
 import BlogHeader from '@/components/blog/BlogHeader';
-import BlogContent from '@/components/blog/BlogContent';
+import BlogContentWrapper from '@/components/blog/BlogContentWrapper';
 import { RelatedPosts } from '@/components/blog/RelatedPosts';
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
@@ -45,7 +45,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
         images: [post.coverImage],
       },
     };
-  } catch (error) {
+  } catch {
     return {
       title: 'Blog Post Not Found',
       description: 'The requested blog post could not be found.',
@@ -82,7 +82,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       <div className="container mx-auto px-4 py-12">
         <article>
           <BlogHeader post={post} />
-          <BlogContent 
+          <BlogContentWrapper 
             content={mdxSource} 
             headings={headings}
             slug={post.slug}
@@ -95,7 +95,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
       </div>
     );
-  } catch (error) {
+  } catch {
     notFound();
   }
 }

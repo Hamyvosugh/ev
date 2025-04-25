@@ -7,12 +7,11 @@ import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote';
 import { TableOfContents } from './TableOfContents';
 import { ShareButtons } from './ShareButtons';
-import { StaticImport } from 'next/dist/shared/lib/get-img-props';
 
 // Define TypeScript types for MDX component props
 interface MDXComponentProps {
   children: React.ReactNode;
-  [key: string]: any;
+  [key: string]: unknown;
 }
 
 // Define MDX components with proper TypeScript types
@@ -69,7 +68,8 @@ const components = {
 };
 
 interface BlogContentProps {
-  content: any; // MDX content
+  // Use MDXRemoteSerializeResult type or a proper type that can be spread
+  content: Record<string, unknown>;
   headings: { id: string; text: string; level: number }[];
   slug: string;
   title: string;
@@ -81,7 +81,7 @@ const BlogContent = ({ content, headings, slug, title }: BlogContentProps) => {
     <div className="flex flex-col lg:flex-row gap-12">
       <article className="lg:w-2/3">
         <div className="prose prose-lg max-w-none">
-          <MDXRemote {...content} components={components} />
+          <MDXRemote compiledSource={''} scope={undefined} frontmatter={undefined} {...content} components={components} />
         </div>
         
         <hr className="my-10 border-gray-200" />

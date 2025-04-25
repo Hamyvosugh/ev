@@ -2,8 +2,6 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { remark } from 'remark';
-import html from 'remark-html';
 import { BlogPost, BlogPostMeta } from '../types/blog';
 
 const postsDirectory = path.join(process.cwd(), 'content/blog');
@@ -43,7 +41,8 @@ export function getAllPosts(): BlogPostMeta[] {
     .map((slug) => getPostBySlug(slug))
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   
-  return posts.map(({ content, ...rest }) => rest);
+  // Return posts without content field
+  return posts.map(({ content: _, ...rest }) => rest);
 }
 
 export function getPostsByCategory(category: string): BlogPostMeta[] {
@@ -69,11 +68,6 @@ export function getAllTags(): string[] {
   });
   
   return Array.from(tagsSet);
-}
-
-export async function markdownToHtml(markdown: string): Promise<string> {
-  const result = await remark().use(html).process(markdown);
-  return result.toString();
 }
 
 // Helper to calculate reading time
