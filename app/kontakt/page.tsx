@@ -1,7 +1,7 @@
 // app/kontakt/page.tsx
-import ContactForm from '@/components/contact/ContactForm';
-import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import ContactCTA from '@/components/contact/ContactCTA';
+import ContactForm from '@/components/contact/ContactForm';
+import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -67,9 +67,9 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">E-Mail</h3>
               <p className="text-gray-600">
-                <a href="mailto:hi@hamyvosugh.com" className="hover:text-[#1a365d] transition-colors">
+                <a href="mailto:hi@emoviral.com" className="hover:text-[#1a365d] transition-colors">
                   hi@emoviral.com <br />
-                  hi@hamyvosugh.com
+                  hi@emoviral.com
                 </a>
               </p>
             </div>

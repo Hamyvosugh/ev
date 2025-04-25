@@ -13,7 +13,7 @@ export async function POST(request: Request) {
       port: parseInt(process.env.SMTP_PORT || '465'),
       secure: true, // true for 465 (Zoho recommends SSL)
       auth: {
-        user: process.env.SMTP_USER || 'hi@hamyvosugh.com',
+        user: process.env.SMTP_USER || 'hi@emoviral.com',
         pass: process.env.SMTP_PASSWORD || 'your-zoho-app-password'
       }
     });
@@ -43,10 +43,10 @@ export async function POST(request: Request) {
     Diese Nachricht wurde automatisch über das Kontaktformular Ihrer Website generiert.
     `;
 
-    // Send email to your address (hi@hamyvosugh.com)
+    // Send email to your address (hi@emoviral.com)
     await transporter.sendMail({
-      from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@hamyvosugh.com'}>`,
-      to: to || 'hi@hamyvosugh.com',
+      from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
+      to: to || 'hi@emoviral.com',
       subject: `Neue Anfrage: ${service} - von ${name}`,
       text: emailContent,
       replyTo: email
@@ -71,7 +71,7 @@ export async function POST(request: Request) {
     `;
 
     await transporter.sendMail({
-      from: `"EmoViral" <${process.env.SMTP_USER || 'hi@hamyvosugh.com'}>`,
+      from: `"EmoViral" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
       to: email,
       subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
       text: confirmationEmail

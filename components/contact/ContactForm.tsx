@@ -46,7 +46,7 @@ const ContactForm = () => {
         },
         body: JSON.stringify({
           ...formData,
-          to: 'hi@hamyvosugh.com',
+          to: 'hi@emoviral.com',
         }),
       });
 
