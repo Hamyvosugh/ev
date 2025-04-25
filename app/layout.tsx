@@ -1,17 +1,12 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import "./globals.css";
+import "@/styles/fonts.css";
 import ScrollToTopButton from '@/components/global/scrollup';
 import Header from '@/components/global/header';
 import Footer from '@/components/global/footer';
 import { Analytics } from "@vercel/analytics/react";
 import Script from "next/script";
 
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'],
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: "Auto Services",
@@ -35,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="de" className={`${poppins.className} w-full`}>
+    <html lang="de" className="w-full font-poppins">
       <head>
   {/* Add this explicit favicon link for search engines */}
   <link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" />
@@ -66,13 +61,7 @@ export default function RootLayout({
     ` 
   }} />
   
-  {/* Preload fonts */}
-  <link 
-    rel="preload" 
-    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
-    as="style" 
-    crossOrigin="anonymous" 
-  />
+
           <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 </head>
       <body className="w-full min-w-full m-0 p-0">

@@ -13,6 +13,9 @@ module.exports = {
           accent: '#d4af37',     // Gold accent
           'accent-secondary': '#7c0a02', // Burgundy red
         },
+        fontFamily: {
+          poppins: ['Poppins', 'sans-serif'],
+        },
       },
       container: {
         center: true,
