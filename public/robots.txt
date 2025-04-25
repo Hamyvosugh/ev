@@ -1,30 +1,9 @@
-# robots.txt for Emoviral – Digitale Lösungen für Autohäuser
-
+# *
 User-agent: *
 Allow: /
 
-# Disallow crawling of administrative or private areas
-Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /api/
-Disallow: /internal/
-Disallow: /thank-you/
+# Host
+Host: https://emoviral.com
 
-# Allow crawling of important pages (optional, not required with Allow: /)
-Allow: /fahrzeugfotografie/
-Allow: /webdesign/
-Allow: /social-media-management/
-Allow: /werbekampagnen/
-Allow: /kontakt/
-Allow: /ueber-uns/
-Allow: /blog/
-
-# Sitemap location
-Sitemap: https://www.emoviral.com/sitemap.xml
-
-# Crawl delay for major bots
-User-agent: Googlebot
-Crawl-delay: 1
-
-User-agent: Bingbot
-Crawl-delay: 1
+# Sitemaps
+Sitemap: https://emoviral.com/sitemap.xml
