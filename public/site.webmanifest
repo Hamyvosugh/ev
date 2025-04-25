@@ -1,0 +1,50 @@
+{
+    "name": "EmoViral - Digitale Lösungen für Autohändler",
+    "short_name": "EmoViral",
+    "description": "Digitale Komplettlösungen für Autohändler und Ausstellungen: Fahrzeugfotografie, Webdesign, Social Media Management und intelligente Automatisierungen.",    "icons": [
+      {
+        "src": "/favicon_io/android-chrome-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png",
+        "purpose": "any maskable"
+      },
+      {
+        "src": "/favicon_io/android-chrome-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any maskable"
+      }
+    ],
+    "theme_color": "#0a3d62",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "orientation": "portrait",
+    "start_url": "/",
+    "lang": "de",
+    "dir": "ltr",
+    "scope": "/",
+    "categories": ["automotive", "vehicle_photography", "digital_marketing", "web_design", "business_services"],
+    "shortcuts": [
+      {
+        "name": "Fotografie",
+        "url": "/foto",
+        "description": "Hochwertige Fahrzeugfotografie für Autohändler und Ausstellungen"
+      },
+      {
+        "name": "Web",
+        "url": "/web",
+        "description": "Individuelle Webseiten und Online-Shops für die Automobilbranche"
+      },
+      {
+        "name": "Social Media",
+        "url": "/socialmedia",
+        "description": "Erfolgreiches Social Media Management für Autohäuser und Ausstellungen"
+      },
+      {
+        "name": "Magazin",
+        "url": "/blog",
+        "description": "Aktuelle Trends und Tipps für Automotive Marketing entdecken"
+      }
+    ],
+    "prefer_related_applications": false
+  }
