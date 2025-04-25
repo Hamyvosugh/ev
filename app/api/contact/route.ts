@@ -102,18 +102,9 @@ export async function POST(request: Request) {
     
     return NextResponse.json({ success: true });
   } catch (error) {
-    console.error('Error sending email:', error);
-    
-    // Safe error details extraction for logging
+    // Simplified error handling that's TypeScript-compliant
     const errorMessage = error instanceof Error ? error.message : 'Unknown error';
-    const errorDetails = error instanceof Error ? 
-      Object.getOwnPropertyNames(error).reduce((acc, key) => {
-        acc[key] = (error as unknown as Record<string, unknown>)[key];
-        return acc;
-      }, {} as Record<string, unknown>) : 
-      {};
-    
-    console.error('Error details:', JSON.stringify(errorDetails));
+    console.error('Error sending email:', error);
     
     return NextResponse.json(
       { error: 'Failed to send email', details: errorMessage },
