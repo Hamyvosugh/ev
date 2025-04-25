@@ -27,11 +27,11 @@ export default function BlogPage({
     : allPosts;
 
   return (
-    <div className="container mx-auto px-4 py-12">
+    <div className="container mx-auto px-4 py-14 mt-10">
       <div className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Unser Fachblog</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Digitales Autohaus Magazin</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Professionelle Einblicke und Expertentipps zur Fahrzeugfotografie und digitalen Präsentation für Autohäuser und Fahrzeughändler.
+        Aktuelle Trends, Insights und Strategien für die digitale Vermarktung von Fahrzeugen und Autohäusern.
         </p>
       </div>
       

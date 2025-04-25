@@ -41,6 +41,7 @@ const Header = () => {
     { name: "Home", href: "/" },
     { name: "Dienstleistungen", href: "#services", hasMegaMenu: true },
     { name: "Demo", href: "https://demo01.emoviral.com/", target: "_blank" },
+    { name: "Magazin", href: "/blog" },
     { name: "Über uns", href: "/about" },
     { name: "Karriere", href: "/karriere" },
     { name: "Kontakt", href: "/kontakt" }

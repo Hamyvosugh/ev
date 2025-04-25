@@ -44,16 +44,18 @@ const components = {
   blockquote: (props: MDXComponentProps) => (
     <blockquote className="border-l-4 border-blue-900 pl-4 py-1 mb-6 italic bg-gray-50" {...props} />
   ),
-  img: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
+  // The img component is causing the hydration error
+  // Instead of nesting a div inside a p tag, we'll replace the entire p > img with our custom component
+  img: ({ src, alt, ...rest }: React.ImgHTMLAttributes<HTMLImageElement>) => {
     // Make sure src is a valid string for the Image component
-    const imgSrc = typeof props.src === 'string' ? props.src : '';
+    const imgSrc = typeof src === 'string' ? src : '';
     
     return (
       <div className="relative h-96 w-full my-8">
         <Image
           fill
           src={imgSrc}
-          alt={props.alt || ""}
+          alt={alt || ""}
           className="object-contain"
         />
       </div>

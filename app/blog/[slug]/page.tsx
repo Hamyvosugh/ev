@@ -9,6 +9,8 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { extractHeadings } from '@/lib/mdx';
+// Import our custom plugin
+import { remarkUnwrapImages } from '@/lib/mdx-plugins/unwrap-images';
 
 type PageProps = {
   params: { slug: string };
@@ -66,6 +68,10 @@ export default async function BlogPostPage({ params }: PageProps) {
     // Process MDX content with plugins
     const mdxSource = await serialize(post.content, {
       mdxOptions: {
+        remarkPlugins: [
+          // Add our custom plugin to unwrap images from paragraph tags
+          remarkUnwrapImages
+        ],
         rehypePlugins: [
           rehypeSlug,
           [rehypeAutolinkHeadings, { behavior: 'wrap' }],
