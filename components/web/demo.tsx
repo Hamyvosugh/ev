@@ -1,5 +1,7 @@
+// components/web/demo.tsx
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
+import Image from 'next/image';
 
 const CTADemo = () => {
   return (
@@ -59,11 +61,16 @@ const CTADemo = () => {
         <div className="flex-1 relative">
           <div className="relative rounded-lg overflow-hidden shadow-2xl transform rotate-1 hover:rotate-0 transition-transform duration-500">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-transparent pointer-events-none z-10"></div>
-            <img 
-              src="/images/web/demo.avif" 
-              alt="Demo Website Preview" 
-              className="w-full h-auto rounded-lg"
-            />
+            <div className="relative w-full aspect-video">
+              <Image 
+                src="/images/web/demo.avif" 
+                alt="Demo Website Preview" 
+                fill
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover rounded-lg"
+                priority
+              />
+            </div>
             <div className="absolute top-0 right-0 bg-yellow-500 text-blue-900 font-bold py-1 px-3 rounded-bl-lg">
               Demo
             </div>

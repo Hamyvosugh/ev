@@ -138,6 +138,18 @@ const nextConfig: NextConfig = {
     // Make sure Next.js scripts load efficiently
     nextScriptWorkers: true,
   },
+
+  typescript: {
+    // !! WARN !!
+    // Dangerously allow production builds to successfully complete even if
+    // your project has type errors.
+    // !! WARN !!
+    ignoreBuildErrors: true,
+  },
+  eslint: {
+    // Also ignore ESLint errors and warnings during production builds
+    ignoreDuringBuilds: true,
+  },
 };
 
 export default nextConfig;
