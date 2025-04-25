@@ -102,30 +102,6 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Map Section (Optional) */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-[#1a365d] mb-8 text-center">Unser Einzugsgebiet</h2>
-            <div className="aspect-w-16 aspect-h-9 bg-gray-200 rounded-lg overflow-hidden">
-              {/* Google Maps view showing Hanau and Frankfurt area */}
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d204621.76474379862!2d8.763189!3d50.107145!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sde!2sde!4v1650000000000!5m2!1sde!2sde"
-                width="100%"
-                height="450"
-                style={{ border: 0 }}
-                allowFullScreen={true}
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                className="w-full h-full"
-              ></iframe>
-            </div>
-            <p className="text-gray-600 mt-4 text-center">Wir bedienen die gesamte Region Frankfurt am Main und Hanau.</p>
-          </div>
-        </div>
-      </section>
-
       {/* CTA Section */}
       <ContactCTA />
     </main>
