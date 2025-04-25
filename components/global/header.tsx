@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef } from 'react';
-import { Camera, Code, Share2, Megaphone, ChevronDown, Target } from 'lucide-react';
+import { Camera, Code, Share2, Megaphone, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 
 const Header = () => {
