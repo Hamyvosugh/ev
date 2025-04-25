@@ -10,13 +10,16 @@ import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { extractHeadings } from '@/lib/mdx';
 
-interface BlogPostPageProps {
-  params: {
-    slug: string;
-  };
+interface Params {
+  slug: string;
 }
 
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+interface Props {
+  params: Params;
+  searchParams: Record<string, string | string[] | undefined>;
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   try {
     const post = getPostBySlug(params.slug);
     
@@ -55,7 +58,7 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
 
 export const revalidate = 3600; // Revalidate every hour
 
-export default async function BlogPostPage({ params }: BlogPostPageProps) {
+export default async function BlogPostPage({ params }: Props) {
   try {
     const post = getPostBySlug(params.slug);
     const allPosts = getAllPosts();
@@ -101,7 +104,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 }
 
 // Generate static paths for all blog posts
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<Params[]> {
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
