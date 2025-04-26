@@ -31,7 +31,7 @@ export default function BlogPage({
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Digitales Autohaus Magazin</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-          Aktuelle Trends, Insights und Strategien für die digitale Vermarktung von Fahrzeugen und Autohäusern.
+        Aktuelle Trends, Insights und Strategien für die digitale Vermarktung von Fahrzeugen und Autohäusern.
         </p>
       </div>
       
@@ -46,33 +46,25 @@ export default function BlogPage({
         >
           Alle
         </Link>
-        {allCategories.map((category) => {
-          // Ensure each category is a string and can be used as a key
-          const categoryKey = typeof category === 'string' ? category : String(category);
-          
-          return (
-            <Link
-              key={categoryKey}
-              href={`/blog?category=${encodeURIComponent(categoryKey)}`}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
-                selectedCategory === categoryKey
-                  ? 'bg-blue-900 text-white'
-                  : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
-              }`}
-            >
-              {categoryKey}
-            </Link>
-          );
-        })}
+        {allCategories.map((category) => (
+          <Link
+            key={category}
+            href={`/blog?category=${encodeURIComponent(category)}`}
+            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-300 ${
+              selectedCategory === category
+                ? 'bg-blue-900 text-white'
+                : 'bg-gray-100 text-gray-800 hover:bg-gray-200'
+            }`}
+          >
+            {category}
+          </Link>
+        ))}
       </div>
       
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {filteredPosts.map((post) => {
-          // Ensure each post has a unique slug to use as a key
-          const postKey = post.slug || `post-${Math.random().toString(36).substr(2, 9)}`;
-          
-          return <BlogCard key={postKey} post={post} />;
-        })}
+        {filteredPosts.map((post) => (
+          <BlogCard key={post.slug} post={post} />
+        ))}
       </div>
       
       {filteredPosts.length === 0 && (
@@ -86,5 +78,4 @@ export default function BlogPage({
         </div>
       )}
     </div>
-  );
-}
+  )};

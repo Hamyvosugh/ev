@@ -1,4 +1,4 @@
-// app/[locale]/blog/[slug]/page.tsx
+// app/blog/[slug]/page.tsx
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getPostBySlug, getAllPosts } from '@/lib/blog';
@@ -8,9 +8,9 @@ import { RelatedPosts } from '@/components/blog/RelatedPosts';
 import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeHighlight from 'rehype-highlight';
-import remarkGfm from 'remark-gfm';
 import { extractHeadings } from '@/lib/mdx';
+// Import our custom plugin
+import { remarkUnwrapImages } from '@/lib/mdx-plugins/unwrap-images';
 
 type PageProps = {
   params: { slug: string };
@@ -65,48 +65,43 @@ export default async function BlogPostPage({ params }: PageProps) {
       .filter(p => p.category === post.category && p.slug !== post.slug)
       .slice(0, 3);
       
-    // Process MDX content with enhanced plugins
+    // Process MDX content with plugins
     const mdxSource = await serialize(post.content, {
       mdxOptions: {
         remarkPlugins: [
-          remarkGfm, // GitHub Flavored Markdown (tables, strikethrough, etc.)
+          // Add our custom plugin to unwrap images from paragraph tags
+          remarkUnwrapImages
         ],
         rehypePlugins: [
-          rehypeSlug, // Add IDs to headings
-          [rehypeAutolinkHeadings, { behavior: 'wrap' }], // Add links to headings
-          rehypeHighlight, // Syntax highlighting for code blocks
+          rehypeSlug,
+          [rehypeAutolinkHeadings, { behavior: 'wrap' }],
         ],
-        format: 'mdx',
       },
-      parseFrontmatter: true,
     });
     
     // Extract headings for table of contents
     const headings = extractHeadings(post.content);
     
     return (
-      <div className="container mx-auto px-4 py-12">
-        <article className="bg-white rounded-lg shadow-sm overflow-hidden">
+      <div className="container mx-auto px-4 py-12 ">
+        <article>
+          <div className='pt-12 md:pt-5'>
           <BlogHeader post={post} />
-          <div className="p-6 md:p-8">
-            <BlogContentWrapper 
-              content={mdxSource} 
-              headings={headings}
-              slug={post.slug}
-              title={post.title}
-            />
           </div>
+          <BlogContentWrapper 
+            content={mdxSource} 
+            headings={headings}
+            slug={post.slug}
+            title={post.title}
+          />
         </article>
         
-        <hr className="my-16 border-gray-200" />
+        <hr className="my-16 border-gray-200 " />
         
-        {relatedPosts.length > 0 && (
-          <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
-        )}
+        <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
       </div>
     );
-  } catch (error) {
-    console.error("Error rendering blog post:", error);
+  } catch {
     notFound();
   }
 }
