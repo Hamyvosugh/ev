@@ -111,9 +111,9 @@ const BlogContent = ({ content, headings, slug, title }: BlogContentProps) => {
           </div>
           
           <div className="bg-blue-900 text-white rounded-lg p-6">
-            <h3 className="text-lg font-bold mb-4">Benötigen Sie professionelle Fahrzeugfotografie?</h3>
-            <p className="mb-4">Heben Sie Ihr Autohaus mit hochwertigen Bildern hervor, die Kunden begeistern.</p>
-            <a href="/contact" className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-4 py-2 rounded-md transition-colors duration-300">
+            <h3 className="text-lg font-bold mb-4">Bereit, Ihren Fahrzeugverkauf auf das nächste Level zu bringen?</h3>
+            <p className="mb-4">Das Team von Emoviral unterstützt Sie mit professionellen Websites, beeindruckender Fahrzeugfotografie und smarter Vermarktung. Kontaktieren Sie uns noch heute und machen Sie den ersten Schritt zum Erfolg!</p>
+            <a href="/kontakt" className="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-medium px-4 py-2 rounded-md transition-colors duration-300">
               Kontaktieren Sie uns
             </a>
           </div>
