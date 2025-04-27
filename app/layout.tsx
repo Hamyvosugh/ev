@@ -69,9 +69,14 @@ export default function RootLayout({
   "name": "Emoviral",
   "url": "https://emoviral.com",
   "logo": "https://emoviral.com/images/logo/logo-emoviral.png",
+  "image": "https://emoviral.com/images/emoviral-banner.jpg",
   "description": "Ihr zuverlässiger Partner für die Digitalisierung im Automobilhandel. Professionelle Fahrzeugfotografie, Webentwicklung und Social-Media-Management.",
   "email": "hi@emoviral.com",
   "telephone": "+49 6438 4039867",
+  "address": {
+  "@type": "PostalAddress",
+  "addressLocality": "Hanau",
+  "addressCountry": "DE"
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+49 6438 4039867",
@@ -149,7 +154,7 @@ export default function RootLayout({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Emoviral - Fahrzeugfotografie",
-  "image": "https://emoviral.com/images/logo/logo-emoviral.png",
+  "image": "https://emoviral.com/images/foto/automotive-professional-fotografie-hanau.jpg",
   "url": "https://emoviral.com",
   "description": "Professionelle Fahrzeugfotografie für Autohäuser in Frankfurt, Hanau und Umgebung. On-site Service direkt bei Ihrem Autohaus.",
   "email": "hi@emoviral.com",
@@ -169,6 +174,7 @@ export default function RootLayout({
   },
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Hanau",
     "addressCountry": "DE"
   }
 }
