@@ -25,13 +25,22 @@ const components = {
   p: (props: MDXComponentProps) => (
     <p className="mb-6 text-gray-700 leading-relaxed" {...props} />
   ),
-  a: (props: MDXComponentProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) => (
-    <Link 
-      {...props} 
-      href={props.href || "#"}
-      className="text-blue-900 hover:underline"
-    />
-  ),
+  a: (props: MDXComponentProps & React.AnchorHTMLAttributes<HTMLAnchorElement>) => {
+    // Always open external links in a new tab
+    const isExternal = props.href?.startsWith('http');
+    
+    return (
+      <a 
+        {...props} 
+        href={props.href || "#"}
+        target={isExternal ? "_blank" : undefined}
+        rel={isExternal ? "noopener noreferrer" : undefined}
+        className="text-amber-500 font-bold hover:underline"
+      >
+        {props.children}
+      </a>
+    );
+  },
   ul: (props: MDXComponentProps) => (
     <ul className="mb-6 ml-6 list-disc text-gray-700" {...props} />
   ),

@@ -18,7 +18,9 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   try {
-    const post = getPostBySlug(params.slug);
+    // Explicitly assign slug to handle it properly
+    const slug = params.slug;
+    const post = await getPostBySlug(slug);
     
     return {
       title: `${post.title} | Automotive Excellence Blog`,
@@ -57,8 +59,10 @@ export const revalidate = 3600; // Revalidate every hour
 
 export default async function BlogPostPage({ params }: PageProps) {
   try {
-    const post = getPostBySlug(params.slug);
-    const allPosts = getAllPosts();
+    // Explicitly assign slug to handle it properly
+    const slug = params.slug;
+    const post = await getPostBySlug(slug);
+    const allPosts = await getAllPosts();
     
     // Related posts: same category, different post
     const relatedPosts = allPosts
@@ -86,13 +90,14 @@ export default async function BlogPostPage({ params }: PageProps) {
       <div className="container mx-auto px-4 py-12 ">
         <article>
           <div className='pt-12 md:pt-5'>
-          <BlogHeader post={post} />
+            <BlogHeader post={post} />
           </div>
           <BlogContentWrapper 
             content={mdxSource} 
             headings={headings}
             slug={post.slug}
             title={post.title}
+            cta={post.cta} // Pass the CTA from the post frontmatter
           />
         </article>
         
@@ -101,13 +106,14 @@ export default async function BlogPostPage({ params }: PageProps) {
         <RelatedPosts posts={relatedPosts} currentSlug={post.slug} />
       </div>
     );
-  } catch {
+  } catch (error) {
+    console.error("Error loading blog post:", error);
     notFound();
   }
 }
 
 export async function generateStaticParams() {
-  const posts = getAllPosts();
+  const posts = await getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
   }));

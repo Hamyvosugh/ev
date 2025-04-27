@@ -16,6 +16,11 @@ module.exports = {
         fontFamily: {
           poppins: ['Poppins', 'sans-serif'],
         },
+        opacity: {
+          '10': '0.1',
+          '60': '0.6',
+          '90': '0.90',
+        }
       },
       container: {
         center: true,

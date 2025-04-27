@@ -11,6 +11,12 @@ export interface BlogPost {
     tags: string[];
     content: string;
     readingTime?: string;
+    cta?: {
+      title?: string;
+      description?: string;
+      buttonText?: string;
+      buttonUrl?: string;
+    };
   }
   
   export interface BlogPostMeta {

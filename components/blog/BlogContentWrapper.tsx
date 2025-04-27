@@ -14,6 +14,12 @@ interface BlogContentWrapperProps {
   headings: { id: string; text: string; level: number }[];
   slug: string;
   title: string;
+  cta?: {
+    title?: string;
+    description?: string;
+    buttonText?: string;
+    buttonUrl?: string;
+  };
 }
 
 export default function BlogContentWrapper(props: BlogContentWrapperProps) {

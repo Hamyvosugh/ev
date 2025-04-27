@@ -81,11 +81,24 @@ function calculateReadingTime(content: string): string {
 
 // Helper to format date
 function formatDate(dateString: string): string {
-  const date = new Date(dateString);
-  // Format for German locale (since your website is in German)
-  return new Intl.DateTimeFormat('de-DE', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric'
-  }).format(date);
+  try {
+    // Handle ISO string format or other standard formats
+    const date = new Date(dateString);
+    
+    // Check if date is valid before formatting
+    if (isNaN(date.getTime())) {
+      console.warn(`Invalid date string: ${dateString}, returning as is`);
+      return dateString;
+    }
+    
+    // Format for German locale (since your website is in German)
+    return new Intl.DateTimeFormat('de-DE', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric'
+    }).format(date);
+  } catch (error) {
+    console.error(`Error formatting date: ${dateString}`, error);
+    return dateString; // Return the original string if formatting fails
+  }
 }

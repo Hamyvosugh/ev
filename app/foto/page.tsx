@@ -5,6 +5,7 @@ import PricingComponent from '@/components/foto/price';
 import ImageSlider from '@/components/foto/slider';
 import CTAComponent from '@/components/beratung/call';
 import ContactForm from '@/components/contact/ContactForm';
+import PhotographyServices from '@/components/foto/branding';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export default function Home() {
      <CTAComponent />
      <ImageSlider />
      <PricingComponent />
+     <PhotographyServices />
      <ContactForm />
      <CTAComponent />
 
