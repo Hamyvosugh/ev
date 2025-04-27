@@ -35,7 +35,7 @@ const components = {
         href={props.href || "#"}
         target={isExternal ? "_blank" : undefined}
         rel={isExternal ? "noopener noreferrer" : undefined}
-        className="text-amber-500 font-bold hover:underline"
+        className="text-blue-900 font-bold hover:underline"
       >
         {props.children}
       </a>
