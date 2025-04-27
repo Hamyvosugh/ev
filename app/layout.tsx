@@ -60,9 +60,123 @@ export default function RootLayout({
       .text-blue-900 { color: rgb(30, 58, 138); }
     ` 
   }} />
-  
 
-          <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png",
+  "description": "Ihr zuverlässiger Partner für die Digitalisierung im Automobilhandel. Professionelle Fahrzeugfotografie, Webentwicklung und Social-Media-Management.",
+  "email": "hi@emoviral.com",
+  "telephone": "+49 6438 4039867",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+49 6438 4039867",
+    "contactType": "Customer Service",
+    "areaServed": "DE",
+    "availableLanguage": "German"
+  },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": {
+      "@type": "GeoCoordinates",
+      "latitude": 50.1109,
+      "longitude": 8.6821
+    },
+    "geoRadius": 50000
+  },
+  "potentialAction": {
+    "@type": "ContactAction",
+    "target": "https://emoviral.com/kontakt"
+  }
+}
+`}
+</Script>
+
+<Script id="breadcrumb-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "https://emoviral.com"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://emoviral.com/blog"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Fotografie",
+      "item": "https://emoviral.com/foto"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Development",
+      "item": "https://emoviral.com/web"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Social Media",
+      "item": "https://emoviral.com/socialmedia"
+    },
+    {
+      "@type": "ListItem",
+      "position": 6,
+      "name": "Werbekampagnen",
+      "item": "https://emoviral.com/kampagnen"
+    }
+  ]
+}
+`}
+</Script>
+
+<Script id="localbusiness-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Emoviral - Fahrzeugfotografie",
+  "image": "https://emoviral.com/images/logo/logo-emoviral.png",
+  "url": "https://emoviral.com",
+  "description": "Professionelle Fahrzeugfotografie für Autohäuser in Frankfurt, Hanau und Umgebung. On-site Service direkt bei Ihrem Autohaus.",
+  "email": "hi@emoviral.com",
+  "telephone": "+49 6438 4039867",
+  "priceRange": "€€",
+  "areaServed": {
+    "@type": "Place",
+    "name": "Frankfurt, Hanau und Umgebung"
+  },
+  "serviceArea": {
+    "@type": "Place",
+    "name": "Deutschland"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "On-site Service Only"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "DE"
+  }
+}
+`}
+</Script>
+<link rel="canonical" href="https://emoviral.com/" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+<meta name="robots" content="index, follow" />
 </head>
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
