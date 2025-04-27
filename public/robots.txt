@@ -1,6 +1,8 @@
 # *
 User-agent: *
 Allow: /
+Crawl-delay: 10
+
 
 # Host
 Host: https://emoviral.com
