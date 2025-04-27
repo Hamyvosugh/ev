@@ -20,6 +20,7 @@ const config: IConfig = {
     await config.transform(config, '/Impressum'),
     await config.transform(config, '/Datenschutz'),
     await config.transform(config, '/AGB'),
+    await config.transform(config, '/blog'),
   ]
 }
 
