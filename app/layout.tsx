@@ -74,9 +74,11 @@ export default function RootLayout({
   "email": "hi@emoviral.com",
   "telephone": "+49 6438 4039867",
   "address": {
-    "@type": "PostalAddress",
-    "addressLocality": "Hanau",
-    "addressCountry": "DE"
+  "@type": "PostalAddress",
+  "streetAddress": "Kurt-Blaum-Platz",
+  "addressLocality": "Hanau",
+  "postalCode": "63450",
+  "addressCountry": "DE"
   },
   "contactPoint": {
     "@type": "ContactPoint",
