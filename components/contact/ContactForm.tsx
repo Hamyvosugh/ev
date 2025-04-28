@@ -24,7 +24,6 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState<string>('');
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -37,8 +36,6 @@ const ContactForm = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setSubmitStatus('idle');
-    setErrorMessage('');
     
     try {
       // In a real implementation, you would send this data to your API
@@ -53,8 +50,6 @@ const ContactForm = () => {
         }),
       });
 
-      const data = await response.json();
-
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({
@@ -66,16 +61,10 @@ const ContactForm = () => {
           message: '',
         });
       } else {
-        // If the server returned a specific error message, use it
-        setErrorMessage(data.message || 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
         setSubmitStatus('error');
-        
-        // Log the error for debugging
-        console.error('Form submission error:', data);
       }
-    } catch (error) {
-      console.error('Form submission error:', error);
-      setErrorMessage('Es ist ein Netzwerkfehler aufgetreten. Bitte überprüfen Sie Ihre Internetverbindung.');
+    } catch {
+      // Not capturing the error parameter at all since we're not using it
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
@@ -212,7 +201,7 @@ const ContactForm = () => {
 
           {submitStatus === 'error' && (
             <div className="p-4 bg-red-100 text-red-700 rounded-md">
-              {errorMessage}
+              Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
             </div>
           )}
         </form>
