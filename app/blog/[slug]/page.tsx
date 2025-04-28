@@ -55,7 +55,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   }
 }
 
-export const revalidate = 3600; // Revalidate every hour
+export const revalidate = false; // We'll use on-demand revalidation instead
 
 export default async function BlogPostPage({ params }: PageProps) {
   try {

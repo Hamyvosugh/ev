@@ -1,4 +1,4 @@
-// app/[locale]/blog/page.tsx
+// app/blog/page.tsx
 import { Metadata } from 'next';
 import { getAllPosts, getAllCategories } from '@/lib/blog';
 import BlogCard from '@/components/blog/BlogCard';
@@ -9,8 +9,8 @@ export const metadata: Metadata = {
   description: 'Entdecken Sie die neuesten Trends und Expertentipps rund um Fahrzeugfotografie und Fahrzeugpräsentation.',
 };
 
-// This enables static generation for better performance
-export const revalidate = 3600; // Revalidate every hour
+// برای سیستن دیمناتد عوض شد
+export const revalidate = false; // We'll use on-demand revalidation instead
 
 export default async function BlogPage({
   searchParams,
