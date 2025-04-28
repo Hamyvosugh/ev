@@ -14,7 +14,11 @@ export async function POST(request: Request) {
       auth: {
         user: process.env.SMTP_USER || 'hi@emoviral.com',
         pass: process.env.SMTP_PASSWORD
-      }
+      },
+      // Add connection timeout options
+      connectionTimeout: 5000, // 5 seconds
+      greetingTimeout: 5000,   // 5 seconds
+      socketTimeout: 5000      // 5 seconds
     });
     
     // Email template with professional German formatting
@@ -42,47 +46,57 @@ export async function POST(request: Request) {
     Diese Nachricht wurde automatisch über das Kontaktformular Ihrer Website generiert.
     `;
     
-    // Create promise for the first email
-    const adminEmailPromise = transporter.sendMail({
-      from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
-      to: to || 'hi@emoviral.com',
-      subject: `Neue Anfrage: ${service} - von ${name}`,
-      text: emailContent,
-      replyTo: email
-    });
+    // IMPORTANT: Send emails in the background without waiting for them to complete
+    // This ensures the API responds quickly to the client
+    const sendEmailsInBackground = async () => {
+      try {
+        // Send email to admin
+        await transporter.sendMail({
+          from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
+          to: to || 'hi@emoviral.com',
+          subject: `Neue Anfrage: ${service} - von ${name}`,
+          text: emailContent,
+          replyTo: email
+        });
+        
+        // Send confirmation email to customer
+        const confirmationEmail = `
+        Sehr geehrte(r) ${name},
+        
+        vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich bei Ihnen melden.
+        
+        Hier ist eine Kopie Ihrer Anfrage:
+        ------------------------
+        Dienstleistung: ${service}
+        
+        Ihre Nachricht:
+        ${message}
+        ------------------------
+        
+        Mit freundlichen Grüßen
+        Ihr EmoViral Team
+        `;
+        
+        await transporter.sendMail({
+          from: `"EmoViral" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
+          to: email,
+          subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
+          text: confirmationEmail
+        });
+        
+        console.log('Both emails sent successfully in background');
+      } catch (err) {
+        console.error('Background email sending error:', err);
+      }
+    };
     
-    // Send confirmation email to the customer
-    const confirmationEmail = `
-    Sehr geehrte(r) ${name},
+    // Start the email sending process in the background
+    // Don't await this - let it run after we've responded to the client
+    sendEmailsInBackground();
     
-    vielen Dank für Ihre Kontaktaufnahme. Wir haben Ihre Nachricht erhalten und werden uns schnellstmöglich bei Ihnen melden.
-    
-    Hier ist eine Kopie Ihrer Anfrage:
-    ------------------------
-    Dienstleistung: ${service}
-    
-    Ihre Nachricht:
-    ${message}
-    ------------------------
-    
-    Mit freundlichen Grüßen
-    Ihr EmoViral Team
-    `;
-    
-    // Create promise for the second email
-    const customerEmailPromise = transporter.sendMail({
-      from: `"EmoViral" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
-      to: email,
-      subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
-      text: confirmationEmail
-    });
-    
-    // Wait for both emails to be sent
-    await Promise.all([adminEmailPromise, customerEmailPromise]);
-    
-    // Return success response with proper headers
+    // Immediately return a success response
     return new NextResponse(
-      JSON.stringify({ success: true, message: 'Emails sent successfully' }), 
+      JSON.stringify({ success: true, message: 'Your submission is being processed' }), 
       { 
         status: 200,
         headers: { 'Content-Type': 'application/json' }
@@ -90,11 +104,10 @@ export async function POST(request: Request) {
     );
     
   } catch (error) {
-    console.error('Error sending email:', error);
+    console.error('Error in contact API:', error);
     
-    // Return error response with proper headers
     return new NextResponse(
-      JSON.stringify({ success: false, message: 'Failed to send email' }),
+      JSON.stringify({ success: false, message: 'Failed to process request' }),
       { 
         status: 500,
         headers: { 'Content-Type': 'application/json' }
