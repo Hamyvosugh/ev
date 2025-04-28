@@ -39,10 +39,9 @@ const WorkflowComponent = () => {
             
             {/* Content section on top of the image */}
             <div className="relative z-10 p-6 bg-white">
-              <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Fotoshooting vor Ort</h3>
+              <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Auto Fotoshooting vor Ort</h3>
               <p className="text-gray-600 font-poppins">
-                Wir kommen zu Ihrem Standort, positionieren die Fahrzeuge perfekt und erstellen über 40 hochwertige Aufnahmen pro Fahrzeug.
-              </p>
+              Wir kommen zu Ihrem Autohaus, positionieren die Fahrzeuge perfekt und erstellen über 40 hochwertige Aufnahmen pro Fahrzeug.              </p>
             </div>
           </div>
 
@@ -71,7 +70,7 @@ const WorkflowComponent = () => {
             <div className="relative z-10 p-6 bg-white">
               <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Professionelle Bearbeitung</h3>
               <p className="text-gray-600 font-poppins">
-                Alle Bilder werden professionell bearbeitet, zugeschnitten und auf Wunsch für spezielle Plattformen (Website, Social Media, Poster) angepasst.
+                Alle Fahrzeugbilder werden professionell bearbeitet, zugeschnitten und auf Wunsch für spezielle Plattformen (Website, Social Media, Poster) angepasst.
               </p>
             </div>
           </div>
@@ -101,7 +100,7 @@ const WorkflowComponent = () => {
             <div className="relative z-10 p-6 bg-white">
               <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Schnelle Lieferung & Upload</h3>
               <p className="text-gray-600 font-poppins">
-                Sie erhalten die fertigen Bilder innerhalb von 24 Stunden. Auf Wunsch übernehmen wir auch den direkten Upload auf Ihre Verkaufsplattformen.
+                Sie erhalten die fertigen Autobilder innerhalb von 24 Stunden. Auf Wunsch übernehmen wir auch den direkten Upload auf Ihre Verkaufsplattformen.
               </p>
             </div>
           </div>

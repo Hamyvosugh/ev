@@ -10,7 +10,7 @@ const PhotographyServices = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 break-words">
-            Professionelle <span className="text-blue-900">Fahrzeugfotografie</span>
+            Professionelle <span className="text-blue-900">Automobilfotografie</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Hochwertige Bilder, die Emotionen wecken und Fahrzeuge verkaufen
@@ -143,7 +143,7 @@ const PhotographyServices = () => {
               EINZELFAHRZEUGE
             </div>
             <h3 className="text-3xl font-bold text-gray-800 leading-tight break-words">
-              Professionelle Fahrzeugfotografie, die den Unterschied macht
+            Professioneller Fahrzeugfotoservice, der den Unterschied macht
             </h3>
             <p className="text-gray-600 text-l p-2">
               Mit unserer spezialisierten Fahrzeugfotografie heben wir Ihr Angebot von der Konkurrenz ab. 
@@ -152,7 +152,7 @@ const PhotographyServices = () => {
             </p>
             
             <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-900">
-              <h4 className="font-bold text-lg text-gray-800 mb-4">Unsere Fahrzeugfotografie umfasst:</h4>
+              <h4 className="font-bold text-lg text-gray-800 mb-4">Unsere Automobilfotografie umfasst:</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-center space-x-2">
                   <div className="text-blue-900 flex-shrink-0">✓</div>
@@ -211,7 +211,7 @@ const PhotographyServices = () => {
                   <li className="mb-2">55 % erwarten eine genaue Dokumentation von Schäden</li>
                 </ul>
                 <div>
-                  <p className="text-white">Diese Zahlen verdeutlichen, dass professionelle Fahrzeugfotografie nicht nur die Sichtbarkeit erhöht, sondern auch die Kaufentscheidung maßgeblich beeinflusst.</p>
+                  <p className="text-white">Diese Zahlen verdeutlichen, dass professionelle Autofotografie nicht nur die Sichtbarkeit erhöht, sondern auch die Kaufentscheidung maßgeblich beeinflusst.</p>
                 </div>
                 <Link 
                   href="https://innofact-marktforschung.de/autoscout24-studie-fahrzeugbilder-essenziell-beim-kompletten-online-gebrauchtwagenkauf/?utm_source=chatgpt.com" 

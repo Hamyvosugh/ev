@@ -153,9 +153,9 @@ const ImageSlider = () => {
             Einblicke in unsere Fahrzeugfotografie
           </h2>
           <p className="max-w-3xl mx-auto text-gray-700 text-lg">
-            Entdecken Sie die Qualität unserer Arbeit in der Praxis.
-            Hier sehen Sie eine Auswahl unserer Fahrzeugfotos – mit Fokus auf Details, Perspektive und perfekter Präsentation.
-            Alle Bilder wurden professionell vor Ort aufgenommen, sorgfältig bearbeitet und innerhalb von 24 Stunden geliefert.
+          Entdecken Sie die Qualität unserer professionellen Fahrzeugfotografie in der Praxis.
+Hier sehen Sie eine Auswahl unserer hochauflösenden Fahrzeugfotos – mit Fokus auf Makrodetails, dynamische Perspektiven und perfekte Produktpräsentation.
+Alle Bilder wurden mit Spiegelreflexkameras vor Ort aufgenommen, mit Adobe Lightroom sorgfältig nachbearbeitet und innerhalb von 24 Stunden digital geliefert.
           </p>
         </div>
 

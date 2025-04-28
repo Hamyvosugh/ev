@@ -22,7 +22,7 @@ const HeroFoto = () => {
       <div className="relative z-10 flex items-center justify-center h-full px-4  sm:px-6 lg:px-8">
         <div className="w-full max-w-4xl text-center md:-translate-y-20 translate-y-10">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 font-poppins break-words">
-            Professionelle Fahrzeugfotografie
+            Professionelle Fahrzeugfotografie 
           </h1>
           
           <div className="bg-white bg-opacity-90 p-6 md:p-8 rounded-lg shadow-lg mb-8 w-full box-border">
@@ -30,7 +30,7 @@ const HeroFoto = () => {
               Überlassen Sie uns die Arbeit – von der Aufnahme bis zur Bearbeitung.
             </p>
             <p className="text-base md:text-lg text-gray-700 mb-8 font-poppins">
-              Wir kommen direkt zu Ihnen, fotografieren Ihre Fahrzeuge professionell und liefern innerhalb von 24 Stunden perfekte Bilder – komplett bearbeitet und einsatzbereit.
+              Wir kommen direkt zu Ihrem Autohaus, fotografieren Ihre Fahrzeuge professionell und liefern innerhalb von 24 Stunden perfekte Fahrzeugbilder – komplett bearbeitet und einsatzbereit.
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-4 flex-wrap">

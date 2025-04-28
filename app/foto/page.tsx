@@ -9,17 +9,17 @@ import PhotographyServices from '@/components/foto/branding';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Fahrzeugfotografie für Autohäuser | Emoviral Frankfurt & Umgebung',
-  description: 'Professionelle Fahrzeugfotografie direkt bei Ihnen vor Ort – mit über 40 bearbeiteten Bildern pro Fahrzeug. Schnell, hochwertig & zuverlässig.',
+  title: 'Fahrzeugfotografie in Frankfurt, Hanau & Main-Kinzig | Emoviral',
+  description: 'Emoviral bietet professionelle Automobilfotografie für Autohäuser und Händler. Einfache Autoaufnahmen, hochwertige Fahrzeugbilder-Nachbearbeitung und schnelle Lieferung Ihrer Autofotos.',
   openGraph: {
-    title: 'Fahrzeugfotografie für Autohäuser',
-    description: 'Hochwertige Fotos für Ihre Website, mobile.de oder Social Media – mit 24h Lieferung und optionalem Upload-Service.',
+    title: 'Professionelle Fahrzeugfotografie in Frankfurt & Main-Kinzig | Emoviral',
+    description: 'Mit unserer Erfahrung in der Autofotografie liefern wir Ihnen Fahrzeugbilder, die Ihre Angebote auf mobile.de und Social Media optimal hervorheben – innerhalb von 24 Stunden im gesamten Main-Kinzig-Kreis.',
     images: [
       {
         url: '/images/meta/fotografie.webp',
         width: 1200,
         height: 630,
-        alt: 'Fahrzeugfotografie bei Emoviral',
+        alt: 'Professionelle Fahrzeugfotografie bei Emoviral Frankfurt',
       },
     ],
   },

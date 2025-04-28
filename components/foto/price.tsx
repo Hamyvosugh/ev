@@ -27,7 +27,7 @@ const PricingComponent = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 font-poppins">
-            Unsere Pakete und Preise
+          Unsere KFZ-Bildservice-Pakete und Preise
           </h2>
           <div className="w-32 h-1 bg-yellow-500 mx-auto"></div>
         </div>
