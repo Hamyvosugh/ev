@@ -30,6 +30,8 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  position: relative;
+
 }
 
 /* Fix header position */
@@ -76,3 +78,8 @@ header > div {
   margin-left: auto !important;
   margin-right: auto !important;
 }*/
+
+img, video, iframe, table {
+  max-width: 100%;
+  height: auto;
+}

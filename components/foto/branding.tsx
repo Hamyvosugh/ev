@@ -5,11 +5,11 @@ import { Camera, Users, Store, ArrowRight } from 'lucide-react';
 
 const PhotographyServices = () => {
   return (
-    <section className="py-20 px-4 bg-gray-50">
-      <div className="max-w-7xl mx-auto">
+    <section className="py-20 px-4 bg-gray-50 overflow-x-hidden">
+      <div className="max-w-7xl mx-auto w-full box-border">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4 break-words">
             Professionelle <span className="text-blue-900">Fahrzeugfotografie</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -18,13 +18,13 @@ const PhotographyServices = () => {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center mb-24">
           {/* Left Side - Content */}
-          <div className="space-y-8 p-2">
+          <div className="space-y-8 p-2 w-full">
             <div className="inline-block bg-yellow-500 text-white text-sm font-bold px-3 py-1 rounded-md mb-4">
               AUTOHAUS & TEAM
             </div>
-            <h3 className="text-3xl font-bold text-gray-800 leading-tight">
+            <h3 className="text-3xl font-bold text-gray-800 leading-tight break-words">
               Mehr als nur Fahrzeugfotos: Wir bringen Ihre Marke zum Strahlen
             </h3>
             <p className="text-gray-600 text-lg">
@@ -36,19 +36,19 @@ const PhotographyServices = () => {
             
             <ul className="space-y-4">
               <li className="flex items-start">
-                <div className="bg-blue-900 rounded-full p-1 text-white mr-3 mt-1">
+                <div className="bg-blue-900 rounded-full p-1 text-white mr-3 mt-1 flex-shrink-0">
                   <Users size={16} />
                 </div>
                 <span className="text-gray-700">Authentische Teambilder für mehr Nähe und Persönlichkeit</span>
               </li>
               <li className="flex items-start">
-                <div className="bg-blue-900 rounded-full p-1 text-white mr-3 mt-1">
+                <div className="bg-blue-900 rounded-full p-1 text-white mr-3 mt-1 flex-shrink-0">
                   <Store size={16} />
                 </div>
                 <span className="text-gray-700">Eindrucksvolle Aufnahmen Ihrer Ausstellung für einen starken Markenauftritt</span>
               </li>
               <li className="flex items-start">
-                <div className="bg-blue-900 rounded-full p-1 text-white mr-3 mt-1">
+                <div className="bg-blue-900 rounded-full p-1 text-white mr-3 mt-1 flex-shrink-0">
                   <Camera size={16} />
                 </div>
                 <span className="text-gray-700">Emotionale Momente, die Vertrauen schaffen</span>
@@ -69,7 +69,7 @@ const PhotographyServices = () => {
           </div>
           
           {/* Right Side - Image Gallery */}
-          <div className="grid grid-cols-2 gap-4 p-2">
+          <div className="grid grid-cols-2 gap-4 p-2 w-full">
             <div className="space-y-4">
               <div className="rounded-lg overflow-hidden shadow-lg h-64 relative">
                 <Image 
@@ -110,9 +110,9 @@ const PhotographyServices = () => {
         </div>
         
         {/* Vehicle Photography Section */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center p-2">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-16 items-center p-2">
           {/* Left Side - Image */}
-          <div className="order-2 lg:order-1 relative">
+          <div className="order-2 lg:order-1 relative w-full">
             <div className="relative h-96 rounded-xl overflow-hidden shadow-xl">
               <Image 
                 src="/images/foto/branding/nam-06.webp" 
@@ -126,9 +126,8 @@ const PhotographyServices = () => {
                     FAHRZEUGE PERFEKT IN SZENE SETZEN
                   </div>
 
-                  <p className="text-white font-medium p-2 inset-0 bg-black opacity-60">
-
-                  Wir fotografieren Fahrzeuge in einer Weise, die Emotionen weckt und zum Kauf anregt
+                  <p className="text-white font-medium p-2 inset-0 bg-black bg-opacity-60">
+                    Wir fotografieren Fahrzeuge in einer Weise, die Emotionen weckt und zum Kauf anregt
                   </p>
                 </div>
               </div>
@@ -139,11 +138,11 @@ const PhotographyServices = () => {
           </div>
           
           {/* Right Side - Content */}
-          <div className="order-1 lg:order-2 space-y-8">
+          <div className="order-1 lg:order-2 space-y-8 w-full">
             <div className="inline-block bg-yellow-500 text-white text-sm font-bold px-3 py-1 rounded-md mb-4">
               EINZELFAHRZEUGE
             </div>
-            <h3 className="text-3xl font-bold text-gray-800 leading-tight">
+            <h3 className="text-3xl font-bold text-gray-800 leading-tight break-words">
               Professionelle Fahrzeugfotografie, die den Unterschied macht
             </h3>
             <p className="text-gray-600 text-l p-2">
@@ -156,27 +155,27 @@ const PhotographyServices = () => {
               <h4 className="font-bold text-lg text-gray-800 mb-4">Unsere Fahrzeugfotografie umfasst:</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="flex items-center space-x-2">
-                  <div className="text-blue-900">✓</div>
+                  <div className="text-blue-900 flex-shrink-0">✓</div>
                   <span className="text-gray-700">Außenaufnahmen aus allen Perspektiven</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="text-blue-900">✓</div>
+                  <div className="text-blue-900 flex-shrink-0">✓</div>
                   <span className="text-gray-700">Detaillierte Innenraumaufnahmen</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="text-blue-900">✓</div>
+                  <div className="text-blue-900 flex-shrink-0">✓</div>
                   <span className="text-gray-700">Ausstattungsdetails & Highlights</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="text-blue-900">✓</div>
+                  <div className="text-blue-900 flex-shrink-0">✓</div>
                   <span className="text-gray-700">Professionelle Bildbearbeitung</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="text-blue-900">✓</div>
+                  <div className="text-blue-900 flex-shrink-0">✓</div>
                   <span className="text-gray-700">Optimierung für Webseiten & Portale</span>
                 </div>
                 <div className="flex items-center space-x-2">
-                  <div className="text-blue-900">✓</div>
+                  <div className="text-blue-900 flex-shrink-0">✓</div>
                   <span className="text-gray-700">Schnelle Lieferung der Aufnahmen</span>
                 </div>
               </div>
@@ -185,12 +184,11 @@ const PhotographyServices = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
                 href="/kontakt" 
-                className="inline-flex items-center justify-center bg-blue-900 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-800 transition-colors duration-300"
+                className="inline-flex items-center justify-center bg-blue-900 text-white px-6 py-3 rounded-md font-medium hover:bg-blue-800 transition-colors duration-300 w-full sm:w-auto"
               >
                 Jetzt anfragen
                 <ArrowRight size={18} className="ml-2" />
               </Link>
-
             </div>
             
             <p className="text-xs text-gray-500">
@@ -199,25 +197,31 @@ const PhotographyServices = () => {
           </div>
         </div>
         
-         ￼
-
         {/* Testimonial Section */}
         <div className="mt-24 rounded-xl overflow-hidden shadow-xl" style={{ backgroundColor: '#92c3bc' }}>
-            <div className="grid grid-cols-1 lg:grid-cols-3">
-            <div className="p-10 lg:col-span-2 flex items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-3">
+            <div className="p-6 md:p-10 lg:col-span-2 flex items-center">
               <div className="text-white">
-                <h2 className='text-3xl font-bold text-white'>Studienergebnisse zur Wirkung von Fahrzeugbildern</h2>
-                <h3 className='text-2xl mb-2 mt-6'> Eine repräsentative Umfrage von AutoScout24 und INNOFACT zeigt:</h3>
-                <div className="text-xl text-black font-medium mb-8">
-                  <li>50 % der Befragten können sich vorstellen, ein Auto vollständig online zu kaufen – jedoch nur, wenn die Fahrzeugbilder aussagekräftig sind.</li>
-                  <li>64 % legen Wert auf Fotos aus verschiedenen Perspektiven.</li>
-                  <li>55 % wünschen sich detaillierte Innenraumbilder.</li>
-                  <li>55 % erwarten eine genaue Dokumentation von Schäden</li>
-                </div>
+                <h2 className="text-3xl font-bold text-white break-words">Studienergebnisse zur Wirkung von Fahrzeugbildern</h2>
+                <h3 className="text-2xl mb-2 mt-6 break-words"> Eine repräsentative Umfrage von AutoScout24 und INNOFACT zeigt:</h3>
+                <ul className="text-lg md:text-xl text-black font-medium mb-8 pl-5 pr-2">
+                  <li className="mb-2">50 % der Befragten können sich vorstellen, ein Auto vollständig online zu kaufen – jedoch nur, wenn die Fahrzeugbilder aussagekräftig sind.</li>
+                  <li className="mb-2">64 % legen Wert auf Fotos aus verschiedenen Perspektiven.</li>
+                  <li className="mb-2">55 % wünschen sich detaillierte Innenraumbilder.</li>
+                  <li className="mb-2">55 % erwarten eine genaue Dokumentation von Schäden</li>
+                </ul>
                 <div>
                   <p className="text-white">Diese Zahlen verdeutlichen, dass professionelle Fahrzeugfotografie nicht nur die Sichtbarkeit erhöht, sondern auch die Kaufentscheidung maßgeblich beeinflusst.</p>
                 </div>
-                <Link href="https://innofact-marktforschung.de/autoscout24-studie-fahrzeugbilder-essenziell-beim-kompletten-online-gebrauchtwagenkauf/?utm_source=chatgpt.com" target="_blank" rel="noopener noreferrer" className=" inline-flex items-center px-2 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors" title="AutoScout24-Studie: Fahrzeugbilder essenziell beim kompletten Online-Gebrauchtwagenkauf">Quelle <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg></Link>
+                <Link 
+                  href="https://innofact-marktforschung.de/autoscout24-studie-fahrzeugbilder-essenziell-beim-kompletten-online-gebrauchtwagenkauf/?utm_source=chatgpt.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="inline-flex items-center px-2 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors mt-4" 
+                  title="AutoScout24-Studie: Fahrzeugbilder essenziell beim kompletten Online-Gebrauchtwagenkauf"
+                >
+                  Quelle <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </Link>
               </div>
             </div>
             <div className="relative h-80 lg:h-auto">
@@ -233,7 +237,7 @@ const PhotographyServices = () => {
         
         {/* CTA Section */}
         <div className="mt-24 text-center">
-          <h3 className="text-3xl font-bold text-gray-800 mb-6">
+          <h3 className="text-3xl font-bold text-gray-800 mb-6 break-words">
             Bereit, Ihre Fahrzeuge und Ihr Autohaus ins beste Licht zu rücken?
           </h3>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
@@ -242,13 +246,13 @@ const PhotographyServices = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link 
               href="/kontakt" 
-              className="inline-flex items-center justify-center bg-blue-900 text-white px-8 py-4 rounded-md font-medium hover:bg-blue-800 transition-colors duration-300"
+              className="inline-flex items-center justify-center bg-blue-900 text-white px-8 py-4 rounded-md font-medium hover:bg-blue-800 transition-colors duration-300 w-full sm:w-auto"
             >
               Kontakt aufnehmen
             </Link>
             <Link 
               href="/beratung" 
-              className="inline-flex items-center justify-center border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300"
+              className="inline-flex items-center justify-center border-2 border-blue-900 text-blue-900 px-8 py-4 rounded-md font-medium hover:bg-blue-50 transition-colors duration-300 w-full sm:w-auto"
             >
               Angebot anfordern
             </Link>

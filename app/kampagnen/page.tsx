@@ -32,16 +32,16 @@ const WerbekampagnenPage = () => {
   };
 
   return (
-    <div className="font-['Poppins',sans-serif] text-gray-800 bg-white">
+    <div className="font-['Poppins',sans-serif] text-gray-800 bg-white overflow-x-hidden w-full">
       {/* Hero Section */}
-      <section className="relative bg-gray-50 py-24 px-4 overflow-hidden">
+      <section className="relative bg-gray-50 py-24 px-4 overflow-hidden w-full">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-gray-100 opacity-80"></div>
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-opacity-30" style={{ backgroundImage: "url('/api/placeholder/1920/600')", backgroundSize: 'cover', backgroundPosition: 'center', mixBlendMode: 'overlay' }}></div>
         </div>
-        <div className="container mx-auto max-w-6xl relative z-10 p-4">
+        <div className="container mx-auto max-w-6xl relative z-10 p-4 w-full box-border">
           <div className="max-w-2xl">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6" style={{ color: colors.primary }}>
+            <h1 className="text-4xl md:text-5xl font-bold mb-6 break-words" style={{ color: colors.primary }}>
               Gezielte Werbekampagnen für Ihren maximalen Erfolg
             </h1>
             <p className="text-lg mb-8 text-gray-700">
@@ -49,20 +49,19 @@ const WerbekampagnenPage = () => {
               Vertrauen Sie auf datenbasierte Strategien, kreative Anzeigengestaltung und laufende Optimierung.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <SmoothScrollLink href="#contact-form" className="px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all bg-amber-500" >
+              <SmoothScrollLink href="#contact-form" className="px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all bg-amber-500 w-full sm:w-auto text-center" >
                 Jetzt Kampagnen-Beratung sichern
               </SmoothScrollLink>
-
             </div>
           </div>
         </div>
       </section>
 
       {/* Why Paid Advertising is Important */}
-      <section className="py-20 px-4 bg-white ">
-        <div className="container mx-auto max-w-6xl p-4">
+      <section className="py-20 px-4 bg-white w-full">
+        <div className="container mx-auto max-w-6xl p-4 w-full box-border">
           <div className="text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold mb-6" style={{ color: colors.primary }}>
+            <h2 className="text-3xl font-bold mb-6 break-words" style={{ color: colors.primary }}>
               Warum bezahlte Werbung unverzichtbar ist
             </h2>
             <p className="text-lg text-gray-700">
@@ -71,35 +70,35 @@ const WerbekampagnenPage = () => {
             </p>
           </div>
           
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: `${colors.primary}20` }}>
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
+            <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${colors.primary}20` }}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke={colors.primary} strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3" style={{ color: colors.primary }}>Gezielte Sichtbarkeit</h3>
+              <h3 className="text-xl font-semibold mb-3 break-words" style={{ color: colors.primary }}>Gezielte Sichtbarkeit</h3>
               <p className="text-gray-600">Erreichen Sie genau die Kunden, die bereits nach Ihren Produkten oder Dienstleistungen suchen.</p>
             </div>
             
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: `${colors.primary}20` }}>
+            <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${colors.primary}20` }}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke={colors.primary} strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3" style={{ color: colors.primary }}>Messbare Ergebnisse</h3>
+              <h3 className="text-xl font-semibold mb-3 break-words" style={{ color: colors.primary }}>Messbare Ergebnisse</h3>
               <p className="text-gray-600">Verfolgen Sie genau, wie Ihre Investition in Werbung zu messbaren Ergebnissen für Ihr Unternehmen führt.</p>
             </div>
             
-            <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
-              <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center" style={{ backgroundColor: `${colors.primary}20` }}>
+            <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all">
+              <div className="w-16 h-16 mb-6 rounded-full flex items-center justify-center flex-shrink-0" style={{ backgroundColor: `${colors.primary}20` }}>
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8" viewBox="0 0 24 24" fill="none" stroke={colors.primary} strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3" style={{ color: colors.primary }}>Schnelles Wachstum</h3>
+              <h3 className="text-xl font-semibold mb-3 break-words" style={{ color: colors.primary }}>Schnelles Wachstum</h3>
               <p className="text-gray-600">Beschleunigen Sie Ihr Unternehmenswachstum durch strategisch platzierte Werbekampagnen.</p>
             </div>
           </div>
@@ -107,13 +106,13 @@ const WerbekampagnenPage = () => {
       </section>
 
       {/* Our Services */}
-      <section className="py-20 px-4" style={{ backgroundColor: colors.background }}>
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: colors.primary }}>
+      <section className="py-20 px-4 w-full" style={{ backgroundColor: colors.background }}>
+        <div className="container mx-auto max-w-6xl w-full box-border">
+          <h2 className="text-3xl font-bold mb-12 text-center break-words" style={{ color: colors.primary }}>
             Unsere Leistungen für Ihren Werbeerfolg
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
             {[
               "Kampagnen-Strategie und Zielgruppenanalyse",
               "Erstellung und Gestaltung von Anzeigen (Texte, Bilder, Videos)",
@@ -122,7 +121,7 @@ const WerbekampagnenPage = () => {
               "A/B-Testing und kontinuierliche Kampagnenoptimierung",
               "Auswertung, Reporting und ROI-Analyse"
             ].map((item, index) => (
-              <div key={index} className="flex items-start p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
+              <div key={index} className="flex items-start p-4 md:p-6 bg-white rounded-lg shadow-md hover:shadow-lg transition-all">
                 <div className="flex-shrink-0 mr-4">
                   <div className="w-8 h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: colors.accent }}>
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-white" viewBox="0 0 20 20" fill="currentColor">
@@ -130,8 +129,8 @@ const WerbekampagnenPage = () => {
                     </svg>
                   </div>
                 </div>
-                <div>
-                  <p className="text-gray-700 font-medium">{item}</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-gray-700 font-medium break-words">{item}</p>
                 </div>
               </div>
             ))}
@@ -140,13 +139,13 @@ const WerbekampagnenPage = () => {
       </section>
 
       {/* Advantages of working with Emoviral */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl p-4">
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: colors.primary }}>
+      <section className="py-20 px-4 bg-white w-full">
+        <div className="container mx-auto max-w-6xl p-4 w-full box-border">
+          <h2 className="text-3xl font-bold mb-12 text-center break-words" style={{ color: colors.primary }}>
             Ihre Vorteile mit Emoviral
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
             {[
               "Schnellere Resultate durch gezielte Ansprache",
               "Höherer ROI durch datenbasierte Optimierungen",
@@ -162,8 +161,8 @@ const WerbekampagnenPage = () => {
                     </svg>
                   </div>
                 </div>
-                <div>
-                  <p className="text-gray-700">{item}</p>
+                <div className="flex-1 min-w-0">
+                  <p className="text-gray-700 break-words">{item}</p>
                 </div>
               </div>
             ))}
@@ -172,23 +171,23 @@ const WerbekampagnenPage = () => {
       </section>
 
       {/* Packages & Prices */}
-      <section className="py-20 px-4" style={{ backgroundColor: colors.background }}>
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-12 text-center" style={{ color: colors.primary }}>
+      <section className="py-20 px-4 w-full" style={{ backgroundColor: colors.background }}>
+        <div className="container mx-auto max-w-6xl w-full box-border">
+          <h2 className="text-3xl font-bold mb-12 text-center break-words" style={{ color: colors.primary }}>
             Unsere Werbekampagnen-Pakete
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Starter Package */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
-              <div className="p-8 border-b border-gray-200">
-                <h3 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>Starter-Paket</h3>
+              <div className="p-6 md:p-8 border-b border-gray-200">
+                <h3 className="text-2xl font-bold mb-2 break-words" style={{ color: colors.primary }}>Starter-Paket</h3>
                 <div className="flex items-end">
                   <span className="text-3xl font-bold" style={{ color: colors.primary }}>390 €</span>
                   <span className="text-gray-600 ml-1">/ Monat</span>
                 </div>
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <ul className="space-y-4">
                   {["Kampagnenerstellung + Verwaltung einer Google- oder Amazon-Kampagne", "Monatliches Reporting"].map((item, index) => (
                     <li key={index} className="flex items-start">
@@ -199,32 +198,31 @@ const WerbekampagnenPage = () => {
                           </svg>
                         </div>
                       </div>
-                      <span className="text-gray-700 text-sm">{item}</span>
+                      <span className="text-gray-700 text-sm break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <SmoothScrollLink 
-  href='#contact-form' 
-  className="w-full block mt-8 px-6 py-3 rounded font-medium text-white text-center" 
-  style={{ backgroundColor: colors.primary }}
->
-  Jetzt anrufen & starten
-</SmoothScrollLink>
-
+                  href='#contact-form' 
+                  className="w-full block mt-8 px-6 py-3 rounded font-medium text-white text-center" 
+                  style={{ backgroundColor: colors.primary }}
+                >
+                  Jetzt anrufen & starten
+                </SmoothScrollLink>
               </div>
             </div>
             
             {/* Business Package */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden transform scale-105 hover:shadow-xl transition-all border-2" style={{ borderColor: colors.accent }}>
-              <div className="p-8 border-b border-gray-200 relative">
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden md:transform md:scale-105 hover:shadow-xl transition-all border-2" style={{ borderColor: colors.accent }}>
+              <div className="p-6 md:p-8 border-b border-gray-200 relative">
                 <div className="absolute top-0 right-0 bg-yellow-400 text-xs font-bold py-1 px-3 text-white rounded-bl">EMPFOHLEN</div>
-                <h3 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>Business-Paket</h3>
+                <h3 className="text-2xl font-bold mb-2 break-words" style={{ color: colors.primary }}>Business-Paket</h3>
                 <div className="flex items-end">
                   <span className="text-3xl font-bold" style={{ color: colors.primary }}>690 €</span>
                   <span className="text-gray-600 ml-1">/ Monat</span>
                 </div>
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <ul className="space-y-4">
                   {[
                     "Verwaltung mehrerer Kampagnen (Google & Amazon)",
@@ -239,29 +237,29 @@ const WerbekampagnenPage = () => {
                           </svg>
                         </div>
                       </div>
-                      <span className="text-gray-700 text-sm">{item}</span>
+                      <span className="text-gray-700 text-sm break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <SmoothScrollLink 
-  href='#contact-form' 
-  className="w-full block mt-8 px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all text-center" 
-  style={{ backgroundColor: colors.accent }}
->
-  Jetzt anrufen & starten
-</SmoothScrollLink>
+                  href='#contact-form' 
+                  className="w-full block mt-8 px-6 py-3 rounded font-medium text-white shadow-lg hover:shadow-xl transition-all text-center" 
+                  style={{ backgroundColor: colors.accent }}
+                >
+                  Jetzt anrufen & starten
+                </SmoothScrollLink>
               </div>
             </div>
             
             {/* Premium Package */}
             <div className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-all">
-              <div className="p-8 border-b border-gray-200">
-                <h3 className="text-2xl font-bold mb-2" style={{ color: colors.primary }}>Premium-Paket</h3>
+              <div className="p-6 md:p-8 border-b border-gray-200">
+                <h3 className="text-2xl font-bold mb-2 break-words" style={{ color: colors.primary }}>Premium-Paket</h3>
                 <div className="flex items-end">
                   <span className="text-xl font-medium text-gray-700">Individuelle Preisgestaltung</span>
                 </div>
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <ul className="space-y-4">
                   {[
                     "Komplettkampagnen mit Full-Funnel-Strategie",
@@ -276,17 +274,17 @@ const WerbekampagnenPage = () => {
                           </svg>
                         </div>
                       </div>
-                      <span className="text-gray-700 text-sm">{item}</span>
+                      <span className="text-gray-700 text-sm break-words">{item}</span>
                     </li>
                   ))}
                 </ul>
                 <SmoothScrollLink 
-  href='#contact-form' 
-  className="w-full block mt-8 px-6 py-3 rounded font-medium border-2 shadow-md hover:shadow-lg transition-all text-center" 
-  style={{ borderColor: colors.primary, color: colors.primary }}
->
-  Anfrage stellen
-</SmoothScrollLink>
+                  href='#contact-form' 
+                  className="w-full block mt-8 px-6 py-3 rounded font-medium border-2 shadow-md hover:shadow-lg transition-all text-center" 
+                  style={{ borderColor: colors.primary, color: colors.primary }}
+                >
+                  Anfrage stellen
+                </SmoothScrollLink>
               </div>
             </div>
           </div>
@@ -294,21 +292,21 @@ const WerbekampagnenPage = () => {
       </section>
 
       {/* Customer Feedback */}
-      <section className="py-20 px-4 bg-white">
-        <div className="container mx-auto max-w-6xl">
-          <h2 className="text-3xl font-bold mb-12 text-center p-4" style={{ color: colors.primary }}>
+      <section className="py-20 px-4 bg-white w-full">
+        <div className="container mx-auto max-w-6xl w-full box-border">
+          <h2 className="text-3xl font-bold mb-12 text-center p-4 break-words" style={{ color: colors.primary }}>
             Was unsere Kunden über uns sagen
           </h2>
           
-          <div className="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition-all max-w-2xl mx-auto">
+          <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-md hover:shadow-lg transition-all max-w-2xl mx-auto">
             <div className="flex items-center mb-4">
               <div className="w-12 h-12 rounded-full bg-gray-300 flex-shrink-0 mr-4"></div>
               <div>
-                <p className="font-medium" style={{ color: colors.primary }}>Markus F.</p>
+                <p className="font-medium break-words" style={{ color: colors.primary }}>Markus F.</p>
                 <p className="text-sm text-gray-600">Autohaus Müller GmbH</p>
               </div>
             </div>
-            <p className="text-gray-700 italic">
+            <p className="text-gray-700 italic break-words">
               &bdquo;Dank Emoviral konnten wir unsere Sichtbarkeit auf Google in kürzester Zeit verdoppeln und unseren Umsatz auf Amazon signifikant steigern.&ldquo;
             </p>
           </div>
@@ -316,16 +314,16 @@ const WerbekampagnenPage = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 px-4" style={{ backgroundColor: colors.primary }}>
-        <div className="container mx-auto max-w-4xl text-center p-4">
-          <h2 className="text-3xl font-bold mb-6 text-white">
+      <section className="py-20 px-4 w-full" style={{ backgroundColor: colors.primary }}>
+        <div className="container mx-auto max-w-4xl text-center p-4 w-full box-border">
+          <h2 className="text-3xl font-bold mb-6 text-white break-words">
             Bereit für mehr Kunden und mehr Umsatz?
           </h2>
           <p className="text-lg mb-8 text-gray-200">
             Starten Sie jetzt mit einer maßgeschneiderten Kampagne auf Google und Amazon!
             Vereinbaren Sie eine kostenlose Erstberatung und lassen Sie uns gemeinsam Ihren Erfolg beschleunigen.
           </p>
-          <Link href='/beratung' className="px-8 py-4 rounded-lg font-medium text-gray-900 shadow-lg hover:shadow-xl transition-all text-lg" style={{ backgroundColor: colors.accent }}>
+          <Link href='/beratung' className="inline-block px-8 py-4 rounded-lg font-medium text-gray-900 shadow-lg hover:shadow-xl transition-all text-lg w-full sm:w-auto" style={{ backgroundColor: colors.accent }}>
             Jetzt Kampagne starten
           </Link>
         </div>
