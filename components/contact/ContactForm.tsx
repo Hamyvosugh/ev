@@ -215,8 +215,8 @@ const ContactForm = () => {
           )}
 
           {showStatusMessage && submitStatus === 'error' && (
-            <div className="p-4 bg-red-100 text-red-700 rounded-md animate-fade-in">
-              Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
+            <div className="p-4 bg-blue-50 text-blue-800 border border-blue-200 rounded-md animate-fade-in">
+             Ihre Nachricht wurde möglicherweise gesendet. Bitte überprüfen Sie die Bestätigungs-E-Mail, die wir an Sie gesendet haben, um sicherzustellen, dass Ihre Anfrage bei uns eingegangen ist.
             </div>
           )}
         </form>
