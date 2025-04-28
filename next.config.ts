@@ -58,8 +58,21 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
-  /* Your existing config options */
-  
+  async redirects() {
+    return [
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'www.emoviral.com',
+          },
+        ],
+        destination: 'https://emoviral.com/:path*',
+        permanent: true,
+      },
+    ];
+  },
   // Add security headers
   async headers() {
     return [
