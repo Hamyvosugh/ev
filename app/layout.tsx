@@ -6,6 +6,7 @@ import Header from '@/components/global/header';
 import Footer from '@/components/global/footer';
 import { Analytics } from "@vercel/analytics/react";
 import Breadcrumb from '@/components/global/Breadcrumb';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from "next/script";
 
 
@@ -193,6 +194,7 @@ export default function RootLayout({
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
           <Analytics/>
+          <GoogleAnalytics gaId="G-CX2TJHGWT2" />
           <Header />
            <div className=" mt-20 z-10 pb-0">
            <Breadcrumb
