@@ -13,7 +13,7 @@ const ServicesIntroduction = () => {
     },
     {
       icon: <Search className="w-5 h-5" />,
-      title: "Suchmaschinenoptimierung (SEO)",
+      title: "Suchmaschinen- optimierung (SEO)",
       description: "Bessere Sichtbarkeit bei Google"
     },
     {

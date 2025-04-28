@@ -19,7 +19,7 @@ const HeroSection2 = () => {
       </div>
       
       {/* Main content container */}
-      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center mt-16 md:mt-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-8 h-full flex items-center">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 w-full ">
           <div className={`flex flex-col justify-center transition-all duration-1000 transform ${
             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0'

@@ -1,8 +1,8 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-// Typdefinitionen für die Props
+// Type definitions for props
 interface SlideData {
   id: number;
   title: string;
@@ -18,8 +18,11 @@ interface SliderProps {
 const ModernSlider = ({ slides, autoplaySpeed = 5000 }: SliderProps) => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isAutoplay, setIsAutoplay] = useState(true);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
-  // Automatisches Wechseln der Slides
+  // Automatic slide transition
   useEffect(() => {
     let interval: NodeJS.Timeout;
     
@@ -32,37 +35,65 @@ const ModernSlider = ({ slides, autoplaySpeed = 5000 }: SliderProps) => {
     return () => clearInterval(interval);
   }, [isAutoplay, slides.length, autoplaySpeed]);
 
-  // Navigation-Handler
+  // Navigation handlers
   const goToNextSlide = () => {
     setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
-    setIsAutoplay(false); // Autoplay pausieren, wenn Benutzer manuell navigiert
+    setIsAutoplay(false);
   };
 
   const goToPrevSlide = () => {
     setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
-    setIsAutoplay(false); // Autoplay pausieren, wenn Benutzer manuell navigiert
+    setIsAutoplay(false);
   };
 
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
-    setIsAutoplay(false); // Autoplay pausieren, wenn Benutzer manuell navigiert
+    setIsAutoplay(false);
   };
 
-  // Reaktiviere Autoplay nach einer Weile
+  // Touch event handlers
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+    setIsAutoplay(false);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 50) {
+      // Swipe left
+      goToNextSlide();
+    }
+
+    if (touchStart - touchEnd < -50) {
+      // Swipe right
+      goToPrevSlide();
+    }
+  };
+
+  // Resume autoplay after inactivity
   useEffect(() => {
     if (!isAutoplay) {
       const timeout = setTimeout(() => {
         setIsAutoplay(true);
-      }, 10000); // Nach 10 Sekunden ohne Interaktion Autoplay fortsetzen
+      }, 10000);
       
       return () => clearTimeout(timeout);
     }
   }, [isAutoplay, currentSlide]);
 
   return (
-    <div className="relative w-full h-full overflow-hidden bg-gray-50 rounded-md">
-      {/* Slider Container */}
-      <div className="relative w-full h-full">
+    <div className="relative w-full h-full overflow-hidden bg-white rounded-md flex flex-col">
+      {/* Slider Container with touch events */}
+      <div 
+        ref={sliderRef}
+        className="relative w-full flex-grow"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
         {slides.map((slide, index) => (
           <div
             key={slide.id}
@@ -70,49 +101,49 @@ const ModernSlider = ({ slides, autoplaySpeed = 5000 }: SliderProps) => {
               index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
             }`}
           >
-            {/* Titel oben (außerhalb des Bildes) */}
-            <div className="w-full px-6 py-4 bg-white">
-              <h2 className="text-2xl font-bold text-gray-800 font-poppins">{slide.title}</h2>
-            </div>
-            
-            {/* Bild */}
-            <div className="relative w-full" style={{ height: 'calc(105% - 125px)' }}>
+            {/* Image - Made larger and full size on mobile */}
+            <div className="relative w-full h-full">
               <div 
                 className="w-full h-full bg-cover bg-center"
                 style={{ 
                   backgroundImage: `url(${slide.image || '/images/social/insta.webp'})`,
-                  aspectRatio: "10/7"
+                  aspectRatio: "1/1", // More square aspect ratio for mobile
                 }}
               />
-              
-              {/* Beschreibung am unteren Rand des Bildes */}
-              <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-blue-900/100 to-transparent">
-                <p className="text-white text-sm font-poppins">{slide.description}</p>
-              </div>
             </div>
           </div>
         ))}
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={goToPrevSlide}
+          className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-900"
+          aria-label="Vorheriger Slide"
+        >
+          <ChevronLeft size={24} />
+        </button>
+        
+        <button
+          onClick={goToNextSlide}
+          className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-900"
+          aria-label="Nächster Slide"
+        >
+          <ChevronRight size={24} />
+        </button>
+      </div>
+
+      {/* Text content below the image - moved out of the image */}
+      <div className="w-full px-4 py-3 bg-white">
+        <h2 className="text-xl md:text-2xl font-bold text-gray-800 font-poppins mb-2">
+          {slides[currentSlide].title}
+        </h2>
+        <p className="text-sm text-gray-700 font-poppins">
+          {slides[currentSlide].description}
+        </p>
       </div>
       
-      {/* Navigation Pfeile */}
-      <button
-        onClick={goToPrevSlide}
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-900"
-        aria-label="Vorheriger Slide"
-      >
-        <ChevronLeft size={24} />
-      </button>
-      
-      <button
-        onClick={goToNextSlide}
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white/90 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-blue-900"
-        aria-label="Nächster Slide"
-      >
-        <ChevronRight size={24} />
-      </button>
-      
-      {/* Untere Navigation */}
-      <div className="absolute bottom-4 left-0 right-0 z-20 flex justify-center space-x-2">
+      {/* Bottom Navigation */}
+      <div className="w-full bg-white px-4 py-3 flex justify-center space-x-2">
         {slides.map((_, index) => (
           <button
             key={index}
@@ -130,7 +161,7 @@ const ModernSlider = ({ slides, autoplaySpeed = 5000 }: SliderProps) => {
   );
 };
 
-// Beispieldaten
+// Demo data
 const demoSlides: SlideData[] = [
   {
     id: 1,
@@ -164,11 +195,11 @@ const demoSlides: SlideData[] = [
   }
 ];
 
-// Demo-Komponente
+// Demo Component
 const SliderDemo = () => {
   return (
-    <div className="w-full bg-blue-900 p-8 relative overflow-hidden">
-      {/* Dekorative Linien im Hintergrund */}
+    <div className="w-full bg-blue-900 p-4 md:p-8 relative overflow-hidden">
+      {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-10">
         <div className="absolute top-0 left-0 w-full h-2 bg-yellow-400"></div>
         <div className="absolute top-0 left-0 h-full w-2 bg-yellow-400"></div>
@@ -185,8 +216,11 @@ const SliderDemo = () => {
       </div>
       
       <div className="flex justify-center items-center w-full relative z-10">
-        <div className="w-full max-w-4xl bg-white shadow-md rounded-lg overflow-hidden" style={{ aspectRatio: "10/7" }}>
-          <ModernSlider slides={demoSlides} />
+        <div className="w-full max-w-4xl bg-white shadow-md rounded-lg overflow-hidden">
+          {/* Using different aspect ratio for mobile */}
+          <div className="w-full md:h-auto" style={{ aspectRatio: "1/1.2", maxHeight: "90vh" }}>
+            <ModernSlider slides={demoSlides} />
+          </div>
         </div>
       </div>
     </div>

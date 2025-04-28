@@ -1,13 +1,10 @@
 'use client';
 import React from 'react';
-import { ChevronRight } from 'lucide-react';
-import SmoothScrollLink from '@/components/global/SmoothScrollLink'
-
-
+import SmoothScrollLink from '@/components/global/SmoothScrollLink';
 
 const WorkflowComponent = () => {
   return (
-    <div className="w-full bg-white py-16 px-4">
+    <div className="w-full bg-gray-100 py-16 px-4">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-16">
@@ -17,24 +14,31 @@ const WorkflowComponent = () => {
           <div className="w-20 h-1 bg-yellow-600 mx-auto"></div>
         </div>
 
-        {/* Workflow Steps */}
+        {/* Workflow Steps - Caption in front of image */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Step 1 */}
-          <div className="group relative bg-gray-50 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <div className="absolute top-0 left-0 w-12 h-12 flex items-center justify-center bg-yellow-600 text-white font-bold rounded-br-xl z-10">
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Number box */}
+            <div className="absolute top-0 left-0 w-16 h-16 flex items-center justify-center bg-yellow-600 text-white font-bold text-2xl z-20">
               1
             </div>
-            {/* Image Container */}
-            <div className="h-64 relative">
+            
+            {/* Full size image in background */}
+            <div className="absolute inset-0 w-full h-full">
               <img 
                 src="/images/foto/carshoot1.webp" 
                 alt="Fotoshooting vor Ort"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gray-900 opacity-10 group-hover:opacity-0 transition-opacity duration-300"></div>
             </div>
-            {/* Content */}
-            <div className="p-6">
+            
+            {/* Top section with image visible */}
+            <div className="w-full h-60 relative">
+              {/* Intentionally empty to show background image */}
+            </div>
+            
+            {/* Content section on top of the image */}
+            <div className="relative z-10 p-6 bg-white">
               <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Fotoshooting vor Ort</h3>
               <p className="text-gray-600 font-poppins">
                 Wir kommen zu Ihrem Standort, positionieren die Fahrzeuge perfekt und erstellen über 40 hochwertige Aufnahmen pro Fahrzeug.
@@ -42,26 +46,29 @@ const WorkflowComponent = () => {
             </div>
           </div>
 
-          {/* Step 2 with right chevron connector */}
-          <div className="group relative bg-gray-50 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <div className="absolute top-0 left-0 w-12 h-12 flex items-center justify-center bg-yellow-600 text-white font-bold rounded-br-xl z-10">
+          {/* Step 2 */}
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Number box */}
+            <div className="absolute top-0 left-0 w-16 h-16 flex items-center justify-center bg-yellow-600 text-white font-bold text-2xl z-20">
               2
             </div>
-            {/* Connector (visible only on desktop) */}
-            <div className="hidden md:flex absolute -left-4 top-1/2 transform -translate-y-1/2">
-              <ChevronRight className="w-8 h-8 text-yellow-600" />
-            </div>
-            {/* Image Container */}
-            <div className="h-64 relative">
+            
+            {/* Full size image in background */}
+            <div className="absolute inset-0 w-full h-full">
               <img 
                 src="/images/foto/fotoshoot2.webp" 
                 alt="Professionelle Bearbeitung"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gray-900 opacity-10 group-hover:opacity-0 transition-opacity duration-300"></div>
             </div>
-            {/* Content */}
-            <div className="p-6">
+            
+            {/* Top section with image visible */}
+            <div className="w-full h-60 relative">
+              {/* Intentionally empty to show background image */}
+            </div>
+            
+            {/* Content section on top of the image */}
+            <div className="relative z-10 p-6 bg-white">
               <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Professionelle Bearbeitung</h3>
               <p className="text-gray-600 font-poppins">
                 Alle Bilder werden professionell bearbeitet, zugeschnitten und auf Wunsch für spezielle Plattformen (Website, Social Media, Poster) angepasst.
@@ -69,26 +76,29 @@ const WorkflowComponent = () => {
             </div>
           </div>
 
-          {/* Step 3 with right chevron connector */}
-          <div className="group relative bg-gray-50 rounded-xl shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
-            <div className="absolute top-0 left-0 w-12 h-12 flex items-center justify-center bg-yellow-600 text-white font-bold rounded-br-xl z-10">
+          {/* Step 3 */}
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Number box */}
+            <div className="absolute top-0 left-0 w-16 h-16 flex items-center justify-center bg-yellow-600 text-white font-bold text-2xl z-20">
               3
             </div>
-            {/* Connector (visible only on desktop) */}
-            <div className="hidden md:flex absolute -left-4 top-1/2 transform -translate-y-1/2">
-              <ChevronRight className="w-8 h-8 text-yellow-600" />
-            </div>
-            {/* Image Container */}
-            <div className="h-64 relative">
+            
+            {/* Full size image in background */}
+            <div className="absolute inset-0 w-full h-full">
               <img 
                 src="/images/foto/fotoshoot3.webp" 
                 alt="Schnelle Lieferung & Upload"
                 className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 bg-gray-900 opacity-10 group-hover:opacity-0 transition-opacity duration-300"></div>
             </div>
-            {/* Content */}
-            <div className="p-6">
+            
+            {/* Top section with image visible */}
+            <div className="w-full h-60 relative">
+              {/* Intentionally empty to show background image */}
+            </div>
+            
+            {/* Content section on top of the image */}
+            <div className="relative z-10 p-6 bg-white">
               <h3 className="text-xl font-bold text-gray-800 mb-3 font-poppins">Schnelle Lieferung & Upload</h3>
               <p className="text-gray-600 font-poppins">
                 Sie erhalten die fertigen Bilder innerhalb von 24 Stunden. Auf Wunsch übernehmen wir auch den direkten Upload auf Ihre Verkaufsplattformen.
@@ -98,8 +108,11 @@ const WorkflowComponent = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="mt-12 text-center">
-        <SmoothScrollLink href="#contact-form" className="px-8 py-3 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-md transition duration-300 font-poppins">
+        <div className="mt-16 text-center">
+          <SmoothScrollLink 
+            href="#contact-form" 
+            className="inline-block px-10 py-4 bg-yellow-600 hover:bg-yellow-700 text-white font-medium rounded-md transition duration-300 font-poppins text-lg p-4"
+          >
             Jetzt Termin vereinbaren
           </SmoothScrollLink>
         </div>

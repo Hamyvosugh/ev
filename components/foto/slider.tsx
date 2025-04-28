@@ -21,6 +21,10 @@ const ImageSlider = () => {
     slider3: 0
   });
 
+  // Touch handling states
+  const [touchStart, setTouchStart] = useState<number>(0);
+  const [touchEnd, setTouchEnd] = useState<number>(0);
+
   // Mock image arrays - in a real application, you would replace these with actual image paths
   const sliders: SliderData = {
     slider1: Array.from({ length: 15 }, (_, i) => `/images/fahrzeuge/aussen/aus${(i+1).toString().padStart(2, '0')}.webp`),
@@ -115,6 +119,31 @@ const ImageSlider = () => {
     openFullscreen(sliderId);
   };
 
+  // Touch event handlers
+  const handleTouchStart = (sliderId: SliderId) => (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = (sliderId: SliderId) => () => {
+    const minSwipeDistance = 50; // Minimum distance required for a swipe
+    
+    if (touchStart - touchEnd > minSwipeDistance) {
+      // Swipe left, go to next image
+      nextImage(sliderId);
+    } else if (touchEnd - touchStart > minSwipeDistance) {
+      // Swipe right, go to previous image
+      prevImage(sliderId);
+    }
+    
+    // Reset touch positions
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
   return (
     <div className="w-full bg-gray-400 py-16 px-4">
       <div className="max-w-6xl mx-auto">
@@ -135,18 +164,33 @@ const ImageSlider = () => {
           {(Object.keys(sliders) as SliderId[]).map((sliderId) => (
             <div key={sliderId} className="bg-white rounded-lg shadow-lg overflow-hidden">
               <div className="relative">
-                {/* Image */}
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={sliders[sliderId][currentIndexes[sliderId]]} 
-                    alt={`${sliderTitles[sliderId]} ${currentIndexes[sliderId] + 1}`}
-                    className="w-full h-full object-cover transition-all duration-500 ease-in-out"
-                  />
+                {/* Image with touch support - Improved to ensure full coverage */}
+                <div 
+                  className="relative h-64 overflow-hidden"
+                  onTouchStart={handleTouchStart(sliderId)}
+                  onTouchMove={handleTouchMove}
+                  onTouchEnd={handleTouchEnd(sliderId)}
+                >
+                  <div className="absolute inset-0 flex items-center justify-center bg-gray-200">
+                    <img 
+                      src={sliders[sliderId][currentIndexes[sliderId]]} 
+                      alt={`${sliderTitles[sliderId]} ${currentIndexes[sliderId] + 1}`}
+                      className="min-w-full min-h-full object-cover object-center w-auto h-auto"
+                      style={{
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        width: '100%',
+                        height: '100%',
+                      }}
+                    />
+                  </div>
                   
-                  {/* Navigation arrows */}
+                  {/* Navigation arrows with improved positioning */}
                   <button 
                     onClick={handlePrevClick(sliderId)} 
-                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-50"
+                    className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                     aria-label="Vorheriges Bild"
                     type="button"
                   >
@@ -156,7 +200,7 @@ const ImageSlider = () => {
                   </button>
                   <button 
                     onClick={handleNextClick(sliderId)} 
-                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-50"
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                     aria-label="Nächstes Bild"
                     type="button"
                   >
@@ -168,7 +212,7 @@ const ImageSlider = () => {
                   {/* Fullscreen button */}
                   <button 
                     onClick={handleFullscreenClick(sliderId)} 
-                    className="absolute right-2 bottom-2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all"
+                    className="absolute right-2 bottom-2 bg-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-all z-10"
                     aria-label="Vollbildansicht"
                     type="button"
                   >
@@ -191,14 +235,19 @@ const ImageSlider = () => {
         </div>
       </div>
 
-      {/* Fullscreen overlay */}
+      {/* Fullscreen overlay with touch support - Improved image coverage */}
       {fullscreenSlider && (
-        <div className="fixed inset-0 z-50 bg-black flex items-center justify-center">
+        <div 
+          className="fixed inset-0 z-50 bg-black flex items-center justify-center"
+          onTouchStart={handleTouchStart(fullscreenSlider)}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd(fullscreenSlider)}
+        >
           <div className="relative w-full h-full flex flex-col justify-center items-center">
             {/* Close button */}
             <button 
               onClick={closeFullscreen} 
-              className="absolute top-4 right-4 z-10 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
+              className="absolute top-4 right-4 z-50 bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
               aria-label="Vollbildansicht schließen"
               type="button"
             >
@@ -207,15 +256,23 @@ const ImageSlider = () => {
               </svg>
             </button>
 
-            {/* Fullscreen image */}
-            <img 
-              src={sliders[fullscreenSlider][currentIndexes[fullscreenSlider]]} 
-              alt={`${sliderTitles[fullscreenSlider]} im Vollbild`}
-              className="max-h-screen max-w-screen p-4 object-contain"
-            />
+            {/* Fullscreen image with improved coverage */}
+            <div className="w-full h-full flex items-center justify-center">
+              <img 
+                src={sliders[fullscreenSlider][currentIndexes[fullscreenSlider]]} 
+                alt={`${sliderTitles[fullscreenSlider]} im Vollbild`}
+                className="object-contain w-full h-full"
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  objectFit: 'contain',
+                  padding: '1rem'
+                }}
+              />
+            </div>
 
-            {/* Fullscreen navigation */}
-            <div className="absolute inset-x-0 bottom-8 flex justify-between items-center px-8">
+            {/* Fullscreen navigation with increased z-index */}
+            <div className="absolute inset-x-0 bottom-8 flex justify-between items-center px-8 z-50">
               <button 
                 onClick={() => prevImage(fullscreenSlider)} 
                 className="bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
@@ -232,7 +289,7 @@ const ImageSlider = () => {
               </div>
 
               <button 
-                onClick={() => prevImage(fullscreenSlider)} 
+                onClick={() => nextImage(fullscreenSlider)} 
                 className="bg-black bg-opacity-50 text-white p-3 rounded-full hover:bg-opacity-70 transition-all"
                 aria-label="Nächstes Bild"
                 type="button"
