@@ -6,7 +6,6 @@ import Header from '@/components/global/header';
 import Footer from '@/components/global/footer';
 import { Analytics } from "@vercel/analytics/react";
 import Breadcrumb from '@/components/global/Breadcrumb';
-import { GoogleAnalytics } from '@next/third-parties/google'
 import Script from "next/script";
 
 
@@ -187,6 +186,24 @@ export default function RootLayout({
 }
 `}
 </Script>
+<Script
+        strategy="afterInteractive"
+        src={`https://www.googletagmanager.com/gtag/js?id=G-CX2TJHGWT2`}
+      />
+      
+      {/* اجرای تنظیمات Google Analytics پس از لود شدن gtag.js */}
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-CX2TJHGWT2');
+          `,
+        }}
+      />
 <link rel="canonical" href="https://emoviral.com/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <meta name="robots" content="index, follow" />
@@ -194,7 +211,6 @@ export default function RootLayout({
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
           <Analytics/>
-          <GoogleAnalytics gaId="G-CX2TJHGWT2" />
           <Header />
            <div className=" mt-20 z-10 pb-0">
            <Breadcrumb
