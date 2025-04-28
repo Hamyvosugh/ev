@@ -8,12 +8,12 @@ export async function POST(request: Request) {
     
     // Create a transporter using Hostinger SMTP settings
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.hostinger.com', // Updated to Hostinger
+      host: process.env.SMTP_HOST || 'smtp.hostinger.com',
       port: parseInt(process.env.SMTP_PORT || '465'),
-      secure: true, // true for 465
+      secure: true,
       auth: {
         user: process.env.SMTP_USER || 'hi@emoviral.com',
-        pass: process.env.SMTP_PASSWORD || 'your-hostinger-password' // Remember to update this in your .env file
+        pass: process.env.SMTP_PASSWORD
       }
     });
     
@@ -42,8 +42,8 @@ export async function POST(request: Request) {
     Diese Nachricht wurde automatisch über das Kontaktformular Ihrer Website generiert.
     `;
     
-    // Send email to your address (hi@emoviral.com)
-    await transporter.sendMail({
+    // Create promise for the first email
+    const adminEmailPromise = transporter.sendMail({
       from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
       to: to || 'hi@emoviral.com',
       subject: `Neue Anfrage: ${service} - von ${name}`,
@@ -69,19 +69,36 @@ export async function POST(request: Request) {
     Ihr EmoViral Team
     `;
     
-    await transporter.sendMail({
+    // Create promise for the second email
+    const customerEmailPromise = transporter.sendMail({
       from: `"EmoViral" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
       to: email,
       subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
       text: confirmationEmail
     });
     
-    return NextResponse.json({ success: true });
+    // Wait for both emails to be sent
+    await Promise.all([adminEmailPromise, customerEmailPromise]);
+    
+    // Return success response with proper headers
+    return new NextResponse(
+      JSON.stringify({ success: true, message: 'Emails sent successfully' }), 
+      { 
+        status: 200,
+        headers: { 'Content-Type': 'application/json' }
+      }
+    );
+    
   } catch (error) {
     console.error('Error sending email:', error);
-    return NextResponse.json(
-      { error: 'Failed to send email' },
-      { status: 500 }
+    
+    // Return error response with proper headers
+    return new NextResponse(
+      JSON.stringify({ success: false, message: 'Failed to send email' }),
+      { 
+        status: 500,
+        headers: { 'Content-Type': 'application/json' }
+      }
     );
   }
 }

@@ -24,7 +24,7 @@ const ContactForm = () => {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-  const [errorMessage, setErrorMessage] = useState<string>('');
+  const [showStatusMessage, setShowStatusMessage] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -38,10 +38,8 @@ const ContactForm = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-    setErrorMessage('');
     
     try {
-      // In a real implementation, you would send this data to your API
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -53,9 +51,15 @@ const ContactForm = () => {
         }),
       });
 
-      const data = await response.json();
-
-      if (response.ok) {
+      let responseData;
+      
+      try {
+        responseData = await response.json();
+      } catch (parseError) {
+        console.error('Error parsing response:', parseError);
+      }
+      
+      if (response.ok || (responseData && responseData.success)) {
         setSubmitStatus('success');
         setFormData({
           name: '',
@@ -66,19 +70,19 @@ const ContactForm = () => {
           message: '',
         });
       } else {
-        // If the server returned a specific error message, use it
-        setErrorMessage(data.message || 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.');
         setSubmitStatus('error');
-        
-        // Log the error for debugging
-        console.error('Form submission error:', data);
       }
     } catch (error) {
       console.error('Form submission error:', error);
-      setErrorMessage('Es ist ein Netzwerkfehler aufgetreten. Bitte überprüfen Sie Ihre Internetverbindung.');
       setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
+      setShowStatusMessage(true);
+      
+      // Hide status message after 5 seconds
+      setTimeout(() => {
+        setShowStatusMessage(false);
+      }, 5000);
     }
   };
 
@@ -204,15 +208,15 @@ const ContactForm = () => {
             </button>
           </div>
 
-          {submitStatus === 'success' && (
-            <div className="p-4 bg-green-100 text-green-700 rounded-md">
+          {showStatusMessage && submitStatus === 'success' && (
+            <div className="p-4 bg-green-100 text-green-700 rounded-md animate-fade-in">
               Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.
             </div>
           )}
 
-          {submitStatus === 'error' && (
-            <div className="p-4 bg-red-100 text-red-700 rounded-md">
-              {errorMessage}
+          {showStatusMessage && submitStatus === 'error' && (
+            <div className="p-4 bg-red-100 text-red-700 rounded-md animate-fade-in">
+              Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später erneut.
             </div>
           )}
         </form>
