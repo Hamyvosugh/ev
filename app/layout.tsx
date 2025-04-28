@@ -5,6 +5,7 @@ import ScrollToTopButton from '@/components/global/scrollup';
 import Header from '@/components/global/header';
 import Footer from '@/components/global/footer';
 import { Analytics } from "@vercel/analytics/react";
+import Breadcrumb from '@/components/global/Breadcrumb';
 import Script from "next/script";
 
 
@@ -193,13 +194,19 @@ export default function RootLayout({
         <div className="w-full min-w-full p-0 m-0">
           <Analytics/>
           <Header />
+           <div className=" mt-20 z-10 pb-0">
+           <Breadcrumb
+           containerClasses="py-3 px-4 sm:px-6 lg:px-8 z-50   border-b border-gray-100"
+           activeItemClasses="text-blue-900 font-medium"
+           inactiveItemClasses="text-gray-600 hover:text-blue-900 transition-colors duration-200"
+           />
+          </div>
           <main className="w-full min-w-full p-0 m-0">
-            {children}
+          {children}
           </main>
           <Footer />
           <ScrollToTopButton />
         </div>
-        
         {/* Load non-critical scripts */}
         <Script id="partytown-config" strategy="worker">
           {`

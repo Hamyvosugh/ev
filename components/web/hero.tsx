@@ -12,7 +12,7 @@ const HeroSection = () => {
   };
 
   return (
-    <div className="relative w-full md:h-screen bg-gray-50 overflow-hidden">
+    <div className="relative w-full md:h-screen bg-gray-50 overflow-hidden md:-mt-28 ">
       {/* Background with subtle pattern and darker right side similar to screenshot */}
       <div className="absolute inset-0 z-0 ">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-blue-900/90 " style={{
@@ -38,7 +38,7 @@ const HeroSection = () => {
           <div className="w-16 h-1 bg-yellow-500 mb-6"></div>
           
           {/* Main heading */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight mt-20 md:mt-0 ">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight   ">
             Ihr professioneller Webauftritt für den Automobilhandel
           </h1>
           
@@ -48,7 +48,7 @@ const HeroSection = () => {
           </p>
           
           {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 ">
           <SmoothScrollLink href="#contact-form" className="px-8 py-4 bg-blue-900 hover:bg-blue-800 text-white font-medium rounded-md transition duration-300 shadow-lg hover:shadow-xl">
               Jetzt Beratung anfordern
             </SmoothScrollLink>
@@ -63,7 +63,7 @@ const HeroSection = () => {
           </div>
           
           {/* Trust indicators */}
-          <div className="mt-16 flex flex-col sm:flex-row items-center gap-8">
+          <div className=" mt-16 flex flex-col sm:flex-row items-center gap-8">
             <div className="flex items-center gap-2">
               <div className="w-10 h-10 flex items-center justify-center rounded-full bg-blue-900 text-white">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -17,7 +17,7 @@ export default function BlogHeader({ post }: BlogHeaderProps) {
 
   return (
     <div className="mb-12">
-      <div className="relative h-96 md:h-[500px] w-full mb-8 rounded-xl overflow-hidden ">
+      <div className="relative h-[550px] md:h-[500px] w-full mb-8 rounded-xl overflow-hidden ">
         <Image
           src={post.coverImage}
           alt={post.title}
@@ -28,17 +28,19 @@ export default function BlogHeader({ post }: BlogHeaderProps) {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
           <div className="p-8 md:p-12 w-full">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 md:mb-4 -mb-12">
               <span className="bg-yellow-500 text-white text-sm font-medium px-3 py-1 rounded-full ">
                 {post.category}
               </span>
               <span className="px-2 text-white/80">•</span>
-              <span className="text-white/80 text-sm">{post.readingTime}</span>
+              <span className="text-white/80 bg-blue-900 py-1.5 px-2 rounded-2xl text-sm">{post.readingTime}</span>
             </div>
-            <h1 className="text-3xl md:text-5xl font-bold text-white mb-4 leading-tight">
-              {post.title}
-            </h1>
-            <p className="text-white/90 md:text-lg mb-6 max-w-3xl">
+            <h1 className="text-3xl md:text-5xl font-bold mb-4 leading-normal pt-16">
+           <span className="bg-black/90 md:bg-black/60 text-white px-3 py-2 rounded-md inline-block">
+           {post.title}
+           </span>
+           </h1>
+            <p className="text-white bg-black/90 md:bg-black/60 p-2  md:text-lg mb-6 max-w-3xl">
               {post.excerpt}
             </p>
             <div className="flex items-center">

@@ -12,14 +12,17 @@ export const metadata: Metadata = {
 // This enables static generation for better performance
 export const revalidate = 3600; // Revalidate every hour
 
-export default function BlogPage({
+export default async function BlogPage({
   searchParams,
 }: {
   searchParams?: { category?: string };
 }) {
-  const selectedCategory = searchParams?.category || '';
-  const allPosts = getAllPosts();
-  const allCategories = getAllCategories();
+  // Await searchParams before accessing its properties
+  const { category } = await searchParams || {};
+  const selectedCategory = category || '';
+  
+  const allPosts = await getAllPosts();
+  const allCategories = await getAllCategories();
   
   // Filter posts by category if one is selected
   const filteredPosts = selectedCategory
@@ -27,7 +30,7 @@ export default function BlogPage({
     : allPosts;
 
   return (
-    <div className="container mx-auto px-4 py-14 mt-10">
+    <div className="container mx-auto px-4 py-14 ">
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Digitales Autohaus Magazin</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -78,4 +81,5 @@ export default function BlogPage({
         </div>
       )}
     </div>
-  )};
+  );
+}

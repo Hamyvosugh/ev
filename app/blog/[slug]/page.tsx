@@ -18,8 +18,8 @@ type PageProps = {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   try {
-    // Explicitly assign slug to handle it properly
-    const slug = params.slug;
+    // Await params before accessing slug
+    const { slug } = await params;
     const post = await getPostBySlug(slug);
     
     return {
@@ -59,8 +59,8 @@ export const revalidate = 3600; // Revalidate every hour
 
 export default async function BlogPostPage({ params }: PageProps) {
   try {
-    // Explicitly assign slug to handle it properly
-    const slug = params.slug;
+    // Await params before accessing slug
+    const { slug } = await params;
     const post = await getPostBySlug(slug);
     const allPosts = await getAllPosts();
     
@@ -87,9 +87,9 @@ export default async function BlogPostPage({ params }: PageProps) {
     const headings = extractHeadings(post.content);
     
     return (
-      <div className="container mx-auto px-4 py-12 ">
+      <div className="container mx-auto px-4 py-2 ">
         <article>
-          <div className='pt-12 md:pt-5'>
+          <div className='pt-0'>
             <BlogHeader post={post} />
           </div>
           <BlogContentWrapper 

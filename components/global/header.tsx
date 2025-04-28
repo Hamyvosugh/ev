@@ -4,6 +4,7 @@ import { Camera, Code, Share2, Megaphone, ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -81,10 +82,12 @@ const Header = () => {
 
   return (
     <header 
+    
       className={`fixed w-full z-50 transition-all duration-300 ${
         isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'
       }`}
     >
+      
       <div className="w-full px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center w-full">
           {/* Logo */}
@@ -104,7 +107,6 @@ const Header = () => {
               <span className={`font-bold text-xl ${isScrolled ? 'text-blue-900' : 'text-blue-900'}`}>EmoViral</span>
             </Link>
           </div>
-
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
