@@ -33,6 +33,7 @@ export default function RootLayout({
   return (
     <html lang="de" className="w-full font-poppins">
       <head>
+      <link rel="icon" href="/favicon.ico" />
   {/* Add this explicit favicon link for search engines */}
   <link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" />
   
