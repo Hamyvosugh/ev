@@ -1,5 +1,6 @@
 {
     "redirects": [
-      { "source": "/:path((?!www).*)", "destination": "https://www.emoviral.com/:path*", "permanent": true }
+      { "source": "https://emoviral.com", "destination": "https://www.emoviral.com", "permanent": true },
+      { "source": "https://emoviral.com/:path*", "destination": "https://www.emoviral.com/:path*", "permanent": true }
     ]
   }
