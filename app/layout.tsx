@@ -197,7 +197,7 @@ export default function RootLayout({
         src={`https://www.googletagmanager.com/gtag/js?id=G-CX2TJHGWT2`}
       />
       
-      {/* اجرای تنظیمات Google Analytics پس از لود شدن gtag.js */}
+      {/* اجرای تنظیمات  Google Analytics پس از لود شدن gtag.js */}
       <Script
         id="google-analytics"
         strategy="afterInteractive"
