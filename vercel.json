@@ -1,0 +1,12 @@
+{
+    "redirects": [
+      {
+        "source": "/(.*)",
+        "has": [
+          { "type": "host", "value": "www.emoviral.com" }
+        ],
+        "destination": "https://emoviral.com/:1",
+        "permanent": true
+      }
+    ]
+  }
