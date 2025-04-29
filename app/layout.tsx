@@ -12,7 +12,7 @@ import Script from "next/script";
 export const metadata: Metadata = {
   title: "Auto Services",
   description: "Professionelle Dienstleistungen für Autohändler und Ausstellungen",
-  metadataBase: new URL('https://emoviral.com'),
+  metadataBase: new URL('https://www.emoviral.com'),
   icons: {
     icon: [
       { url: '/favicon_io/favicon.ico' },
@@ -68,9 +68,15 @@ export default function RootLayout({
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Emoviral",
-  "url": "https://emoviral.com",
-  "logo": "https://emoviral.com/images/logo/logo-emoviral.png",
-  "image": "https://emoviral.com/images/emoviral-banner.jpg",
+  "url": "https://www.emoviral.com",
+  "logo": {
+    "@type": "ImageObject",
+    "url": "https://www.emoviral.com/images/logo/logo-emoviral.png",
+    "width": 600,
+    "height": 60,
+    "contentUrl": "https://www.emoviral.com/images/logo/logo-emoviral.png"
+  },
+  "image": "https://www.emoviral.com/images/emoviral-banner.jpg",
   "description": "Ihr zuverlässiger Partner für die Digitalisierung im Automobilhandel. Professionelle Fahrzeugfotografie, Webentwicklung und Social-Media-Management.",
   "email": "hi@emoviral.com",
   "telephone": "+49 6438 4039867",
@@ -99,7 +105,7 @@ export default function RootLayout({
   },
   "potentialAction": {
     "@type": "ContactAction",
-    "target": "https://emoviral.com/kontakt"
+    "target": "https://www.emoviral.com/kontakt"
   }
 }
 `}
@@ -115,37 +121,37 @@ export default function RootLayout({
       "@type": "ListItem",
       "position": 1,
       "name": "Home",
-      "item": "https://emoviral.com"
+      "item": "https://www.emoviral.com"
     },
     {
       "@type": "ListItem",
       "position": 2,
       "name": "Blog",
-      "item": "https://emoviral.com/blog"
+      "item": "https://www.emoviral.com/blog"
     },
     {
       "@type": "ListItem",
       "position": 3,
       "name": "Fotografie",
-      "item": "https://emoviral.com/foto"
+      "item": "https://www.emoviral.com/foto"
     },
     {
       "@type": "ListItem",
       "position": 4,
       "name": "Development",
-      "item": "https://emoviral.com/web"
+      "item": "https://www.emoviral.com/web"
     },
     {
       "@type": "ListItem",
       "position": 5,
       "name": "Social Media",
-      "item": "https://emoviral.com/socialmedia"
+      "item": "https://www.emoviral.com/socialmedia"
     },
     {
       "@type": "ListItem",
       "position": 6,
       "name": "Werbekampagnen",
-      "item": "https://emoviral.com/kampagnen"
+      "item": "https://www.emoviral.com/kampagnen"
     }
   ]
 }
@@ -158,8 +164,8 @@ export default function RootLayout({
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Emoviral - Fahrzeugfotografie",
-  "image": "https://emoviral.com/images/foto/automotive-professional-fotografie-hanau.jpg",
-  "url": "https://emoviral.com",
+  "image": "https://www.emoviral.com/images/foto/automotive-professional-fotografie-hanau.jpg",
+  "url": "https://www.emoviral.com",
   "description": "Professionelle Fahrzeugfotografie für Autohäuser in Frankfurt, Hanau und Umgebung. On-site Service direkt bei Ihrem Autohaus.",
   "email": "hi@emoviral.com",
   "telephone": "+49 6438 4039867",
@@ -204,7 +210,7 @@ export default function RootLayout({
           `,
         }}
       />
-<link rel="canonical" href="https://emoviral.com/" />
+<link rel="canonical" href="https://www.emoviral.com/" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 <meta name="robots" content="index, follow" />
 </head>
