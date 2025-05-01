@@ -1,5 +1,4 @@
-import React from 'react';
-import { Phone, Mail, MessageCircle } from 'lucide-react';
+import { Mail, MessageCircle, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 const CTAComponent = () => {
@@ -23,7 +22,7 @@ const CTAComponent = () => {
               rel="noopener noreferrer"
             >
               <Phone size={18} />
-              <span>06438 4039867</span>
+              <span>06181 4347066</span>
             </Link> 
             
             {/* Email */}

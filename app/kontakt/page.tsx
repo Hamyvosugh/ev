@@ -55,7 +55,7 @@ export default function ContactPage() {
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Telefon</h3>
               <p className="text-gray-600">
-                06438 4039867<br />
+                06181 4347066<br />
                 0176 47666407<br />
                 Mo-Fr: 9:00 - 18:00 Uhr
               </p>

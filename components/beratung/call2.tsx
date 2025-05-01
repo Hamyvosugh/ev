@@ -1,6 +1,5 @@
-import React from 'react';
-import { Phone, Mail, MessageCircle, Calendar, ArrowRight } from 'lucide-react';
 import ScrollButton from '@/components/global/Scroll100vh';
+import { ArrowRight, Calendar, Mail, MessageCircle, Phone } from 'lucide-react';
 import Link from 'next/link';
 
 
@@ -45,7 +44,7 @@ const TallCTAComponent = () => {
                 <Phone size={28} />
               </div>
               <span className="font-bold text-lg">Telefon</span>
-              <span className="text-gray-200">06438 4039867</span>
+              <span className="text-gray-200">06181 4347066</span>
             </Link> 
             
             {/* Email */}

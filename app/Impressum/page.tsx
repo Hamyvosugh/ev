@@ -1,6 +1,5 @@
-import Link from 'next/link';
-import React from 'react';
 import type { Metadata } from 'next';
+import Link from 'next/link';
 
 export const metadata: Metadata = {
   title: 'Impressum | Emoviral – Angaben gemäß § 5 TMG',
@@ -71,7 +70,7 @@ const Impressum = () => {
               <div className="pl-5 border-l-2 border-gray-200 space-y-2">
                 <div className="flex items-center">
                   <div className="w-24 flex-shrink-0 text-gray-500">Telefon:</div>
-                  <Link href="tel:06438-4039867" className="text-blue-800 hover:text-blue-600 font-medium">06438 4039867</Link>
+                  <Link href="tel:06438-4039867" className="text-blue-800 hover:text-blue-600 font-medium">06181 4347066</Link>
                 </div>
                 <div className="flex items-center">
                   <div className="w-24 flex-shrink-0 text-gray-500">E-Mail:</div>
