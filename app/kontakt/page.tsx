@@ -3,6 +3,8 @@ import ContactCTA from '@/components/contact/ContactCTA';
 import ContactForm from '@/components/contact/ContactForm';
 import { Clock, Mail, MapPin, Phone } from 'lucide-react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
+
 
 export const metadata: Metadata = {
   title: 'Über uns | Emoviral – Digitale Lösungen für Autohäuser',
@@ -24,6 +26,18 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <main className="min-h-screen bg-gray-50">
+
+<Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
       {/* Hero Section */}
       <section className="bg-[#1a365d] text-white py-20 ">
         <div className="container mx-auto px-4">

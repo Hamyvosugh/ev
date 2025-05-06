@@ -7,6 +7,8 @@ import CTAComponent from '@/components/beratung/call';
 import ContactForm from '@/components/contact/ContactForm';
 import PhotographyServices from '@/components/foto/branding';
 import type { Metadata } from 'next';
+import Script from 'next/script';
+
 
 export const metadata: Metadata = {
   title: 'Fahrzeugfotografie in Frankfurt, Hanau & Main-Kinzig | Emoviral',
@@ -27,9 +29,21 @@ export const metadata: Metadata = {
 
 
 
-export default function Home() {
+
+export default function Fahrzeugfotografie() {
   return (
     <main className="min-h-screen p-4">
+      <Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
      <HeroFoto />
      <WorkflowComponent />
      <CTAComponent />

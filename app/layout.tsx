@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import "@/styles/fonts.css";
-import ScrollToTopButton from '@/components/global/scrollup';
-import Header from '@/components/global/header';
-import Footer from '@/components/global/footer';
-import { Analytics } from "@vercel/analytics/react";
 import Breadcrumb from '@/components/global/Breadcrumb';
+import Footer from '@/components/global/footer';
+import Header from '@/components/global/header';
+import ScrollToTopButton from '@/components/global/scrollup';
+import "@/styles/fonts.css";
+import { Analytics } from "@vercel/analytics/react";
+import type { Metadata } from "next";
 import Script from "next/script";
+import "./globals.css";
 
 
 export const metadata: Metadata = {
-  title: "Auto Services",
-  description: "Professionelle Dienstleistungen für Autohändler und Ausstellungen",
+  title: "Digitale Lösungen für Autohäuser",
+  description: "Webdesign, Online-Marketing, Fahrzeugfotografie, Content-Erstellung & intelligente Automatisierung für Autohäuser und Autohändler",
   metadataBase: new URL('https://emoviral.com'),
   icons: {
     icon: [
@@ -33,7 +33,6 @@ export default function RootLayout({
   return (
     <html lang="de" className="w-full font-poppins">
       <head>
-      <link rel="icon" href="/favicon.ico" />
   {/* Add this explicit favicon link for search engines */}
   <link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" />
   
@@ -74,7 +73,7 @@ export default function RootLayout({
   "image": "https://emoviral.com/images/emoviral-banner.jpg",
   "description": "Ihr zuverlässiger Partner für die Digitalisierung im Automobilhandel. Professionelle Fahrzeugfotografie, Webentwicklung und Social-Media-Management.",
   "email": "hi@emoviral.com",
-  "telephone": "+49 6438 4039867",
+  "telephone": "+49 6181 4347066", 
   "address": {
   "@type": "PostalAddress",
   "streetAddress": "Kurt-Blaum-Platz",
@@ -84,7 +83,7 @@ export default function RootLayout({
   },
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+49 6438 4039867",
+    "telephone": "+49 6181 4347066",
     "contactType": "Customer Service",
     "areaServed": "DE",
     "availableLanguage": "German"
@@ -161,9 +160,8 @@ export default function RootLayout({
   "name": "Emoviral - Fahrzeugfotografie",
   "image": "https://emoviral.com/images/foto/automotive-professional-fotografie-hanau.jpg",
   "url": "https://emoviral.com",
-  "description": "Professionelle Fahrzeugfotografie für Autohäuser in Frankfurt, Hanau und Umgebung. On-site Service direkt bei Ihrem Autohaus.",
-  "email": "hi@emoviral.com",
-  "telephone": "+49 6438 4039867",
+  "description": "Gebrauchtwagenfotografie, Autoshooting, 360 Grad Autofotografie, hochwertige Autobilder & Dienstleistungen von einem professionellen Autofotograf für Autohändler in Frankfurt, Hanau, Main-Kinzig-Kreis & Umgebung."  "email": "hi@emoviral.com",
+  "telephone": "+49 6181 4347066",
   "priceRange": "€€",
   "areaServed": {
     "@type": "Place",

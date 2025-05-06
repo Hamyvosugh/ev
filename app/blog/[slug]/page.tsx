@@ -9,8 +9,11 @@ import { serialize } from 'next-mdx-remote/serialize';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import { extractHeadings } from '@/lib/mdx';
+import Script from 'next/script';
 // Import our custom plugin
 import { remarkUnwrapImages } from '@/lib/mdx-plugins/unwrap-images';
+
+
 
 type PageProps = {
   params: { slug: string };
@@ -88,6 +91,17 @@ export default async function BlogPostPage({ params }: PageProps) {
     
     return (
       <div className="container mx-auto px-4 py-2 ">
+            <Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+    {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Emoviral",
+      "url": "https://emoviral.com",
+      "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+    }
+    `}
+    </Script>
         <article>
           <div className='pt-0'>
             <BlogHeader post={post} />

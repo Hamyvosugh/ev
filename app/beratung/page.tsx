@@ -3,6 +3,7 @@ import ContactForm from '@/components/contact/ContactForm';
 import { Coffee, Users, Lightbulb, Target } from 'lucide-react';
 import CTAComponent from '@/components/beratung/call2';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Kostenlose Beratung | Emoviral – Digitale Strategien für Autohäuser',
@@ -25,6 +26,17 @@ export const metadata: Metadata = {
 export default function BeratungPage() {
   return (
     <main className="min-h-screen bg-gray-50">
+      <Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
       {/* Hero Section */}
       <section className="bg-[#1a365d] text-white py-20  ">
         <div className="container mx-auto px-4">

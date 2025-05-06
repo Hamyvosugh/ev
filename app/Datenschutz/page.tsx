@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import React from 'react';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Datenschutzerklärung | Emoviral',
@@ -22,6 +23,19 @@ export const metadata: Metadata = {
 const Datenschutz = () => {
   return (
     <div className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 overflow-x-hidden w-full">
+      
+
+<Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
       <div className="max-w-4xl mx-auto w-full box-border">
         {/* Page Title */}
         <div className="mb-10 text-center">

@@ -2,6 +2,8 @@ import React from 'react';
 import { Check, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import Script from 'next/script';
+
 
 export const metadata: Metadata = {
   title: 'Über uns | Emoviral – Digitale Lösungen für Autohäuser',
@@ -24,6 +26,17 @@ export const metadata: Metadata = {
 const AboutUsPage = () => {
   return (
     <div className="font-[Poppins] text-gray-800 bg-gray-50">
+      <Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
       {/* Hero Section */}
       <section className="relative bg-[#0a2e4a] text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a2e4a]/90 to-[#0a2e4a]/70"></div>

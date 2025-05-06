@@ -5,6 +5,7 @@ import WhyEmoviralSection from '@/components/karriere/why'
 import JobListings from '@/components/karriere/jobs'
 import ApplicationForm from '@/components/karriere/berwrben'
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Karriere bei Emoviral | Arbeiten im digitalen Automobilhandel',
@@ -24,9 +25,22 @@ export const metadata: Metadata = {
 };
 
 
-export default function Home() {
+export default function karriere() {
   return (
     <main className="min-h-screen p-4">
+      
+
+<Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
     <HeroKarriere />
     <AnimatedTextBanner />
     <WhyEmoviralSection />

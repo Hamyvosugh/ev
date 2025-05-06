@@ -7,6 +7,7 @@ import CTAComponent from '@/components/web/cta';
 import CTADemo from '@/components/web/demo';
 import ContactForm from '@/components/contact/ContactForm';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Webdesign & Entwicklung für Autohäuser | Emoviral',
@@ -25,9 +26,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Home() {
+export default function Webdesign() {
   return (
     <main className="min-h-screen overflow-x-hidden">
+            <Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+        {`
+        {
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Emoviral",
+          "url": "https://emoviral.com",
+          "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+        }
+        `}
+      </Script>
       <div className="px-4 max-w-full mx-auto">
         <HeroSection />
         <ServicesIntroduction />

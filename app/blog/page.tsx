@@ -3,6 +3,7 @@ import { Metadata } from 'next';
 import { getAllPosts, getAllCategories } from '@/lib/blog';
 import BlogCard from '@/components/blog/BlogCard';
 import Link from 'next/link';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Blog | Automotive Excellence',
@@ -31,6 +32,17 @@ export default async function BlogPage({
 
   return (
     <div className="container mx-auto px-4 py-14 ">
+          <Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+    {`
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Emoviral",
+      "url": "https://emoviral.com",
+      "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+    }
+    `}
+    </Script>
       <div className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Digitales Autohaus Magazin</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">

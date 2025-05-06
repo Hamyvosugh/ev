@@ -3,6 +3,7 @@ import ContactForm from '@/components/contact/ContactForm';
 import SmoothScrollLink from '@/components/global/SmoothScrollLink';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Google & Amazon Ads für Autohäuser | Emoviral Kampagnen',
@@ -33,6 +34,19 @@ const WerbekampagnenPage = () => {
 
   return (
     <div className="font-['Poppins',sans-serif] text-gray-800 bg-white overflow-x-hidden w-full">
+
+
+<Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
+{`
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Emoviral",
+  "url": "https://emoviral.com",
+  "logo": "https://emoviral.com/images/logo/logo-emoviral.png"
+}
+`}
+</Script>
       {/* Hero Section */}
       <section className="relative bg-gray-50 py-24 px-4 overflow-hidden w-full">
         <div className="absolute inset-0 bg-gradient-to-r from-gray-50 to-gray-100 opacity-80"></div>
