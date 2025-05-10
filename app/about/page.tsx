@@ -37,7 +37,7 @@ const AboutUsPage = () => {
 }
 `}
 </Script>
-      {/* Hero Section */}
+      {/* Hero 1 Section */}
       <section className="relative bg-[#0a2e4a] text-white">
         <div className="absolute inset-0 bg-gradient-to-r from-[#0a2e4a]/90 to-[#0a2e4a]/70"></div>
         <div className="relative container mx-auto px-6 py-24 md:py-32">
