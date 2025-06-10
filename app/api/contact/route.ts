@@ -16,7 +16,7 @@ export async function POST(request: Request) {
     }
 
     // Create transporter with better error handling
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       host: "smtp.zoho.eu",
       port: 587,
       secure: false,
@@ -151,7 +151,7 @@ export async function POST(request: Request) {
       }
     );
 
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error in contact API:', error);
     
     // لاگ دقیق‌تر از خطا
@@ -165,7 +165,7 @@ export async function POST(request: Request) {
       JSON.stringify({ 
         success: false, 
         message: 'Failed to process request',
-        error: process.env.NODE_ENV === 'development' ? error.message : undefined
+        error: process.env.NODE_ENV === 'development' ? error?.message : undefined
       }),
       { 
         status: 500,
