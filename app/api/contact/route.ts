@@ -9,15 +9,15 @@ export async function POST(request: Request) {
     // Create a transporter using Hostinger SMTP settings
     const transporter = nodemailer.createTransport({
       host: "smtp.zoho.eu",
-      port: 465,
-      secure: true,
+      port: 587, // ← اینو تغییر بده
+      secure: false, // ← برای 587 باید false باشه
       auth: {
         user: "hi@emoviral.com",
         pass: process.env.ZOHO_APP_PASSWORD,
       },
-      connectionTimeout: 5000,
-      greetingTimeout: 5000,
-      socketTimeout: 5000,
+      connectionTimeout: 10000, // می‌تونی کمی بیشتر هم بذاری
+      greetingTimeout: 10000,
+      socketTimeout: 10000,
     });
 
     // Email template with professional German formatting
