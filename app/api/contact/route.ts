@@ -5,22 +5,21 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { name, email, company, phone, service, message, to } = body;
-    
+
     // Create a transporter using Hostinger SMTP settings
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.hostinger.com',
-      port: parseInt(process.env.SMTP_PORT || '465'),
+      host: "smtp.zoho.eu",
+      port: 465,
       secure: true,
       auth: {
-        user: process.env.SMTP_USER || 'hi@emoviral.com',
-        pass: process.env.SMTP_PASSWORD
+        user: "hi@emoviral.com",
+        pass: process.env.ZOHO_APP_PASSWORD,
       },
-      // Add connection timeout options
-      connectionTimeout: 5000, // 5 seconds
-      greetingTimeout: 5000,   // 5 seconds
-      socketTimeout: 5000      // 5 seconds
+      connectionTimeout: 5000,
+      greetingTimeout: 5000,
+      socketTimeout: 5000,
     });
-    
+
     // Email template with professional German formatting
     const emailContent = `
     Neue Kontaktanfrage von ${name}
@@ -30,8 +29,8 @@ export async function POST(request: Request) {
     ============================
     Name: ${name}
     E-Mail: ${email}
-    Autohaus/Firma: ${company || 'Nicht angegeben'}
-    Telefon: ${phone || 'Nicht angegeben'}
+    Autohaus/Firma: ${company || "Nicht angegeben"}
+    Telefon: ${phone || "Nicht angegeben"}
     
     ============================
     ANFRAGE DETAILS
@@ -45,20 +44,20 @@ export async function POST(request: Request) {
     
     Diese Nachricht wurde automatisch über das Kontaktformular Ihrer Website generiert.
     `;
-    
+
     // IMPORTANT: Send emails in the background without waiting for them to complete
     // This ensures the API responds quickly to the client
     const sendEmailsInBackground = async () => {
       try {
         // Send email to admin
         await transporter.sendMail({
-          from: `"Website Kontaktformular" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
-          to: to || 'hi@emoviral.com',
+          from: `"Website Kontaktformular" <${process.env.SMTP_USER || "hi@emoviral.com"}>`,
+          to: to || "hi@emoviral.com",
           subject: `Neue Anfrage: ${service} - von ${name}`,
           text: emailContent,
-          replyTo: email
+          replyTo: email,
         });
-        
+
         // Send confirmation email to customer
         const confirmationEmail = `
         Sehr geehrte(r) ${name},
@@ -76,33 +75,35 @@ export async function POST(request: Request) {
         Mit freundlichen Grüßen
         Ihr EmoViral Team
         `;
-        
+
         await transporter.sendMail({
-          from: `"EmoViral" <${process.env.SMTP_USER || 'hi@emoviral.com'}>`,
+          from: `"EmoViral" <${process.env.SMTP_USER || "hi@emoviral.com"}>`,
           to: email,
-          subject: 'Bestätigung: Ihre Anfrage wurde erhalten',
-          text: confirmationEmail
+          subject: "Bestätigung: Ihre Anfrage wurde erhalten",
+          text: confirmationEmail,
         });
-        
-        console.log('Both emails sent successfully in background');
+
+        console.log("Both emails sent successfully in background");
       } catch (err) {
-        console.error('Background email sending error:', err);
+        console.error("Background email sending error:", err);
       }
     };
-    
+
     // Start the email sending process in the background
     // Don't await this - let it run after we've responded to the client
     sendEmailsInBackground();
-    
+
     // Immediately return a success response
     return new NextResponse(
-      JSON.stringify({ success: true, message: 'Your submission is being processed' }), 
-      { 
+      JSON.stringify({
+        success: true,
+        message: "Your submission is being processed",
+      }),
+      {
         status: 200,
-        headers: { 'Content-Type': 'application/json' }
+        headers: { "Content-Type": "application/json" },
       }
     );
-    
   } catch (error) {
     console.error('Error in contact API:', error);
     
