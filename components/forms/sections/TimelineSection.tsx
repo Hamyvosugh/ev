@@ -199,7 +199,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({
 
       {/* Info Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-amber-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <Calendar className="w-5 h-5 text-amber-600 mr-2" />
             <h3 className="font-medium text-amber-900">
@@ -217,7 +217,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({
           </p>
         </div>
 
-        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-green-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <DollarSign className="w-5 h-5 text-green-600 mr-2" />
             <h3 className="font-medium text-green-900">
@@ -227,7 +227,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({
               {language === 'tr' && 'Değer Yatırımı'}
             </h3>
           </div>
-          <p className="text-sm text-green-700">
+          <p className="text-sm text-white">
             {language === 'en' && 'A professional website is an investment that pays for itself through increased business and credibility.'}
             {language === 'de' && 'Eine professionelle Website ist eine Investition, die sich durch mehr Geschäft und Glaubwürdigkeit amortisiert.'}
             {language === 'fa' && 'وب‌سایت حرفه‌ای سرمایه‌گذاری‌ست که از طریق افزایش کسب‌وکار و اعتبار خود را بازپرداخت می‌کند.'}
@@ -238,7 +238,7 @@ const TimelineSection: React.FC<TimelineSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-amber-100 text-black text-sm">
           <div className="w-2 h-2 bg-amber-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 9 of 10 - Timeline & Budget'}
           {language === 'de' && 'Schritt 9 von 10 - Zeitplan & Budget'}

@@ -458,7 +458,7 @@ const DesignSection: React.FC<DesignSectionProps> = ({
 
       {/* Info Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <div className="bg-pink-50 border border-pink-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-pink-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <Sparkles className="w-5 h-5 text-pink-600 mr-2" />
             <h3 className="font-medium text-pink-900">
@@ -476,17 +476,17 @@ const DesignSection: React.FC<DesignSectionProps> = ({
           </p>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-blue-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <Eye className="w-5 h-5 text-blue-600 mr-2" />
-            <h3 className="font-medium text-blue-900">
+            <h3 className="font-medium text-white">
               {language === 'en' && 'Visual Consistency'}
               {language === 'de' && 'Visuelle Konsistenz'}
               {language === 'fa' && 'یکپارچگی بصری'}
               {language === 'tr' && 'Görsel Tutarlılık'}
             </h3>
           </div>
-          <p className="text-sm text-blue-700">
+          <p className="text-sm text-white">
             {language === 'en' && 'A consistent visual identity across all touchpoints builds trust and brand recognition. Every element will work together harmoniously.'}
             {language === 'de' && 'Eine konsistente visuelle Identität über alle Berührungspunkte hinweg schafft Vertrauen und Markenerkennung. Jedes Element wird harmonisch zusammenarbeiten.'}
             {language === 'fa' && 'هویت بصری یکپارچه در تمام نقاط تماس اعتماد و شناخت برند را ایجاد می‌کند. هر عنصر به صورت هماهنگ کار خواهد کرد.'}
@@ -497,7 +497,7 @@ const DesignSection: React.FC<DesignSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-pink-100 text-pink-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-pink-100 text-black text-sm">
           <div className="w-2 h-2 bg-pink-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 4 of 10 - Design & Branding'}
           {language === 'de' && 'Schritt 4 von 10 - Design & Branding'}

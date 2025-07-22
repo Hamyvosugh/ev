@@ -258,7 +258,7 @@ const DatabaseSection: React.FC<DatabaseSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-100 text-cyan-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-cyan-100 text-black text-sm">
           <div className="w-2 h-2 bg-cyan-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 7 of 10 - Database & Backend'}
           {language === 'de' && 'Schritt 7 von 10 - Datenbank & Backend'}

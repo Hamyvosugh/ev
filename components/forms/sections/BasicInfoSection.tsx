@@ -141,18 +141,18 @@ const BasicInfoSection: React.FC<BasicInfoSectionProps> = ({
       </div>
 
       {/* Info Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 ">
+        <div className="bg-blue-950 border border-blue-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
-            <Target className="w-5 h-5 text-blue-600 mr-2" />
-            <h3 className="font-medium text-blue-900">
+            <Target className="w-5 h-5 text-white mr-2" />
+            <h3 className="font-medium text-white">
               {language === 'en' && 'Pro Tip'}
               {language === 'de' && 'Profi-Tipp'}
               {language === 'fa' && 'نکته مهم'}
               {language === 'tr' && 'Profesyonel İpucu'}
             </h3>
           </div>
-          <p className="text-sm text-blue-700">
+          <p className="text-sm text-white">
             {language === 'en' && 'Be specific about your goals. The more details you provide, the better we can tailor our solution to your needs.'}
             {language === 'de' && 'Seien Sie spezifisch bei Ihren Zielen. Je mehr Details Sie angeben, desto besser können wir unsere Lösung an Ihre Bedürfnisse anpassen.'}
             {language === 'fa' && 'در بیان اهدافتان دقیق باشید. هرچه جزئیات بیشتری ارائه دهید، بهتر می‌توانیم راه‌حل را متناسب با نیازهایتان طراحی کنیم.'}
@@ -160,10 +160,10 @@ const BasicInfoSection: React.FC<BasicInfoSectionProps> = ({
           </p>
         </div>
 
-        <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-amber-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
-            <Star className="w-5 h-5 text-amber-600 mr-2" />
-            <h3 className="font-medium text-amber-900">
+            <Star className="w-5 h-5 text-white mr-2" />
+            <h3 className="font-medium text-white">
               {language === 'en' && 'Why This Matters'}
               {language === 'de' && 'Warum das wichtig ist'}
               {language === 'fa' && 'چرا این مهم است'}

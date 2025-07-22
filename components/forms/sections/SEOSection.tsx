@@ -227,7 +227,7 @@ const SEOSection: React.FC<SEOSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-orange-100 text-black text-sm">
           <div className="w-2 h-2 bg-orange-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 6 of 10 - SEO & Marketing'}
           {language === 'de' && 'Schritt 6 von 10 - SEO & Marketing'}

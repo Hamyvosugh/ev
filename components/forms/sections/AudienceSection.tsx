@@ -213,7 +213,7 @@ const AudienceSection: React.FC<AudienceSectionProps> = ({
 
       {/* Helper Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <div className="bg-purple-50 border border-purple-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-purple-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <HelpCircle className="w-5 h-5 text-purple-600 mr-2" />
             <h3 className="font-medium text-purple-900">
@@ -231,17 +231,17 @@ const AudienceSection: React.FC<AudienceSectionProps> = ({
           </p>
         </div>
 
-        <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-green-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <Zap className="w-5 h-5 text-green-600 mr-2" />
-            <h3 className="font-medium text-green-900">
+            <h3 className="font-medium text-white">
               {language === 'en' && 'Conversion Focus'}
               {language === 'de' && 'Conversion-Fokus'}
               {language === 'fa' && 'تمرکز بر تبدیل'}
               {language === 'tr' && 'Dönüşüm Odağı'}
             </h3>
           </div>
-          <p className="text-sm text-green-700">
+          <p className="text-sm text-white">
             {language === 'en' && 'Think about what success looks like. Is it more leads, sales, sign-ups, or something else? This drives design decisions.'}
             {language === 'de' && 'Denken Sie darüber nach, wie Erfolg aussieht. Sind es mehr Leads, Verkäufe, Anmeldungen oder etwas anderes? Das treibt Designentscheidungen an.'}
             {language === 'fa' && 'درباره اینکه موفقیت چگونه به نظر می‌رسد فکر کنید. آیا لید بیشتر، فروش، ثبت‌نام یا چیز دیگری است؟ این تصمیمات طراحی را هدایت می‌کند.'}
@@ -252,7 +252,7 @@ const AudienceSection: React.FC<AudienceSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-purple-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-purple-100 text-black text-sm">
           <div className="w-2 h-2 bg-purple-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 2 of 10 - Target Audience'}
           {language === 'de' && 'Schritt 2 von 10 - Zielgruppe'}

@@ -367,7 +367,7 @@ const WebsiteRequestForm: React.FC<WebsiteRequestFormProps> = ({
   return (
     <div className={`max-w-4xl mx-auto p-6 ${isRTL ? 'rtl' : 'ltr'}`}>
       {/* Language Selector */}
-      <div className="flex justify-end mb-6">
+      <div className="flex justify-end mb-6 text-black">
         <select
           value={language}
           onChange={(e) => onLanguageChange?.(e.target.value as SupportedLanguage)}

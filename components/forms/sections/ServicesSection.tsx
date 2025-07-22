@@ -164,7 +164,7 @@ const ServicesSection: React.FC<ServicesSectionProps> = ({
       </div>
 
       {/* Services Info Card */}
-      <div className="bg-violet-50 border border-violet-200 rounded-lg p-6 mt-8">
+      <div className="bg-blue-950 border border-violet-200 rounded-lg p-6 mt-8">
         <div className="flex items-center mb-3">
           <CheckCircle className="w-6 h-6 text-violet-600 mr-3" />
           <h3 className="font-semibold text-violet-900">

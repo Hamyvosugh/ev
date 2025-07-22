@@ -731,7 +731,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
 
       {/* Info Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-        <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-indigo-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <Shield className="w-5 h-5 text-indigo-600 mr-2" />
             <h3 className="font-medium text-indigo-900">
@@ -749,7 +749,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
           </p>
         </div>
 
-        <div className="bg-teal-50 border border-teal-200 rounded-lg p-4">
+        <div className="bg-blue-950 border border-teal-200 rounded-lg p-4">
           <div className="flex items-center mb-2">
             <Settings className="w-5 h-5 text-teal-600 mr-2" />
             <h3 className="font-medium text-teal-900">
@@ -770,7 +770,7 @@ const TechnicalSection: React.FC<TechnicalSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-indigo-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-indigo-100 text-black text-sm">
           <div className="w-2 h-2 bg-indigo-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 5 of 10 - Technical Features'}
           {language === 'de' && 'Schritt 5 von 10 - Technische Funktionen'}

@@ -246,7 +246,7 @@ const HostingSection: React.FC<HostingSectionProps> = ({
       </div>
 
       {/* Info Card */}
-      <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mt-8">
+      <div className="bg-blue-950 border border-emerald-200 rounded-lg p-4 mt-8">
         <div className="flex items-center mb-2">
           <Server className="w-5 h-5 text-emerald-600 mr-2" />
           <h3 className="font-medium text-emerald-900">
@@ -266,7 +266,7 @@ const HostingSection: React.FC<HostingSectionProps> = ({
 
       {/* Progress Indicator */}
       <div className="mt-6 text-center">
-        <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-sm">
+        <div className="inline-flex items-center px-3 py-1 rounded-full bg-emerald-100 text-black text-sm">
           <div className="w-2 h-2 bg-emerald-600 rounded-full mr-2 animate-pulse"></div>
           {language === 'en' && 'Step 8 of 10 - Hosting & Domain'}
           {language === 'de' && 'Schritt 8 von 10 - Hosting & Domain'}
