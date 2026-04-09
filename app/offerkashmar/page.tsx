@@ -1164,7 +1164,7 @@ const t = {
     fa: "بیایید در یک جلسه بدون تعهد بررسی کنیم که چگونه می‌توانیم کشمر را به برند پیشرو مشروبات ایرانی در آلمان تبدیل کنیم.",
   },
   ctaBtn1: { de: "Kontakt aufnehmen", fa: "تماس با ما" },
-  ctaBtn2: { de: "Direkt anrufen", fa: "تماس مستقیم" },
+  ctaBtn2: { de: "WhatsApp", fa: "واتس‌اپ" },
   ctaSteps: {
     de: ["Erstgespräch", "Strategievorschlag", "Umsetzung"],
     fa: ["جلسه اول", "پیشنهاد استراتژی", "اجرا"],
@@ -2380,7 +2380,7 @@ export default function KashmarPresentation() {
                 </p>
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                   <a
-                    href="mailto:info@emoviral.com"
+                    href="mailto:Swallper@gmail.com"
                     className="group flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 text-black font-semibold px-8 py-4 rounded-full hover:shadow-lg hover:shadow-amber-500/25 transition-all"
                   >
                     <MailCheck className="w-5 h-5" />
@@ -2388,7 +2388,9 @@ export default function KashmarPresentation() {
                     <Arrow className="w-4 h-4 group-hover:translate-x-1 rtl:group-hover:-translate-x-1 transition-transform" />
                   </a>
                   <a
-                    href="tel:+4917612345678"
+                    href="https://wa.me/905528375079"
+                    target="_blank"
+                    rel="noreferrer"
                     className="flex items-center gap-2 border border-white/20 text-white px-8 py-4 rounded-full hover:bg-white/5 transition-all"
                   >
                     {L(t.ctaBtn2, lang)}
