@@ -10,23 +10,23 @@ import CTAComponent from '@/components/beratung/call';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Emoviral – Digitale Lösungen für Autohäuser',
-  description: 'Emoviral bietet Webdesign, Fahrzeugfotografie, Social-Media-Management und Werbekampagnen speziell für Autohändler in Deutschland.',
+  title: 'Emoviral – Digitale Systeme für Marketing, Vertrieb & Skalierung',
+  description:
+    'Emoviral entwickelt maßgeschneiderte Websites, Web-Applikationen, Marketing-Systeme und Automatisierungen für Unternehmen in Deutschland, die digital skalieren wollen.',
   openGraph: {
-    title: 'Emoviral – Digitale Lösungen für Autohäuser',
-    description: 'Professionelle Online-Lösungen für Autohäuser und Fahrzeughändler: Webseiten, Fotografie, Marketing & mehr – alles aus einer Hand.',
+    title: 'Emoviral – Digitale Systeme für Marketing, Vertrieb & Skalierung',
+    description:
+      'Individuelle Web-Architektur, digitales Marketing, Lead-Generierung, Automatisierung und KI-Integration – entwickelt für messbares Wachstum.',
     images: [
       {
-        url: '/images/meta/emoviral.webp', 
+        url: '/images/meta/emoviral.webp',
         width: 1200,
         height: 630,
-        alt: 'Emoviral – Digitale Lösungen für Autohäuser',
+        alt: 'Emoviral – Digitale Systeme für Unternehmen',
       },
     ],
   },
 };
-
-
 
 export default function Home() {
   return (

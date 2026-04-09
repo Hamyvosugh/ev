@@ -1,28 +1,33 @@
-import Breadcrumb from '@/components/global/Breadcrumb';
-import Footer from '@/components/global/footer';
-import Header from '@/components/global/header';
-import ScrollToTopButton from '@/components/global/scrollup';
+import LayoutShell from "@/components/global/LayoutShell";
 import "@/styles/fonts.css";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 
-
 export const metadata: Metadata = {
   title: "Digitale Lösungen für Autohäuser",
-  description: "Webdesign, Online-Marketing, Fahrzeugfotografie, Content-Erstellung & intelligente Automatisierung für Autohäuser und Autohändler",
-  metadataBase: new URL('https://emoviral.com'),
+  description:
+    "Webdesign, Online-Marketing, Fahrzeugfotografie, Content-Erstellung & intelligente Automatisierung für Autohäuser und Autohändler",
+  metadataBase: new URL("https://emoviral.com"),
   icons: {
     icon: [
-      { url: '/favicon_io/favicon.ico' },
-      { url: '/favicon_io/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/favicon_io/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: "/favicon_io/favicon.ico" },
+      {
+        url: "/favicon_io/favicon-16x16.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
+      {
+        url: "/favicon_io/favicon-32x32.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
     ],
-    apple: '/favicon_io/apple-touch-icon.png',
-    shortcut: '/favicon_io/favicon.ico',
+    apple: "/favicon_io/apple-touch-icon.png",
+    shortcut: "/favicon_io/favicon.ico",
   },
-  manifest: '/site.webmanifest',
+  manifest: "/site.webmanifest",
 };
 
 export default function RootLayout({
@@ -33,12 +38,17 @@ export default function RootLayout({
   return (
     <html lang="de" className="w-full font-poppins">
       <head>
-  {/* Add this explicit favicon link for search engines */}
-  <link rel="icon" type="image/png" href="/favicon_io/favicon-32x32.png" />
-  
-  {/* Your existing head content */}
-  <style dangerouslySetInnerHTML={{ 
-    __html: `
+        {/* Add this explicit favicon link for search engines */}
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon_io/favicon-32x32.png"
+        />
+
+        {/* Your existing head content */}
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
       /* Critical CSS for above-the-fold content */
       body { 
         margin: 0; 
@@ -59,11 +69,16 @@ export default function RootLayout({
       .font-bold { font-weight: 700; }
       .text-gray-900 { color: rgb(17, 24, 39); }
       .text-blue-900 { color: rgb(30, 58, 138); }
-    ` 
-  }} />
+    `,
+          }}
+        />
 
-<Script id="organization-ld-json" type="application/ld+json" strategy="afterInteractive">
-{`
+        <Script
+          id="organization-ld-json"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`
 {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -103,10 +118,14 @@ export default function RootLayout({
   }
 }
 `}
-</Script>
+        </Script>
 
-<Script id="breadcrumb-ld-json" type="application/ld+json" strategy="afterInteractive">
-{`
+        <Script
+          id="breadcrumb-ld-json"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
@@ -150,10 +169,14 @@ export default function RootLayout({
   ]
 }
 `}
-</Script>
+        </Script>
 
-<Script id="localbusiness-ld-json" type="application/ld+json" strategy="afterInteractive">
-{`
+        <Script
+          id="localbusiness-ld-json"
+          type="application/ld+json"
+          strategy="afterInteractive"
+        >
+          {`
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
@@ -184,45 +207,36 @@ export default function RootLayout({
 }
 }
 `}
-</Script>
-<Script
-        strategy="afterInteractive"
-        src={`https://www.googletagmanager.com/gtag/js?id=G-CX2TJHGWT2`}
-      />
-      
-      {/* اجرای تنظیمات Google Analytics پس از لود شدن gtag.js */}
-      <Script
-        id="google-analytics"
-        strategy="afterInteractive"
-        dangerouslySetInnerHTML={{
-          __html: `
+        </Script>
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=G-CX2TJHGWT2`}
+        />
+
+        {/* اجرای تنظیمات Google Analytics پس از لود شدن gtag.js */}
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-CX2TJHGWT2');
           `,
-        }}
-      />
-<link rel="canonical" href="https://emoviral.com/" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-<meta name="robots" content="index, follow" />
-</head>
+          }}
+        />
+        <link rel="canonical" href="https://emoviral.com/" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+        />
+        <meta name="robots" content="index, follow" />
+      </head>
       <body className="w-full min-w-full m-0 p-0">
         <div className="w-full min-w-full p-0 m-0">
-          <Analytics/>
-          <Header />
-           <div className=" mt-20 z-10 pb-0">
-           <Breadcrumb
-           containerClasses="py-3 px-4 sm:px-6 lg:px-8 z-50   border-b border-gray-100"
-           activeItemClasses="text-blue-900 font-medium"
-           inactiveItemClasses="text-gray-600 hover:text-blue-900 transition-colors duration-200"
-           />
-          </div>
-          <main className="w-full min-w-full p-0 m-0">
-          {children}
-          </main>
-          <Footer />
-          <ScrollToTopButton />
+          <Analytics />
+          <LayoutShell>{children}</LayoutShell>
         </div>
         {/* Load non-critical scripts */}
         <Script id="partytown-config" strategy="worker">
