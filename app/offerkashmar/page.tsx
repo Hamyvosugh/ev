@@ -34,7 +34,14 @@ import {
   Video,
   Zap,
 } from "lucide-react";
+import { Vazirmatn } from "next/font/google";
 import { useEffect, useRef, useState } from "react";
+
+const vazirmatn = Vazirmatn({
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
 
 /* ═══════════════════════════════════════════
    TRANSLATIONS
@@ -44,7 +51,7 @@ type Lang = "de" | "fa";
 const t = {
   heroBadge: {
     de: "Digitale Exzellenz für Kashmar",
-    fa: "تعالی دیجیتال برای کشمر",
+    fa: "تعالی دیجیتال برای کاشمر",
   },
   heroSub: { de: "trifft digitale Innovation", fa: "و نوآوری دیجیتال" },
   heroDesc: {
@@ -108,7 +115,7 @@ const t = {
   },
   servSub: {
     de: "Von der Website bis zur Amazon-Optimierung — alles aus einer Hand für Kashmar.",
-    fa: "از وب‌سایت تا بهینه‌سازی آمازون — همه چیز از یک منبع برای کشمر.",
+    fa: "از وب‌سایت تا بهینه‌سازی آمازون — همه چیز از یک منبع برای کاشمر.",
   },
   servCards: {
     de: [
@@ -173,7 +180,7 @@ const t = {
   },
   seoDesc: {
     de: "Suchmaschinenoptimierung ist das Fundament Ihrer digitalen Präsenz. Wir sorgen dafür, dass Kashmar bei relevanten Suchanfragen ganz oben steht.",
-    fa: "بهینه‌سازی موتور جستجو پایه حضور دیجیتال شماست. ما تضمین می‌کنیم که کشمر در جستجوهای مرتبط در رتبه اول قرار گیرد.",
+    fa: "بهینه‌سازی موتور جستجو پایه حضور دیجیتال شماست. ما تضمین می‌کنیم که کاشمر در جستجوهای مرتبط در رتبه اول قرار گیرد.",
   },
   seoItems: {
     de: [
@@ -199,7 +206,7 @@ const t = {
   },
   aeoDesc: {
     de: "Answer Engine Optimization — die Zukunft der Suche. Wir optimieren Kashmar für KI-gestützte Suchmaschinen, Sprachassistenten und Featured Snippets.",
-    fa: "بهینه‌سازی موتور پاسخ — آینده جستجو. ما کشمر را برای موتورهای جستجوی مبتنی بر هوش مصنوعی، دستیارهای صوتی و Featured Snippets بهینه می‌کنیم.",
+    fa: "بهینه‌سازی موتور پاسخ — آینده جستجو. ما کاشمر را برای موتورهای جستجوی مبتنی بر هوش مصنوعی، دستیارهای صوتی و Featured Snippets بهینه می‌کنیم.",
   },
   aeoItems: {
     de: [
@@ -1161,7 +1168,7 @@ const t = {
   ctaTitle2: { de: "Wachstumsschritt?", fa: "گام بعدی رشد؟" },
   ctaDesc: {
     de: "Lassen Sie uns in einem unverbindlichen Gespräch besprechen, wie wir Kashmar zur führenden iranischen Spirituosen-Marke in Deutschland machen können.",
-    fa: "بیایید در یک جلسه بدون تعهد بررسی کنیم که چگونه می‌توانیم کشمر را به برند پیشرو مشروبات ایرانی در آلمان تبدیل کنیم.",
+    fa: "بیایید در یک جلسه بدون تعهد بررسی کنیم که چگونه می‌توانیم کاشمر را به برند پیشرو مشروبات ایرانی در آلمان تبدیل کنیم.",
   },
   ctaBtn1: { de: "Kontakt aufnehmen", fa: "تماس با ما" },
   ctaBtn2: { de: "WhatsApp", fa: "واتس‌اپ" },
@@ -1176,7 +1183,7 @@ const t = {
   },
   footerConf: {
     de: "Vertrauliches Dokument — erstellt für Kashmar",
-    fa: "سند محرمانه — تهیه شده برای کشمر",
+    fa: "سند محرمانه — تهیه شده برای کاشمر",
   },
   footerRights: { de: "Alle Rechte vorbehalten.", fa: "تمامی حقوق محفوظ است." },
 };
@@ -1325,6 +1332,9 @@ export default function KashmarPresentation() {
   const [lang, setLang] = useState<Lang>("de");
   const isRtl = lang === "fa";
   const Arrow = isRtl ? ArrowLeft : ArrowRight;
+  const pageFontClass = isRtl
+    ? `${vazirmatn.className} persian-text`
+    : "font-sans";
 
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -1410,7 +1420,7 @@ export default function KashmarPresentation() {
       </Head>
       <div
         dir={isRtl ? "rtl" : "ltr"}
-        className={`bg-[#07070D] text-white min-h-screen overflow-x-hidden font-sans selection:bg-amber-400/30 ${isRtl ? "persian-text" : ""}`}
+        className={`bg-[#07070D] text-white min-h-screen overflow-x-hidden selection:bg-amber-400/30 ${pageFontClass}`}
       >
         {/* ─── LANGUAGE TOGGLE ─── */}
         <div className="fixed top-6 right-6 z-50 flex gap-1 bg-black/60 backdrop-blur-md border border-white/10 rounded-full p-1">
@@ -1435,13 +1445,22 @@ export default function KashmarPresentation() {
         >
           <div className="absolute inset-0">
             <video
+              src="/videos/mobilehero.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              className="absolute inset-0 h-full w-full object-cover opacity-30 md:hidden"
+            />
+            <video
               src="/videos/hero.mp4"
               autoPlay
               muted
               loop
               playsInline
               preload="metadata"
-              className="absolute inset-0 h-full w-full object-cover opacity-30"
+              className="absolute inset-0 hidden h-full w-full object-cover opacity-30 md:block"
             />
             <div className="absolute inset-0 bg-black/20" />
             <div className="absolute inset-0 bg-gradient-to-br from-[#1a0e05]/70 via-[#07070D]/55 to-[#0c0820]/75" />
